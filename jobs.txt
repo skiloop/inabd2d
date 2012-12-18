@@ -1,0 +1,21 @@
+dxM:Maxwell cell size
+dxF:Fluid cell size
+m=dxF/dxM
+n=lambda/dxM
+run time: 150 ns
+jobs:
+const dxM
+No.	n	m
+1	50	2
+2	50	6
+3	50	10
+4	50	20
+5	50	24
+const 
+No.	n	m
+6	25	40
+5	50	20
+7	75	13
+8	100	10
+compare:
+9	50	25
