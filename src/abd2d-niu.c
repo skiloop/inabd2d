@@ -39,7 +39,7 @@
 
 #define FREQUENCY 110E9
 #define MAX_NE 1E24
-#define INC_ANGLE 0.0*M_PI
+#define INC_ANGLE 0.25*M_PI
 //////////////////////////////////////
 //display definition
 /////////////////////////////////////
