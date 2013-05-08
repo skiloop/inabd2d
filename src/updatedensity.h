@@ -105,7 +105,7 @@ void UpdateDensity() {
                         }
                         Nu_c.data[ind] = collision(Eeff, p);
 
-                        mu_e = e / me / vm; //3.7e-2;
+                        mu_e = e / me / Nu_c.data[ind]; //3.7e-2;
                         mu_i = mu_e / 100.0; //mu_e/mu_i ranges from 100 to 200//
                         De = mu_e*Te; //*1.6021e-19/e;//
                         Da = De * mu_i / mu_e;
@@ -313,8 +313,6 @@ void CalSumESqrt() {
                     printf("Erms is nan at (%d,%d) at\n Line %d in function CalSumESqrt()\n", i*m, j*m, __LINE__);
                 }
 #endif
-                //if(i == 141&&j==39)
-                //	printf("%5.4e\t%5.4e\t%5.4e\t%5.4e\n",Erms.data[i*m*Erms.ny+j*m],Ez_s.data[index],Ez_s.data[index+Ez_s.ny]);
             }
     }
 }

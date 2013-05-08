@@ -116,11 +116,12 @@ void scatfdtd() {
             UpdateEFieldForPML(Hx_s, Hy_s, Hz_s, Ex_s, Ey_s, Ez_s);
             //DispEMFields(CurTimeStep);
 
-            UpdateVelocity();
-            //CaptureE(CapEF,Step,xpos,ypos);
+
 
 
             if (IfWithDensity) {
+                UpdateVelocity();
+                //CaptureE(CapEF,Step,xpos,ypos);
 #if IF_ERMS_EMAX==1
                 CalSumESqrt_Emax();
 #else
