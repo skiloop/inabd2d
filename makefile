@@ -27,7 +27,7 @@ MATINC=-I$(MATPATH)/extern/include
 LIB=-lm $(MATLIB)
 
 # C compiler compile option
-CFLAGS=-O3 -DMATLAB_SIMULATION # -g
+CFLAGS=-O3 -DMATLAB_SIMULATION# -g
 
 all:abd2d
 abd2d:abd2d-niu.o InonizationFormula.o
