@@ -1,5 +1,5 @@
 /*
- *		This file defines functions that update scatter fields.
+ *      This file defines functions that update scatter fields.
  *
  *
  *

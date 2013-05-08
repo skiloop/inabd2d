@@ -29,7 +29,6 @@ void InitBeta(MyStruct* stru, MyDataF gamma) {
     for (i = 0; i < stru->nx; i++) {
         for (j = 0; j < stru->ny; j++) {
             ind = i * stru->ny + j;
-
             if (niutype == 4) {
                 vm_ = collision(Erms.data[ind], p);
                 a = dt * vm_ / 2;
@@ -155,7 +154,7 @@ void InitCev(MyStruct beta, MyDataF alpha_ev) {
 
 void InitVelocityCoeff_Equatioan_Five() {
     int i, j, index = 0;
-    MyDataF temp, a=0, gamma=1;
+    MyDataF temp, a = 0, gamma = 1;
 
     temp = e * dt * 0.5 / (me);
     if (IsTMx) {
@@ -275,7 +274,25 @@ void InitCevNoDen() {
     }
 }
 
-/**********************************************************************************************/
+/******************************************************************/
+void UpdateCoeff() {
+    MyDataF gamma, a = 0;
+
+    a = 0.5 * dt*vm;
+    gamma = 1 + a;
+    
+    if (IfWithDensity) {
+        Init_ne();
+        InitBeta(&beta, gamma);
+        /*PrintData(beta);*/
+        InitCee(beta);
+        InitCeh(beta);
+        InitCev(beta, alpha);
+        if (niutype == 4 || niutype == 5) {
+            InitVelocityCoeff_Equatioan_Five();
+        }
+    }
+};
 
 void InitCoeff() {
     MyDataF gamma, a = 0;
@@ -290,15 +307,7 @@ void InitCoeff() {
     Chzey = -dt / mu_0 / dx;
     Cve = e * dt * 0.5 / (me * gamma);
     if (IfWithDensity) {
-        Init_ne();
-        InitBeta(&beta, gamma);
-        /*PrintData(beta);*/
-        InitCee(beta);
-        InitCeh(beta);
-        InitCev(beta, alpha);
-        if (niutype == 4 || niutype == 5) {
-            InitVelocityCoeff_Equatioan_Five();
-        }
+        UpdateCoeff();
     } else {
         InitCeeNoDen();
         InitCehNoDen();

@@ -45,12 +45,6 @@ void UpdateDensity() {
         }
     }
     BackupMyStruct(ne, ne_pre);
-    // 为第五种计算方法备份碰撞率
-    /**
-    if(niutype==5){
-            BackupMyStruct(Nu_c,Nu_c_pre);
-    }
-     */
     //printf("%5.4e\t%5.4e\t",Erms.data[250*Erms.ny+250],ne.data[250*ne.ny+250]);
     for (i = mt; i < ne.nx - mt; i++)
         for (j = mt; j < ne.ny - mt; j++) {
@@ -85,9 +79,9 @@ void UpdateDensity() {
                         if (ne.data[ind] <= 0.0)vi = 0;
                         else
                             vi = ionization(Erms.data[ind], p);
-                        vm = collision(Erms.data[ind], p);
+                        Nu_c.data[ind] = collision(Erms.data[ind], p);
                         va = 0.0;
-                        mu_e = e / me / vm; //3.7e-2;
+                        mu_e = e / me / Nu_c.data[ind]; //3.7e-2;
                         mu_i = mu_e / 100.0; //mu_e/mu_i ranges from 100 to 200//
                         De = mu_e*Te; //*1.6021e-19/e;//
                         Da = De * mu_i / mu_e;
@@ -105,7 +99,7 @@ void UpdateDensity() {
                         }
                         Nu_c.data[ind] = collision(Eeff, p);
 
-                        mu_e = e / me / Nu_c.data[ind]; //3.7e-2;
+                        mu_e = e / me / Nu_c.data[ind]; //原来的是mu_e = e / me / vm; //
                         mu_i = mu_e / 100.0; //mu_e/mu_i ranges from 100 to 200//
                         De = mu_e*Te; //*1.6021e-19/e;//
                         Da = De * mu_i / mu_e;
@@ -185,7 +179,7 @@ void InterpolatErms() {
     int nk, nl;
     int ind;
     int is, js;
-    int numx=0, numy=0;
+    int numx = 0, numy = 0;
     if (IsTEx) {
         numx = Ez_s.nx;
         numy = Ez_s.ny;

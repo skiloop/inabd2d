@@ -20,7 +20,6 @@ int MTimeStep = 1, MultiSize;
 ///////////////////////////////////////////////
 
 
-void UpdateCoeff();
 void AdBound();
 void InitSources();
 
@@ -30,7 +29,6 @@ void InitSources();
 /////////////////////////////////////////////
 
 void scatfdtd() {
-
 
     int CurTimeStep; //current time step
     int xpos, ypos, sxpos, sypos;
@@ -115,10 +113,6 @@ void scatfdtd() {
             //UpdEFieldForPML();
             UpdateEFieldForPML(Hx_s, Hy_s, Hz_s, Ex_s, Ey_s, Ez_s);
             //DispEMFields(CurTimeStep);
-
-
-
-
             if (IfWithDensity) {
                 UpdateVelocity();
                 //CaptureE(CapEF,Step,xpos,ypos);
@@ -126,36 +120,18 @@ void scatfdtd() {
                 CalSumESqrt_Emax();
 #else
                 CalSumESqrt();
-#endif
-                // 保存数据				
+#endif               				
             }
-
-            //RealEz = Ez_s.data[(tpis-4)*Ez_s.ny+tpjs+16];
-            //ezl = Ez_s.data[(tpie+4)*Ez_s.ny+tpjs+16];
-            //ezlr = E0*Source(CurTime - (tpie-tpis)*dx/c);
-            //rhtb = E0*Source(CurTime-half_dt);
-
-
-
-            //if(Step%10==0){//1){
-            //	//if(Step==302)//system("pause");
-            //	//printf("Step = %d\n",Step);
-            //	DispEMFields(CurTimeStep);
-            //	//DispNe(CurTimeStep);
-            //}
-            if (Step == 100)
-                //{
+            if (Step == 100){
                 DispEMFields(CurTimeStep);
-            //	DispNe(CurTimeStep);
-            //	//system("pause");
-            //}
+            }
         }
         if (IfWithDensity) {
 #if IF_ERMS_EMAX!=1
             CalErmsAtCoarseGrid();
 #endif
             InterpolatErms();
-            SaveCapField(Step);
+            SaveCapField(Step); // 保存数据
             UpdateDensity();
             UpdateCoeff();
             //SaveErms(CurTimeStep);
@@ -163,11 +139,8 @@ void scatfdtd() {
             DispNe(CurTimeStep);
             //DispEMFields(CurTimeStep);
             ResetStructData(Erms);
-
         }
         printf("%d\t%f ns\n", Step, CurTime / 1e-9);
-
-
         ////
         //if(CurTimeStep%1==0)
     }//END FOR

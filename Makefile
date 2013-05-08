@@ -9,11 +9,12 @@ CURDIR=.
 
 #
 # origin CFLAGS
-CFLAGS=-O3 -Wall #-Wunused-but-set-variable# run mode
+CFLAGS=-O4 -Wall #-Wunused-but-set-variable# run mode
 #CFLAGS=-g -Wall -DDEBUG #-Wunused-but-set-variable #debug mode
 
 # origin link options
 LIB=-lm
+LIB+=-O4
 
 # source path
 SRC=$(CURDIR)/src
