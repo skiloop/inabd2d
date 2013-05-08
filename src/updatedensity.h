@@ -185,7 +185,7 @@ void InterpolatErms() {
     int nk, nl;
     int ind;
     int is, js;
-    int numx, numy;
+    int numx=0, numy=0;
     if (IsTEx) {
         numx = Ez_s.nx;
         numy = Ez_s.ny;
@@ -236,7 +236,8 @@ void InterpolatErms() {
 
 void DensityBound(MyStruct stru, int bndwidth, const int swidth) {
 
-    int i, j, ind;
+    int i, j;
+    int ind;
     int ii, i1, i2;
     double tmp;
     ii = swidth + bndwidth;

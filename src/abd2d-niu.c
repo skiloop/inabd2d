@@ -147,9 +147,10 @@ int main(int argc, char *argv[]) {
 void input(int argc, char*argv[]) {
     void PrintInput();
     void help();
-    int i, cnt;
-    char buffer[MAX_BUFFER], *pstr;
-    double tdoub;
+    int i;
+    //int cnt;
+    //char buffer[MAX_BUFFER], *pstr;
+    //double tdoub;
     if (argc < 2) {
         fprintf(stderr, "Invalid input!\n");
         help();

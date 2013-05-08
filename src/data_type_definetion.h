@@ -199,7 +199,7 @@ void CaptDataM(const int num, const char*fname, const MyStruct data, int p) {
         }
         for (j = 0; j < data.ny; j += p) {
             for (i = 0; i < data.nx; i += p)
-                fprintf(fp, "%d %d %4.4e\n", data.data[i * data.ny + j]);
+                fprintf(fp, "%d %d %4.4e\n",i,j, data.data[i * data.ny + j]);
             //fprintf(fp,"\n");
         }
         fclose(fp);

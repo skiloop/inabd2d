@@ -155,7 +155,7 @@ void InitCev(MyStruct beta, MyDataF alpha_ev) {
 
 void InitVelocityCoeff_Equatioan_Five() {
     int i, j, index = 0;
-    MyDataF temp, a, gamma;
+    MyDataF temp, a=0, gamma=1;
 
     temp = e * dt * 0.5 / (me);
     if (IsTMx) {
@@ -230,7 +230,8 @@ void InitCeeNoDen() {
 }
 
 void InitCehNoDen() {
-    int i, j, index = 0;
+    int i, j;
+    //int index = 0;
     //MyDataF temp=dt/eps_0;
     if (IsTMx) {
         for (i = 0; i < Cehx.nx; ++i)
@@ -252,7 +253,8 @@ void InitCehNoDen() {
 }
 
 void InitCevNoDen() {
-    int i, j, index = 0;
+    int i, j;
+    //int index = 0;
     //MyDataF temp;
     if (IsTMx) {
         for (i = 0; i < Cevx.nx; ++i)

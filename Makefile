@@ -7,6 +7,14 @@ LD=ld
 # current path
 CURDIR=.
 
+#
+# origin CFLAGS
+CFLAGS=-O3 -Wall #-Wunused-but-set-variable# run mode
+#CFLAGS=-g -Wall -DDEBUG #-Wunused-but-set-variable #debug mode
+
+# origin link options
+LIB=-lm
+
 # source path
 SRC=$(CURDIR)/src
 
@@ -24,16 +32,16 @@ MATLIB=$(MATLINK) -L$(MATPATH)/bin/glnxa64 -lmx -leng
 MATINC=-I$(MATPATH)/extern/include
 
 # link option
-LIB=-lm $(MATLIB)
+#LIB+=$(MATLIB)
 
-# C compiler compile option
-CFLAGS=-O3 -DMATLAB_SIMULATION# -g
+# add Matlab simulation
+#CFLAGS+=-DMATLAB_SIMULATION $(MATINC)# -g
 
 all:abd2d
 abd2d:abd2d-niu.o InonizationFormula.o
 	$(CC) -o abd2d abd2d-niu.o InonizationFormula.o $(LIB)
 abd2d-niu.o:$(SRC)/abd2d-niu.c $(SRC)/*.h
-	$(CC) $(CFLAGS) -c $(SRC)/abd2d-niu.c $(MATINC)
+	$(CC) $(CFLAGS) -c $(SRC)/abd2d-niu.c
 InonizationFormula.o:$(SRC)/InonizationFormula.c $(SRC)/*.h
 	$(CC) $(CFLAGS) -c $(SRC)/InonizationFormula.c
 clean:
