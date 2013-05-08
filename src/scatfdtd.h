@@ -116,13 +116,17 @@ void scatfdtd(){
 			UpdateEFieldForPML(Hx_s,Hy_s,Hz_s,Ex_s,Ey_s,Ez_s);
 			//DispEMFields(CurTimeStep);
 
-			//UpdateVelocity();
+			UpdateVelocity();
 			//CaptureE(CapEF,Step,xpos,ypos);
 
 			
 			if(IfWithDensity){
+#if IF_ERMS_EMAX==1
+				CalSumESqrt_Emax();
+#else
 				CalSumESqrt();
-				SaveCapField(Step);
+#endif
+				// 保存数据				
 			}
 
 			//RealEz = Ez_s.data[(tpis-4)*Ez_s.ny+tpjs+16];
@@ -146,8 +150,11 @@ void scatfdtd(){
 			//}
 		}
 		if(IfWithDensity){
+#if IF_ERMS_EMAX!=1
 			CalErmsAtCoarseGrid();
+#endif
 			InterpolatErms();
+			SaveCapField(Step);
 			UpdateDensity();
 			UpdateCoeff();
 			//SaveErms(CurTimeStep);
@@ -155,6 +162,7 @@ void scatfdtd(){
 			DispNe(CurTimeStep);
 			//DispEMFields(CurTimeStep);
 			ResetStructData(Erms);
+			
 		}
 		printf("%d\t%f ns\n",Step,CurTime/1e-9);
 

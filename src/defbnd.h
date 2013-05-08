@@ -87,21 +87,22 @@ COORDINATES Cezyhx_yp;
 COORDINATES Chxh_yp;
 COORDINATES Chxez_yp;
 
-void init_coordinates(COORDINATES *coo, int nx, int ny, MDOUBLE InitValue) {
-    int i, j;
-    MDOUBLE *p;
 
-    coo->data = (MDOUBLE*) malloc(nx * ny * sizeof (MDOUBLE));
-    if (coo->data == NULL) {
-        fprintf(stderr, "Alloc space fails!\n");
-        exit(0);
-    }
-    coo->nx = nx;
-    coo->ny = ny;
-    p = coo->data;
-    for (i = 0; i < nx; i++)
-        for (j = 0; j < ny; j++)
-            *p++ = InitValue;
+void init_coordinates(COORDINATES *coo,int nx,int ny,MDOUBLE InitValue){
+	int i,j;
+	MDOUBLE *p;
+
+	coo->data=(MDOUBLE*)malloc(nx*ny*sizeof(MDOUBLE));
+	if(coo->data==NULL){
+		fprintf(stderr,"Alloc space fails!\n");
+		exit(0);
+	}
+	coo->nx=nx;
+	coo->ny=ny;
+	p=coo->data;
+	for(i=0;i<nx;i++)
+		for(j=0;j<ny;j++)
+			*p++=InitValue;			
 }
 #endif
 

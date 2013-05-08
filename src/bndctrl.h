@@ -16,25 +16,24 @@ int PMLCellyp = 0;
 int pml_order = 2;
 MyDataF pml_R_0 = 1e-8;
 
-int pis, pie;
-int pjs, pje;
+int pis,pie;
+int pjs,pje;
+void InitBndCtrl(){
+	IsAnySidePML = 1;
+	PMLCellxp=nbound;
+	PMLCellyp=nbound;
+	PMLCellxn=nbound;
+	PMLCellyn=nbound;
+	IsPMLxp=1;
+	IsPMLyp=1;
+	IsPMLxn=1;
+	IsPMLyn=1;
+	
+	pis = PMLCellxn;
+	pie = nx-PMLCellxp;
 
-void InitBndCtrl() {
-    IsAnySidePML = 1;
-    PMLCellxp = nbound;
-    PMLCellyp = nbound;
-    PMLCellxn = nbound;
-    PMLCellyn = nbound;
-    IsPMLxp = 1;
-    IsPMLyp = 1;
-    IsPMLxn = 1;
-    IsPMLyn = 1;
-
-    pis = PMLCellxn;
-    pie = nx - PMLCellxp;
-
-    pjs = PMLCellyn;
-    pje = ny - PMLCellyp;
+	pjs = PMLCellyn;
+	pje = ny-PMLCellyp;
 }
 
 #endif
