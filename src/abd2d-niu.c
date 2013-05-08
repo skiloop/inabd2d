@@ -59,7 +59,7 @@
 
 //是否通过振幅算Eeff
 //设为 1 算振幅
-#define IF_ERMS_EMAX 3
+int if_erms_E_max=3; // if set niutype=4 then this is reset to 1
 
 #define E_0 6.0e6
 #define NE0 1e13
@@ -126,6 +126,9 @@ void input(int argc, char*argv[]);
 
 int main(int argc, char *argv[]) {
     input(argc, argv);
+    if(niutype==4){
+        if_erms_E_max=1;
+    }
     InitComData();
     CalDomainSize();
     InitBndCtrl();

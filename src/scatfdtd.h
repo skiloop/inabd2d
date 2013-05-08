@@ -116,20 +116,20 @@ void scatfdtd() {
             if (IfWithDensity) {
                 UpdateVelocity();
                 //CaptureE(CapEF,Step,xpos,ypos);
-#if IF_ERMS_EMAX==1
-                CalSumESqrt_Emax();
-#else
-                CalSumESqrt();
-#endif               				
+                if (if_erms_E_max == 1) {
+                    CalSumESqrt_Emax();
+                } else {
+                    CalSumESqrt();
+                }
             }
-            if (Step == 100){
+            if (Step == 100) {
                 DispEMFields(CurTimeStep);
             }
         }
         if (IfWithDensity) {
-#if IF_ERMS_EMAX!=1
-            CalErmsAtCoarseGrid();
-#endif
+            if (if_erms_E_max != 1) {
+                CalErmsAtCoarseGrid();
+            }
             InterpolatErms();
             SaveCapField(Step); // 保存数据
             UpdateDensity();
