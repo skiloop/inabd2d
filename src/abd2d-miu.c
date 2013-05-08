@@ -92,7 +92,7 @@
 #include"savedata.h"
 #include"freespace.h"
 
-int main(int argc,char *argv[]) {
+int main(int argc, char *argv[]) {
     InitComData();
     CalDomainSize();
     InitBndCtrl();
