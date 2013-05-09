@@ -98,6 +98,8 @@ void InitComData() {
     printf("Ratio_x\t=\t%5.4e\nRatio_y\t=\t%5.4e\n", Ratio_x, Ratio_y);
     printf("\ndt_F/dt\t\t:\t%d\n", (int) (0.5 + dt_F / dt));
     printf("PML size\t:\t%d\n", nbound);
+    printf("E0\t:\t%f\n",E0);
+    printf("NE0\t:\t%f\n",NE0);
     printf("Fine Mesh Grid\t:\t%d\n", m);
     printf("Maxwell grid size\t:\t%d cells per lambda\n", maxwellGridSize);
     printf("Total propagating time\t:\t%f ns\n", totaltime);

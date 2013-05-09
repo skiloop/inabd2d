@@ -22,7 +22,7 @@ void DensityBound(MyStruct stru, int bndwidth, const int);
 
 void UpdateDensity() {
     int i, j, mt = m*tpis;
-    MyDataF alpha_t, Eeff, tau_m, kasi, Te;
+    MyDataF alpha_t, Eeff=0, tau_m, kasi, Te;
     MyDataF ne_ij, temp2, neip1, neim1, nejm1, nejp1;
     MyDataF Deff;
     MyDataF max_dtmui = 0, maxne = 0, mvi, mva, meff;
@@ -49,9 +49,9 @@ void UpdateDensity() {
     for (i = mt; i < ne.nx - mt; i++)
         for (j = mt; j < ne.ny - mt; j++) {
             ind = i * ne.ny + j;
-            if (niutype != 5) {
+            if (niutype != 4 && niutype!=5 ) {
                 Eeff = Erms.data[ind] / 100 * pow(1 / (1 + omega * omega / vm / vm), 0.5);
-            } else {
+            } else if(niutype==5) {
                 MyDataF tmp;
                 tmp = Nu_c.data[ind] * Nu_c.data[ind];
                 Eeff = Erms.data[ind] * sqrt(tmp / (tmp + omega * omega));
@@ -62,7 +62,7 @@ void UpdateDensity() {
             neim1 = ne_pre.data[ind - ne.ny];
             nejm1 = ne_pre.data[ind - 1];
             nejp1 = ne_pre.data[ind + 1];
-            if (ne_ij <= 0 || fabs(Eeff) < 0.1) va = vi = 0;
+            if ((ne_ij <= 0 || fabs(Eeff) < 1e-10 ) && niutype !=4)va = vi = 0;
             else {
                 switch (niutype) {
                     case 1:

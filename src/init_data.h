@@ -155,7 +155,6 @@ void InitCev(MyStruct beta, MyDataF alpha_ev) {
 void InitVelocityCoeff_Equatioan_Five() {
     int i, j, index = 0;
     MyDataF temp, a = 0, gamma = 1;
-
     temp = e * dt * 0.5 / (me);
     if (IsTMx) {
         for (i = 0; i < Cvvx.nx; ++i) {
@@ -276,13 +275,13 @@ void InitCevNoDen() {
 
 /******************************************************************/
 void UpdateCoeff() {
-    MyDataF gamma, a = 0;
 
-    a = 0.5 * dt*vm;
-    gamma = 1 + a;
-    
     if (IfWithDensity) {
-        Init_ne();
+        MyDataF gamma, a = 0;
+        a = 0.5 * dt*vm;
+        gamma = 1 + a;
+        alpha = (1 - a) / (1 + a);
+
         InitBeta(&beta, gamma);
         /*PrintData(beta);*/
         InitCee(beta);
@@ -307,6 +306,7 @@ void InitCoeff() {
     Chzey = -dt / mu_0 / dx;
     Cve = e * dt * 0.5 / (me * gamma);
     if (IfWithDensity) {
+        Init_ne();
         UpdateCoeff();
     } else {
         InitCeeNoDen();
