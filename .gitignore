@@ -25,3 +25,10 @@ abd2d
 # test directory
 /test
 nbproject/
+
+# compressed files
+*.bz2
+*.rar
+*.7z
+*.gz
+*.tar
