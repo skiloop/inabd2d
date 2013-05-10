@@ -40,15 +40,13 @@ MATINC=-I$(MATPATH)/extern/include
 CFLAGS+=-MMD
 
 OBJS=abd2d.o  \
-breakdownParamters.o \
 commonData.o \
 connectingInterface.o \
 dataSaving.o \
 fdtd.o \
 fieldCreation.o \
-initCommonData.o \
 init.o \
-InonizationFormula.o \
+breakdownFormula.o \
 matlabSimulation.o \
 memoryRelease.o \
 myStruct.o \

@@ -18,7 +18,6 @@ MyDataF vm = 760 * 5.3e9;
 
 MyDataF rei;
 
-
 //FDTD DATA
 MyDataF dt, dt_F, dt_M;
 MyDataF half_dt;
@@ -59,7 +58,6 @@ MyDataF phi = 0; //incidence wave inject angle on x-axis
 //MyStruct Nu_c; // 循环利用的碰撞率
 //
 ////Coeffients
-///*******************************/
 //MyDataF Chxez, Chyez, Chzex, Chzey;
 //
 //MyStruct Cevx, Cevy, Cevz;
@@ -70,8 +68,6 @@ MyDataF phi = 0; //incidence wave inject angle on x-axis
 //
 //MyStruct Cvvx, Cvvy, Cvvz;
 //MyStruct Cvex, Cvey, Cvez;
-
-/*******************************/
 
 int IsTMx = _SOURCE_TMX_;
 int IsTEx = _SOURCE_TEX_;

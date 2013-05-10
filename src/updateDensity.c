@@ -14,7 +14,7 @@
 #include "fdtd.h"
 #include "fluid.h"
 #include "commonData.h"
-#include "InonizationFormula.h"
+#include "breakdownFormula.h"
 
 void my_pause() {
     printf("Press any key to continue...");

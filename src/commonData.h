@@ -42,7 +42,6 @@ extern "C" {
 
     extern MyDataF rei;
 
-
     //FDTD DATA
     extern MyDataF dt, dt_F, dt_M;
     extern MyDataF half_dt;
@@ -69,7 +68,6 @@ extern "C" {
     extern MyDataF omega;
     extern MyDataF phi; //incidence wave inject angle on x-axis 
 
-
 //    //EM field
 //    extern MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;
 //    extern MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;
@@ -82,7 +80,6 @@ extern "C" {
 //    extern MyStruct Nu_c; // 循环利用的碰撞率
 //    //MyStruct Nu_c_pre;//上一步的碰撞率（循环利用的碰撞率）
 //    //Coeffients
-//    /*******************************/
 //    extern MyDataF Chxez, Chyez, Chzex, Chzey;
 //
 //    extern MyStruct Cevx, Cevy, Cevz;
@@ -93,8 +90,6 @@ extern "C" {
 //
 //    extern MyStruct Cvvx, Cvvy, Cvvz;
 //    extern MyStruct Cvex, Cvey, Cvez;
-
-    /*******************************/
 
     extern int IsTMx;
     extern int IsTEx;
@@ -110,7 +105,7 @@ extern "C" {
     //Matlab simulation
     extern int IsMatlabSim;
     extern FILE *filedat;
-    MyDataF totaltime; //in nane second
+    extern MyDataF totaltime; //in nane second
     extern int isConnect;
     extern int IfWithDensity;
     extern int maxwellGridSize;
