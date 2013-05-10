@@ -46,11 +46,9 @@ dataSaving.o \
 dataType.o \
 density.o \
 fdtd.o \
-fieldCreation.o \
-init.o \
+initial.o \
 breakdownFormula.o \
 matlabSimulation.o \
-memoryRelease.o \
 pml.o 
 .PHONY: all clean
 all:abd2d

@@ -12,7 +12,7 @@
 #include <time.h>
 
 #include "common.h"
-#include "init.h"
+#include "initial.h"
 #include "fdtd.h"
 #include "density.h"
 #include "dataType.h"
@@ -280,3 +280,51 @@ void fdtd() {
 void PrintSourceSize(int xpos, int ypos, int sxpos, int sypos) {
     printf("\nnx\t=\t%d\nny\t=\t%d\nxpos\t=\t%d\nypos\t=\t%d\nsxpos\t=\t%d\nsypos\t=\t%d\nnbound\t=\t%d\n", nx, ny, xpos, ypos, sxpos, sypos, nbound);
 }
+
+void FreeSpace() {
+    if (IsTMx) {
+        freeData(&Ex_s);
+        freeData(&Ex_s_pre);
+
+        freeData(&Vex);
+        freeData(&Cevx);
+        freeData(&Ceex);
+        freeData(&Cehx);
+
+        freeData(&Ey_s);
+        freeData(&Ey_s_pre);
+
+        freeData(&Vey);
+        freeData(&Cevy);
+        freeData(&Ceey);
+        freeData(&Cehy);
+        freeData(&Hz_s);
+    }
+    if (IsTEx) {
+        freeData(&Hx_i);
+        freeData(&Hy_i);
+        freeData(&Ez_i);
+
+        freeData(&Hx_s);
+        freeData(&Hy_s);
+        freeData(&Ez_s);
+        freeData(&Ez_s_pre);
+
+        freeData(&Vez);
+        freeData(&Ceez);
+        freeData(&Cevz);
+        freeData(&Cehz);
+    }
+    freeData(&Cvvx);
+    freeData(&Cvvy);
+    freeData(&Cvvz);
+    freeData(&Cvex);
+    freeData(&Cvey);
+    freeData(&Cvez);
+    freeData(&ne);
+    freeData(&Erms);
+    freeData(&ne_pre);
+    freeData(&beta);
+    freeData(&Nu_c);
+}
+

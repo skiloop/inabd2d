@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "init.h"
+#include "initial.h"
 #include "fdtd.h"
 #include "dataType.h"
 #include "commonData.h"
