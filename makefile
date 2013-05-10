@@ -1,14 +1,21 @@
 # compiler
-CC= gcc #icc#gcc
+CC=cc#icc#gcc
 
 # linker
 LD=ld
 
-# current path
-CURDIR=.
-
 # source path
-SRC=$(CURDIR)/src
+SRC=./src
+
+VPATH= $(SRC)
+#
+# origin CFLAGS
+CFLAGS=-O4 -Wall#-Wunused-but-set-variable# run mode
+#CFLAGS=-g -Wall -DDEBUG#-Wunused-but-set-variable #debug mode
+
+# origin link options
+LIB=-lm
+LIB+=-O4
 
 # matlab path 
 MATPATH=/opt/Matlab/R2011a# for local server
@@ -24,19 +31,36 @@ MATLIB=$(MATLINK) -L$(MATPATH)/bin/glnxa64 -lmx -leng
 MATINC=-I$(MATPATH)/extern/include
 
 # link option
-LIB=-lm $(MATLIB)
+#LIB+=$(MATLIB)
 
-# C compiler compile option
-CFLAGS=-O3 -DMATLAB_SIMULATION# -g
+# add Matlab simulation
+#CFLAGS+=-DMATLAB_SIMULATION $(MATINC)# -g
 
+# add -MMD
+CFLAGS+=-MMD
+
+OBJS=abd2d.o  \
+breakdownParamters.o \
+commonData.o \
+connectingInterface.o \
+dataSaving.o \
+fdtd.o \
+fieldCreation.o \
+initCommonData.o \
+initData.o \
+InonizationFormula.o \
+matlabSimulation.o \
+memoryRelease.o \
+myStruct.o \
+pml.o \
+updateDensity.o
+.PHONY: all clean
 all:abd2d
-abd2d:abd2d-niu.o InonizationFormula.o
-	$(CC) -o abd2d abd2d-niu.o InonizationFormula.o $(LIB)
-abd2d-niu.o:$(SRC)/abd2d-niu.c $(SRC)/*.h
-	$(CC) $(CFLAGS) -c $(SRC)/abd2d-niu.c $(MATINC)
-InonizationFormula.o:$(SRC)/InonizationFormula.c $(SRC)/*.h
-	$(CC) $(CFLAGS) -c $(SRC)/InonizationFormula.c
+abd2d:$(OBJS)
+	$(CC) -o abd2d $^ $(LIB)
+$(OBJS):%.o:%.c common.h
+	$(CC) $(CFLAGS) -c $<
 clean:
-	rm -f *.o abd2d
+	-rm -f *.o abd2d *.d
 
 
