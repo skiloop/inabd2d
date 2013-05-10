@@ -7,7 +7,7 @@
 #include "commonData.h"
 #include "fdtd.h"
 
-MyDataF *srcdat=NULL;
+MyDataF *srcdat = NULL;
 //c:\Documents and Settings\Wenbin Lin\My Documents\Visual Studio 2005\Projects\fdtd2d\fdtd2d\define_problem_space_and_parameters.h
 
 void calsampos(int *xpos, int *ypos) {
@@ -31,7 +31,7 @@ void InitCapture(int ttstep) {
     int i;
     MyDataF t;
     //MyDataF *CapEf=NULL;
-    FILE *src=NULL;
+    FILE *src = NULL;
     //MyDataF t_0;
     //MyDataF tau = 1.5166 / M_PI / f / 3 / 5;
     //t_0 = 1.8 * tau; //dt*ttstep/10;
@@ -72,8 +72,9 @@ void scpfld(MyDataF *CapEf, int ttstep) {
         printf("Cannot open field CapEfield.dat!\n");
         exit(0);
     }
-    for (i = 0; i < ttstep; i++)
+    for (i = 0; i < ttstep; i++) {
         fprintf(fp, "%f\t", CapEf[i]);
+    }
     fprintf(fp, "\n");
     fclose(fp);
 
@@ -145,10 +146,13 @@ void chkgrad(MyDataF str, MyDataF strpre, int i, int j) {
 
 void CheckIfNonZeros(MyStruct stru) {
     int i, j;
-    for (i = 0; i < stru.nx; i++)
-        for (j = 0; j < stru.ny; j++)
-            if (fabs(stru.data[i * stru.ny + j]) > MAX_LIMIT)
+    for (i = 0; i < stru.nx; i++) {
+        for (j = 0; j < stru.ny; j++) {
+            if (fabs(stru.data[i * stru.ny + j]) > MAX_LIMIT) {
                 printf("%d\t%d\t%-2.3e\n", i, j, stru.data[i * stru.ny + j]);
+            }
+        }
+    }
 }
 
 //Save Fields
@@ -242,8 +246,9 @@ void SaveRows(const MyStruct stru, int row, char *fname) {
         fprintf(stderr, "Cannot open file %s.\n", fname);
         exit(EXIT_FAILURE);
     }
-    for (i = 0; i < stru.ny; i++)
+    for (i = 0; i < stru.ny; i++) {
         fprintf(fp, "%6.5e\t", stru.data[i * stru.ny + row]);
+    }
     fprintf(fp, "\n");
     printf("Save file %s success.\n", fname);
     fclose(fp);
@@ -270,37 +275,19 @@ void SaveToFile() {
     fprintf(hfile, "DataName\tnx\tny\n");
 
     if (IsTMx) {
-        //SaveData(Ex,"Ex.dat",hfile);
-        //SaveData(Ey,"Ey.dat",hfile);
-        //SaveData(Hz,"Hz.dat",hfile);
-
         SaveData(Ex_s, "Ex_s.dat", hfile);
         SaveData(Ey_s, "Ey_s.dat", hfile);
         SaveData(Hz_s, "Hz_s.dat", hfile);
 
-        //SaveData(Ex_i,"Ex_i.dat",hfile);
-        //SaveData(Ey_i,"Ey_i.dat",hfile);
-        //SaveData(Hz_i,"Hz_i.dat",hfile);
-
         SaveData(Vex, "Vex.dat", hfile);
         SaveData(Vey, "Vey.dat", hfile);
-
     }
     if (IsTEx) {
-        //SaveData(Hx,"Hx.dat",hfile);
-        //SaveData(Hy,"Hy.dat",hfile);
-        //SaveData(Ez,"Ez.dat",hfile);
-
         SaveData(Hx_s, "Hx_s.dat", hfile);
         SaveData(Hy_s, "Hy_s.dat", hfile);
         SaveData(Ez_s, "Ez_s.dat", hfile);
-        /*
-                        SaveData(Hx_i,"Hx_i.dat",hfile);
-                        SaveData(Hy_i,"Hy_i.dat",hfile);
-                        SaveData(Ez_i,"Ez_i.dat",hfile);
-         */
-        SaveData(Vez, "Vez.dat", hfile);
 
+        SaveData(Vez, "Vez.dat", hfile);
     }
     SaveData(ne, "ne.dat", hfile);
     fclose(hfile);

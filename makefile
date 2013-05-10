@@ -47,7 +47,7 @@ dataSaving.o \
 fdtd.o \
 fieldCreation.o \
 initCommonData.o \
-initData.o \
+init.o \
 InonizationFormula.o \
 matlabSimulation.o \
 memoryRelease.o \

@@ -59,7 +59,7 @@ void UpdateEField() {
     if (IsTMx) {
         BackupMyStruct(Ex_s, Ex_s_pre);
         BackupMyStruct(Ey_s, Ey_s_pre);
-        for (i = 0; i < Ex_s.nx; i++)
+        for (i = 0; i < Ex_s.nx; i++) {
             for (j = pjs; j < pje; j++) {
                 index = i * Hz_s.ny + j;
                 indx = i * Ex_s.ny + j;
@@ -67,7 +67,8 @@ void UpdateEField() {
                         Cevx.data[indx] * Vex.data[indx] + Cehx.data[indx]*
                         (Hz_s.data[index] - Hz_s.data[index - 1]);
             }
-        for (i = pis; i < pie; i++)
+        }
+        for (i = pis; i < pie; i++) {
             for (j = 0; j < Ey_s.ny; j++) {
                 indy = i * Ey_s.ny + j;
                 Ey_s.data[indy] = Ceey.data[indy]*(Ey_s.data[indy])
@@ -78,11 +79,12 @@ void UpdateEField() {
                     i = i;
 #endif
             }
+        }
         //AdjustEFieldAtCnntIntfc();
     }
     if (IsTEx) {
         BackupMyStruct(Ez_s, Ez_s_pre);
-        for (i = pis + 1; i < pie; i++)
+        for (i = pis + 1; i < pie; i++) {
             for (j = pjs + 1; j < pje; j++) {
                 index = i * Ez_s.ny + j;
                 indy = i * Hy_s.ny + j;
@@ -94,6 +96,7 @@ void UpdateEField() {
                         (Hx_s.data[indx] - Hx_s.data[indx - 1]));
 
             }
+        }
     }
 }
 
@@ -102,23 +105,24 @@ void UpdateMField() {
     int i, j, index, ind, ind2;
     //MyDataF tmp1,tmp2,tmp3;
     if (IsTEx) {
-        for (i = 0; i < Hx_s.nx; i++)
+        for (i = 0; i < Hx_s.nx; i++) {
             for (j = pjs; j < pje; j++) {
                 index = i * Hx_s.ny + j;
                 ind = i * Ez_s.ny + j;
                 Hx_s.data[index] = Hx_s.data[index] + Chxez * (Ez_s.data[ind + 1] - Ez_s.data[ind]);
             }
-
-        for (i = pis; i < pie; i++)
+        }
+        for (i = pis; i < pie; i++) {
             for (j = 0; j < Hy_s.ny; j++) {
                 index = i * Hy_s.ny + j;
                 ind = i * Ez_s.ny + j;
                 Hy_s.data[index] = Hy_s.data[index] + Chyez * (Ez_s.data[ind + Ez_s.ny] - Ez_s.data[ind]);
             }
+        }
     }
     if (IsTMx) {
 
-        for (i = pis; i < pie; i++)//for(i=0;i<Hz_s.nx;i++)
+        for (i = pis; i < pie; i++) {
             for (j = pjs; j < pje; j++) {
                 index = i * Hz_s.ny + j;
                 ind = i * Ex_s.ny + j;
@@ -131,6 +135,7 @@ void UpdateMField() {
                     i = i;
 #endif
             }
+        }
     }
 }
 
