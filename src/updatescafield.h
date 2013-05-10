@@ -1,5 +1,5 @@
 /*
- *		This file defines functions that update scatter fields.
+ *      This file defines functions that update scatter fields.
  *
  *
  *
@@ -55,24 +55,7 @@ void UpdateEField() {
                         Cevz.data[index] * Vez.data[index] + Cehz.data[index]*(
                         (Hy_s.data[indy] - Hy_s.data[indy - Hy_s.ny])-
                         (Hx_s.data[indx] - Hx_s.data[indx - 1]));
-#ifdef _DEBUG
-                if (i == Ez_s.nx / 2 && j == Ez_s.ny / 2)
-                    i = i;
-#endif
-                //Eztmp = fabs(Ez_s.data[index])*M_SQRT1_2;
-                //if(Eztmp>Erms.data[i*m*Erms.ny+j*m])
-                //	Erms.data[i*m*Erms.ny+j*m] = Eztmp;
-                /*if((Ez_s.data[index]>1e15)||(Ez_s.data[index]<-1e15))
-                {
-                        printf("Ceez = %2.2e\nStep = %d",Ceez.data[index],Step);
-                        printf("i = %d\tj =%d\n",i,j);
-                        printf("Cevz = %2.2e\n",Cevz.data[index]);
-                        printf("Cevz*Vez = %2.2e\n",Cevz.data[index]*Vez.data[index]);
-                        printf("Cehz = %2.2e\n",Cehz.data[index]);
-                        CaptData(1,"ne.dat",ne);
-                        CaptData(1,"Ezsp.dat",Ez_s_pre);
-                        //system("pause");
-                }*/
+
             }
     }
 }

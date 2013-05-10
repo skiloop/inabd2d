@@ -5,7 +5,7 @@
 UpdMagFldForPML_TEz.h
 update magnetic fields at PML regions
 TEz
- ***********************************************************************************************************/
+ ***************************************************************************************************/
 void UpdMagFldForPML_TEz(MyStruct hx, MyStruct hy, MyStruct ez) {
     int i, j;
     if (IsPMLxn) {
@@ -13,7 +13,7 @@ void UpdMagFldForPML_TEz(MyStruct hx, MyStruct hy, MyStruct ez) {
             for (j = 1; j <= nym1; j++) {
                 hy.data[i * hy.ny + j] = Chyh_xn.data[i * Chyh_xn.ny + j - 1] * hy.data[i * hy.ny + j]
                         + Chyez_xn.data[i * Chyez_xn.ny + j - 1]*(ez.data[(i + 1) * ez.ny + j] - ez.data[i * ez.ny + j]);
-                /*******************************************************************************************************************/
+                /*******************************************************************************************/
             }
     }
     if (IsPMLxp) {
@@ -21,7 +21,7 @@ void UpdMagFldForPML_TEz(MyStruct hx, MyStruct hy, MyStruct ez) {
             for (j = 1; j <= nym1; j++) {
                 hy.data[i * hy.ny + j] = Chyh_xp.data[(i - pie) * Chyh_xp.ny + j - 1] * hy.data[i * hy.ny + j]
                         + Chyez_xp.data[(i - pie) * Chyez_xp.ny + j - 1]*(ez.data[(i + 1) * ez.ny + j] - ez.data[i * ez.ny + j]);
-                /*******************************************************************************************************************/
+                /*******************************************************************************************/
             }
     }
 
@@ -59,7 +59,7 @@ void UpdMagFldForPML_TMz(MyStruct hz, MyStruct ex, MyStruct ey) {
 
             }
     }
-    /*============================================================================================================*/
+    /*================================================================================================*/
     if (IsPMLxp) {
         for (i = 0; i < Hzx_xp.nx; ++i)
             for (j = 0; j < Hzx_xp.ny; j++) {
@@ -77,7 +77,7 @@ void UpdMagFldForPML_TMz(MyStruct hz, MyStruct ex, MyStruct ey) {
                 //	puts("Hello!");
             }
     }
-    /*===============================================================================================================*/
+    /*================================================================================================*/
     if (IsPMLyn) {
         for (i = 0; i < Hzx_yn.nx; ++i)
             for (j = 0; j < Hzx_yn.ny; j++)
@@ -89,7 +89,7 @@ void UpdMagFldForPML_TMz(MyStruct hz, MyStruct ex, MyStruct ey) {
                     + Chzyex_yn.data[i * Chzyex_yn.ny + j]*(ex.data[i * ex.ny + j + 1] - ex.data[i * ex.ny + j]);
 
     }
-    /*===============================================================================================================*/
+    /*===============================================================================================*/
     if (IsPMLyp) {
         for (i = 0; i < Hzx_yp.nx; ++i)
             for (j = 0; j < Hzx_yp.ny; j++) {
@@ -106,7 +106,7 @@ void UpdMagFldForPML_TMz(MyStruct hz, MyStruct ex, MyStruct ey) {
                 //	i=i;
             }
     }
-    /*===================================================================================================================*/
+    /*===============================================================================================*/
     //left bottom
     for (i = 0; i < pis; i++) {
         for (j = 0; j < pjs; j++) {
@@ -131,7 +131,7 @@ void UpdMagFldForPML_TMz(MyStruct hz, MyStruct ex, MyStruct ey) {
             hz.data[i * hz.ny + j] = Hzx_xp.data[(i - pie) * Hzx_xp.ny + j] + Hzy_yp.data[i * Hzy_yp.ny + j - pje];
         }
     }
-    /*=======================================================================================================*/
+    /*===============================================================================================*/
     for (i = 0; i < pis; i++) {
         for (j = pjs; j < pje; j++) {
             hz.data[i * hz.ny + j] = Hzx_xn.data[i * Hzx_xn.ny + j] + Hzy_xn.data[i * Hzy_xn.ny + j - pjs];
@@ -212,7 +212,7 @@ void UpdEltFldForPML_TEz(MyStruct ez, MyStruct hx, MyStruct hy) {
                 Ezy_xn.data[i * Ezy_xn.ny + j] = Cezye_xn.data[i * Cezye_xn.ny + j] * Ezy_xn.data[i * Ezy_xn.ny + j]
                     + Cezyhx_xn.data[i * Cezyhx_xn.ny + j]*(hx.data[(i + 1) * hx.ny + j + pjs + 1] - hx.data[(i + 1) * hx.ny + j + pjs]);
     }
-    /*============================================================================================================*/
+    /*===============================================================================================*/
     if (IsPMLxp) {
         for (i = 0; i < Ezx_xp.nx; ++i)
             for (j = 0; j < Ezx_xp.ny; j++) {
@@ -225,7 +225,7 @@ void UpdEltFldForPML_TEz(MyStruct ez, MyStruct hx, MyStruct hy) {
                         + Cezyhx_xp.data[i * Cezyhx_xp.ny + j]*(hx.data[(pie + i) * hx.ny + j + pjs + 1] - hx.data[(pie + i) * hx.ny + j + pjs]);
             }
     }
-    /*===============================================================================================================*/
+    /*===============================================================================================*/
     if (IsPMLyn) {
         for (i = 0; i < Ezx_yn.nx; ++i)
             for (j = 0; j < Ezx_yn.ny; j++) {
@@ -236,23 +236,23 @@ void UpdEltFldForPML_TEz(MyStruct ez, MyStruct hx, MyStruct hy) {
             for (j = 0; j < Ezy_yn.ny; j++) {
                 Ezy_yn.data[i * Ezy_yn.ny + j] = Cezye_yn.data[i * Cezye_yn.ny + j] * Ezy_yn.data[i * Ezy_yn.ny + j]
                         + Cezyhx_yn.data[i * Cezyhx_yn.ny + j]*(hx.data[(i + 1) * hx.ny + j + 1] - hx.data[(i + 1) * hx.ny + j]);
-                /*******************************************************************************************************************/
+                /*******************************************************************************************/
             }
 
     }
-    /*===============================================================================================================*/
+    /*===============================================================================================*/
     if (IsPMLyp) {
         for (i = 0; i < Ezx_yp.nx; ++i)
             for (j = 0; j < Ezx_yp.ny; j++) {
                 Ezx_yp.data[i * Ezx_yp.ny + j] = Cezxe_yp.data[i * Cezxe_yp.ny + j] * Ezx_yp.data[i * Ezx_yp.ny + j]
                         + Cezxhy_yp.data[i * Cezxhy_yp.ny + j]*(hy.data[(i + pis + 1) * hy.ny + j + pje] - hy.data[(i + pis) * hy.ny + j + pje]);
-                /*******************************************************************************************************************/
+                /******************************************************************************************/
             }
         for (i = 0; i < Ezy_yp.nx; ++i)
             for (j = 0; j < Ezy_yp.ny; j++) {
                 Ezy_yp.data[i * Ezy_yp.ny + j] = Cezye_yp.data[i * Cezye_yp.ny + j] * Ezy_yp.data[i * Ezy_yp.ny + j]
                         + Cezyhx_yp.data[i * Cezyhx_yp.ny + j]*(hx.data[(1 + i) * hx.ny + j + pje] - hx.data[(1 + i) * hx.ny + j + pje - 1]);
-                /*******************************************************************************************************************/
+                /*******************************************************************************************/
             }
     }
     /*===================================================================================================================*/

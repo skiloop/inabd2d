@@ -17,6 +17,13 @@ void ResetStructData(MyStruct mst) {
             mst.data[i * mst.ny + j] = 0;
 }
 
+void ResetStructDataR(MyStruct mst, MyDataF val) {
+    int i, j;
+    for (i = 0; i < mst.nx; i++)
+        for (j = 0; j < mst.ny; j++)
+            mst.data[i * mst.ny + j] = val;
+}
+
 void InitMyStr(int nnx, int nny, MyStruct* ms) {
     ms->nx = nnx;
     ms->ny = nny;
@@ -100,8 +107,63 @@ void CaptData(const int num, const char * const fname, const MyStruct data) {
         }
         for (j = 0; j < data.ny; j++) {
             for (i = 0; i < data.nx; i++)
-                fprintf(fp, "%4.4e ", data.data[i * data.ny + j]);
-            fprintf(fp, "\n");
+                fprintf(fp, "%d %d %4.4e\n", i, j, data.data[i * data.ny + j]);
+            //fprintf(fp,"\n");
+        }
+        fclose(fp);
+    } else {
+        printf("num larger than or equals  to 10\n");
+    }
+}
+
+void CaptDataNoPML(const int num, const char * const fname, const MyStruct data, int is, int ie, int js, int je) {
+    int i, j;
+    int in, jn;
+    //const int fnum=0;
+    char rfnm[32] = {'\0'}; //real file name
+    //char *pts;
+    FILE *fp = NULL;
+    if (num < 10) {
+        strcpy(rfnm, fname);
+        /*
+        //deal with filename
+        pts=&rfnm[31];
+        while(*pts!='.'&&pts!=rfnm){
+         *pts=*(pts-1);
+                pts--;
+        }
+        if(pts-rfnm>0)*pts='0'+(num-fnum);
+         */
+        //puts(rfnm);
+        if ((fp = fopen(rfnm, "w")) == NULL) {
+            printf("Cannot create file: \t%s\n", rfnm);
+            exit(EXIT_FAILURE);
+        }
+        for (j = 0, jn = js; jn <= je && jn < data.ny; jn++, j++) {
+            for (i = 0, in = is; in <= ie && in < data.nx; i++, in++)
+                fprintf(fp, "%d %d %4.4e\n", i, j, data.data[in * data.ny + jn]);
+            //fprintf(fp,"\n");
+        }
+        fclose(fp);
+    } else {
+        printf("num larger than or equals  to 10\n");
+    }
+}
+
+void CaptDataCenter(const int num, const char * const fname, const MyStruct data, int jcenter, int is, int ie) {
+
+    int in;
+    char rfnm[32] = {'\0'}; //real file name
+    //char *pts;
+    FILE *fp = NULL;
+    if (num < 10) {
+        strcpy(rfnm, fname);
+        if ((fp = fopen(rfnm, "w")) == NULL) {
+            printf("Cannot create file: \t%s\n", rfnm);
+            exit(EXIT_FAILURE);
+        }
+        for (in = is; in <= ie && in < data.nx; in++) {
+            fprintf(fp, "%d %4.4e\n", in, data.data[in * data.ny + jcenter]);
         }
         fclose(fp);
     } else {
@@ -137,8 +199,45 @@ void CaptDataM(const int num, const char*fname, const MyStruct data, int p) {
         }
         for (j = 0; j < data.ny; j += p) {
             for (i = 0; i < data.nx; i += p)
-                fprintf(fp, "%4.4e ", data.data[i * data.ny + j]);
-            fprintf(fp, "\n");
+                fprintf(fp, "%d %d %4.4e\n",i,j, data.data[i * data.ny + j]);
+            //fprintf(fp,"\n");
+        }
+        fclose(fp);
+    } else {
+        printf("num larger than or equals  to 10\n");
+    }
+}
+
+void CaptDataMNoPML(const int num, const char*fname, const MyStruct data, int p, int is, int ie, int js, int je) {
+    int i, j, in, jn;
+    //const int fnum=0;
+    char rfnm[32] = {'\0'}; //real file name
+    //char *pts;
+    FILE *fp = NULL;
+    if (p < 0 || p > data.nx || p > data.ny) {
+        printf("Invalid p in function CaptDataM!\n");
+        return;
+    }
+    if (num < 10) {
+        strcpy(rfnm, fname);
+        /*
+        //deal with filename
+        pts=&rfnm[31];
+        while(*pts!='.'&&pts!=rfnm){
+         *pts=*(pts-1);
+                pts--;
+        }
+        if(pts-rfnm>0)*pts='0'+(num-fnum);
+         */
+        //puts(rfnm);
+        if ((fp = fopen(rfnm, "w")) == NULL) {
+            printf("Cannot create file: \t%s\n", rfnm);
+            exit(0);
+        }
+        for (j = 0, jn = js; jn <= je && jn < data.ny; jn += p, j += p) {
+            for (i = 0, in = is; in <= ie && in < data.nx; i += p, in += p)
+                fprintf(fp, "%d %d %4.4e\n", i, j, data.data[in * data.ny + jn]);
+            //fprintf(fp,"\n");
         }
         fclose(fp);
     } else {
