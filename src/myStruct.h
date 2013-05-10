@@ -111,6 +111,12 @@ extern "C" {
      * @param InitValue
      */
     void initMyStruct(MyStruct *coo, int nx, int ny, MyDataF InitValue);
+    
+    /**
+     * free struct data
+     * @param mstruct
+     */
+    void freeData(MyStruct *mstruct);
 
     /**
      * 

@@ -5,19 +5,22 @@
 
 #include "dataType.h"
 
-
 void ResetStructData(MyStruct mst) {
     int i, j;
-    for (i = 0; i < mst.nx; i++)
-        for (j = 0; j < mst.ny; j++)
+    for (i = 0; i < mst.nx; i++) {
+        for (j = 0; j < mst.ny; j++) {
             mst.data[i * mst.ny + j] = 0;
+        }
+    }
 }
 
 void ResetStructDataR(MyStruct mst, MyDataF val) {
     int i, j;
-    for (i = 0; i < mst.nx; i++)
-        for (j = 0; j < mst.ny; j++)
+    for (i = 0; i < mst.nx; i++) {
+        for (j = 0; j < mst.ny; j++) {
             mst.data[i * mst.ny + j] = val;
+        }
+    }
 }
 
 void InitMyStr(int nnx, int nny, MyStruct* ms) {
@@ -35,16 +38,19 @@ void InitMyStr(int nnx, int nny, MyStruct* ms) {
 
 void ResetStructData2(MyStruct mst) {
     int i, j;
-    for (i = 0; i < mst.nx; i++)
-        for (j = 0; j < mst.ny; j++)
+    for (i = 0; i < mst.nx; i++) {
+        for (j = 0; j < mst.ny; j++) {
             mst.data[i * mst.ny + j] = 0;
+        }
+    }
 }
 
 void PrintData(MyStruct mst) {
     int i, j;
     for (i = 0; i < mst.nx; i++) {
-        for (j = 0; j < mst.ny; j++)
+        for (j = 0; j < mst.ny; j++) {
             printf("%2.3e ", mst.data[i * mst.ny + j]);
+        }
         printf("\n");
     }
     //system("pause");
@@ -195,7 +201,7 @@ void CaptDataM(const int num, const char*fname, const MyStruct data, int p) {
         }
         for (j = 0; j < data.ny; j += p) {
             for (i = 0; i < data.nx; i += p)
-                fprintf(fp, "%d %d %4.4e\n",i,j, data.data[i * data.ny + j]);
+                fprintf(fp, "%d %d %4.4e\n", i, j, data.data[i * data.ny + j]);
             //fprintf(fp,"\n");
         }
         fclose(fp);
@@ -255,7 +261,15 @@ void initMyStruct(MyStruct *coo, int nx, int ny, MyDataF InitValue) {
     coo->nx = nx;
     coo->ny = ny;
     p = coo->data;
-    for (i = 0; i < nx; i++)
-        for (j = 0; j < ny; j++)
+    for (i = 0; i < nx; i++) {
+        for (j = 0; j < ny; j++) {
             *p++ = InitValue;
+        }
+    }
+}
+
+void freeData(MyStruct *mstruct) {
+    if (mstruct != NULL && mstruct->data != NULL) {
+        free(mstruct->data);
+    }
 }
