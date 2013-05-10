@@ -10,12 +10,12 @@ SRC=./src
 VPATH= $(SRC)
 #
 # origin CFLAGS
-CFLAGS=-O4 -Wall#-Wunused-but-set-variable# run mode
+CFLAGS=-O2 -Wall#-Wunused-but-set-variable# run mode
 #CFLAGS=-g -Wall -DDEBUG#-Wunused-but-set-variable #debug mode
 
 # origin link options
 LIB=-lm
-LIB+=-O4
+#LIB+=-O2
 
 # matlab path 
 MATPATH=/opt/Matlab/R2011a# for local server
@@ -31,10 +31,10 @@ MATLIB=$(MATLINK) -L$(MATPATH)/bin/glnxa64 -lmx -leng
 MATINC=-I$(MATPATH)/extern/include
 
 # link option
-#LIB+=$(MATLIB)
+LIB+=$(MATLIB)
 
 # add Matlab simulation
-#CFLAGS+=-DMATLAB_SIMULATION $(MATINC)# -g
+CFLAGS+=-DMATLAB_SIMULATION $(MATINC)# -g
 
 # add -MMD
 CFLAGS+=-MMD
@@ -50,6 +50,7 @@ initial.o \
 breakdownFormula.o \
 matlabSimulation.o \
 pml.o 
+
 .PHONY: all clean
 all:abd2d
 abd2d:$(OBJS)
