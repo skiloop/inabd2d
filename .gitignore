@@ -32,3 +32,20 @@ nbproject/
 *.7z
 *.gz
 *.tar
+
+# other files
+convertGBK.sh
+convertUTF8.sh
+csrc/
+nsrc/
+q.log
+reportRes.m
+res4/
+res5/
+res6/
+resFormula4/
+resultForFormulaFive/
+resultForFormulaFour/
+run0507/
+runold/
+s.diff
