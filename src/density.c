@@ -12,7 +12,7 @@
 #include <stdlib.h>
 
 #include "fdtd.h"
-#include "fluid.h"
+#include "density.h"
 #include "commonData.h"
 #include "breakdownFormula.h"
 

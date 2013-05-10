@@ -43,15 +43,15 @@ OBJS=abd2d.o  \
 commonData.o \
 connectingInterface.o \
 dataSaving.o \
+dataType.o \
+density.o \
 fdtd.o \
 fieldCreation.o \
 init.o \
 breakdownFormula.o \
 matlabSimulation.o \
 memoryRelease.o \
-myStruct.o \
-pml.o \
-updateDensity.o
+pml.o 
 .PHONY: all clean
 all:abd2d
 abd2d:$(OBJS)

@@ -13,7 +13,7 @@
 #include "fdtd.h"
 #include "dataType.h"
 #include "commonData.h"
-#include "absortBound.h"
+#include "pml.h"
 #include "connectingInterface.h"
 
 void input(int argc, char*argv[]);
