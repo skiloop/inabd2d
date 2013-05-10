@@ -5,6 +5,7 @@
 
 #include "common.h"
 #include "commonData.h"
+#include "fdtd.h"
 
 MyDataF *srcdat=NULL;
 //c:\Documents and Settings\Wenbin Lin\My Documents\Visual Studio 2005\Projects\fdtd2d\fdtd2d\define_problem_space_and_parameters.h

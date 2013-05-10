@@ -1,6 +1,7 @@
 
 #include "common.h"
 #include "dataType.h"
+#include "fdtd.h"
 #include "commonData.h"
 
 void FreeSpace() {
@@ -81,30 +82,30 @@ void FreeSpace() {
         /*----------------------------------*/
 
     }
-	if(Cvxvx.data!=NULL){
-		free(Cvxvx.data);
-	}
-	if(Cvyvy.data!=NULL){
-		free(Cvyvy.data);
-	}
-	if(Cvzvz.data!=NULL){
-		free(Cvzvz.data);
-	}
-	if(Cvxex.data!=NULL){
-		free(Cvxex.data);
-	}
-	if(Cvyey.data!=NULL){
-		free(Cvyey.data);
-	}
-	if(Cvzez.data!=NULL){
-		free(Cvzez.data);
-	}
+    if (Cvvx.data != NULL) {
+        free(Cvvx.data);
+    }
+    if (Cvvy.data != NULL) {
+        free(Cvvy.data);
+    }
+    if (Cvvz.data != NULL) {
+        free(Cvvz.data);
+    }
+    if (Cvex.data != NULL) {
+        free(Cvex.data);
+    }
+    if (Cvey.data != NULL) {
+        free(Cvey.data);
+    }
+    if (Cvez.data != NULL) {
+        free(Cvez.data);
+    }
     free(ne.data);
     free(Erms.data);
     free(ne_pre.data);
     free(beta.data);
-	if(Nu_c.data!=NULL){
-		free(Nu_c.data);
-	}
+    if (Nu_c.data != NULL) {
+        free(Nu_c.data);
+    }
 }
 

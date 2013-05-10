@@ -14,19 +14,38 @@ extern "C" {
 
 #include "dataType.h"
 
-void UpdateEField() ;
-void UpdateMField() ;
-void fdtd();
+    //EM field
+    extern MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;
+    extern MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;
+    extern MyStruct Ey_s_pre, Ex_s_pre, Ez_s_pre;
+    extern MyStruct Vey, Vex, Vez;
+    extern MyStruct ne, ne_pre;
+    extern MyStruct beta;
+    extern MyStruct Erms;
+    extern MyStruct Ermsx, Ermsy;
+    extern MyStruct Nu_c; // 循环利用的碰撞率
+    //Coeffients    
+    extern MyDataF Chxez, Chyez, Chzex, Chzey;
+    extern MyStruct Cevx, Cevy, Cevz;
+    extern MyStruct Ceex, Ceey, Ceez;
+    extern MyStruct Cehx, Cehy, Cehz;
+    extern MyStruct Cvvx, Cvvy, Cvvz;
+    extern MyStruct Cvex, Cvey, Cvez;
+    extern MyDataF Cve;
 
-void my_pause() ;
-void UpdateDensity() ;
-void InterpolatErms() ;
-void DensityBound(MyStruct stru, int bndwidth, const int swidth) ;
-void CalErmsAtCoarseGrid() ;
-void CalSumESqrt() ;
-void CalSumESqrt_Emax() ;
-void calErmsAtCoarsePoint() ;
-void calErmsAtCoarsePoint_Max() ;
+    void UpdateEField();
+    void UpdateMField();
+    void fdtd();
+
+    void my_pause();
+    void UpdateDensity();
+    void InterpolatErms();
+    void DensityBound(MyStruct stru, int bndwidth, const int swidth);
+    void CalErmsAtCoarseGrid();
+    void CalSumESqrt();
+    void CalSumESqrt_Emax();
+    void calErmsAtCoarsePoint();
+    void calErmsAtCoarsePoint_Max();
 
 #ifdef	__cplusplus
 }

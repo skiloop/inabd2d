@@ -2,6 +2,7 @@
 #include "common.h"
 #include "commonData.h"
 #include "dataType.h"
+#include "fdtd.h"
 
 void createFields(){
     

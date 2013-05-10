@@ -3,6 +3,7 @@
 #include <math.h>
 
 #include "common.h"
+#include "fdtd.h"
 #include "dataType.h"
 #include "commonData.h"
 #include "connectingInterface.h"

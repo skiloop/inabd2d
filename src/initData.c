@@ -4,6 +4,7 @@
 #include "common.h"
 #include "dataType.h"
 #include "commonData.h"
+#include "fdtd.h"
 #include "InonizationFormula.h"
 
 void Init_ne() {
