@@ -193,13 +193,13 @@ void SaveCapField(const int timestep) {
         }
         file[0] = 'n';
         file[1] = 'e';
-        CaptDataMNoPML(cnt % 10, file, ne, 4, tpis*m, tpie*m, tpjs*m, tpje * m);
+        CaptDataMNoPML(cnt % 10, file, ne, 1, tpis*m, tpie*m, tpjs*m, tpje * m);
         file[0] = 'n';
         file[1] = 'c';
         CaptDataCenter(cnt % 10, file, ne, ne.ny / 2, tpis*m, tpie * m);
         file[0] = 'e';
         file[1] = 'm';
-        CaptDataMNoPML(cnt % 10, file, Erms, 4, tpis*m, tpie*m, tpjs*m, tpje * m);
+        CaptDataMNoPML(cnt % 10, file, Erms, 1, tpis*m, tpie*m, tpjs*m, tpje * m);
         file[0] = 'm';
         file[1] = 'c';
         CaptDataCenter(cnt % 10, file, Erms, Erms.ny / 2, tpis*m, tpie * m);
