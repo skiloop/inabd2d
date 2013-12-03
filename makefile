@@ -1,5 +1,5 @@
 # compiler
-CC=cc#icc#gcc
+CC=icc#icc#gcc
 
 # linker
 LD=ld
