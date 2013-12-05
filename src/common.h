@@ -111,6 +111,12 @@ extern "C" {
 #define ISCONNECT 1
 #define IF_WITH_DENSITY 1
 
+	////////////////////////////
+	// OUTPUT FILE TYPE
+	////////////////////////////
+#define ORIGN_TYPE (1) // output for orgin
+#define MATLAB_TYPE (2) // output for matlab
+#define SAVE_TYPE (MATLAB_TYPE)
 
 
 #ifdef	__cplusplus

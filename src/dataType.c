@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "dataType.h"
+#include "common.h"
 
 void ResetStructData(MyStruct mst) {
     int i, j;
@@ -108,9 +109,16 @@ void CaptData(const int num, const char * const fname, const MyStruct data) {
             exit(EXIT_FAILURE);
         }
         for (j = 0; j < data.ny; j++) {
-            for (i = 0; i < data.nx; i++)
-                fprintf(fp, "%d %d %4.4e\n", i, j, data.data[i * data.ny + j]);
-            //fprintf(fp,"\n");
+            for (i = 0; i < data.nx; i++){
+#if(SAVE_TYPE==MATLAB_TYPE)
+				fprintf(fp,"%4.4e\t",data.data[i*data.ny+j]);
+#else
+				fprintf(fp, "%d %d %4.4e\n", i, j, data.data[i * data.ny + j]);
+#endif
+			}
+#if(SAVE_TYPE==MATLAB_TYPE)
+            fprintf(fp,"\n");
+#endif
         }
         fclose(fp);
     } else {
@@ -127,25 +135,23 @@ void CaptDataNoPML(const int num, const char * const fname, const MyStruct data,
     FILE *fp = NULL;
     if (num < 10) {
         strcpy(rfnm, fname);
-        /*
-        //deal with filename
-        pts=&rfnm[31];
-        while(*pts!='.'&&pts!=rfnm){
-         *pts=*(pts-1);
-                pts--;
-        }
-        if(pts-rfnm>0)*pts='0'+(num-fnum);
-         */
-        //puts(rfnm);
         if ((fp = fopen(rfnm, "w")) == NULL) {
             printf("Cannot create file: \t%s\n", rfnm);
             exit(EXIT_FAILURE);
         }
         for (j = 0, jn = js; jn <= je && jn < data.ny; jn++, j++) {
-            for (i = 0, in = is; in <= ie && in < data.nx; i++, in++)
-                fprintf(fp, "%d %d %4.4e\n", i, j, data.data[in * data.ny + jn]);
-            //fprintf(fp,"\n");
-        }
+            for (i = 0, in = is; in <= ie && in < data.nx; i++, in++){
+#if(SAVE_TYPE==MATLAB_TYPE)
+						fprintf(fp,"%4.4e\t",data.data[in*data.ny+jn]);
+#else
+						fprintf(fp, "%d %d %4.4e\n", i, j, data.data[in * data.ny + jn]);
+#endif
+				}
+
+			}
+#if(SAVE_TYPE==MATLAB_TYPE)
+		fprintf(fp,"\n");
+#endif
         fclose(fp);
     } else {
         printf("num larger than or equals  to 10\n");
@@ -165,7 +171,11 @@ void CaptDataCenter(const int num, const char * const fname, const MyStruct data
             exit(EXIT_FAILURE);
         }
         for (in = is; in <= ie && in < data.nx; in++) {
+#if(SAVE_TYPE==MATLAB_TYPE)
+			fprintf(fp, "%4.4e\t",data.data[in*data.ny+jcenter]);
+#else
             fprintf(fp, "%d %4.4e\n", in, data.data[in * data.ny + jcenter]);
+#endif
         }
         fclose(fp);
     } else {

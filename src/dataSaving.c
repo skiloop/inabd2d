@@ -1,5 +1,5 @@
 
-#include<stdlib.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 
@@ -8,7 +8,6 @@
 #include "fdtd.h"
 
 MyDataF *srcdat = NULL;
-//c:\Documents and Settings\Wenbin Lin\My Documents\Visual Studio 2005\Projects\fdtd2d\fdtd2d\define_problem_space_and_parameters.h
 
 void calsampos(int *xpos, int *ypos) {
     MyDataF sample_x = 0; //where the sample field in x direction
@@ -193,13 +192,13 @@ void SaveCapField(const int timestep) {
         }
         file[0] = 'n';
         file[1] = 'e';
-        CaptDataMNoPML(cnt % 10, file, ne, 1, tpis*m, tpie*m, tpjs*m, tpje * m);
+        CaptDataMNoPML(cnt % 10, file, ne, 2, tpis*m, tpie*m, tpjs*m, tpje * m);
         file[0] = 'n';
         file[1] = 'c';
         CaptDataCenter(cnt % 10, file, ne, ne.ny / 2, tpis*m, tpie * m);
         file[0] = 'e';
         file[1] = 'm';
-        CaptDataMNoPML(cnt % 10, file, Erms, 1, tpis*m, tpie*m, tpjs*m, tpje * m);
+        CaptDataMNoPML(cnt % 10, file, Erms, 2, tpis*m, tpie*m, tpjs*m, tpje * m);
         file[0] = 'm';
         file[1] = 'c';
         CaptDataCenter(cnt % 10, file, Erms, Erms.ny / 2, tpis*m, tpie * m);
@@ -318,45 +317,3 @@ void SaveData(MyStruct data, char* filename, FILE *hfile) {
 
 #undef GetD
 
-//MyDataF vez[TotalTimeStep],ez[TotalTimeStep],cne[TotalTimeStep];
-//MyDataF vez2[TotalTimeStep],ez2[TotalTimeStep],cne2[TotalTimeStep];
-//void Cap(int cxpos,int cypos,int cnt){
-//
-//	vez[cnt] =Vez.data[cxpos*Vez.ny+cypos];
-//	ez[cnt] = Ez.data[cxpos*Vez.ny+cypos];
-//	cne[cnt] = ne.data[m*cxpos*ne.ny+m*cypos];
-//	vez2[cnt] =Vez.data[(cxpos)*Vez.ny+cypos+45];
-//	ez2[cnt] = Ez.data[cxpos*Vez.ny+cypos+45];
-//	cne2[cnt] = ne.data[m*cxpos*ne.ny+m*cypos+45*m];
-//}
-//void SaveD(int cnt){
-//	FILE *fp;
-//	int i;
-//	fp=fopen("cvez.dat","w");
-//	for(i=0;i<cnt;i++)
-//		fprintf(fp,"%5.2e\t",vez[i]);
-//	fclose(fp);
-//
-//	fp=fopen("cez.dat","w");
-//	for(i=0;i<cnt;i++)
-//		fprintf(fp,"%5.2e\t",ez[i]);
-//	fclose(fp);
-//	fp=fopen("cne.dat","w");
-//	for(i=0;i<cnt;i++)
-//		fprintf(fp,"%5.2e\t",cne[i]);
-//	fclose(fp);
-//
-//	fp=fopen("cvez2.dat","w");
-//	for(i=0;i<cnt;i++)
-//		fprintf(fp,"%5.2e\t",vez2[i]);
-//	fclose(fp);
-//
-//	fp=fopen("cez2.dat","w");
-//	for(i=0;i<cnt;i++)
-//		fprintf(fp,"%5.2e\t",ez2[i]);
-//	fclose(fp);
-//	fp=fopen("cne2.dat","w");
-//	for(i=0;i<cnt;i++)
-//		fprintf(fp,"%5.2e\t",cne2[i]);
-//	fclose(fp);
-//}
