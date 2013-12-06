@@ -46,6 +46,6 @@ abd2d-niu.o:$(SRC)/abd2d-niu.c $(SRC)/*.h
 InonizationFormula.o:$(SRC)/InonizationFormula.c $(SRC)/*.h
 	$(CC) $(CFLAGS) -c $(SRC)/InonizationFormula.c
 clean:
-	rm -f *.o abd2d
+	rm -f *.o abd2d *.d
 
 
