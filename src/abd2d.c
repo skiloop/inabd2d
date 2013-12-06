@@ -107,7 +107,7 @@ void help() {
     printf("--maxwell-grid=\thow many Maxwell cells per wavelength\n");
     printf("--is-connect=[0,1]\tuse connecting interface or not\n");
     printf("--with-density=[0,1]\twether with density\n");
-    printf("--thread-count=n\tset number of threads to run the job\n")
+    printf("--thread-count=n\tset number of threads to run the job\n");
 }
 
 void PrintInput() {
