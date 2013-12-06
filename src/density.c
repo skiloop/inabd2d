@@ -70,7 +70,7 @@ void UpdateDensity() {
             else {
                 switch (niutype) {
                     case 1:
-                        Niu_MorrowAndLowke(&vi, &va, Eeff, 2.44e25 * 1e6);
+                        Niu_MorrowAndLowke(&vi, &va, Eeff, NeutralGasDensityCM);
                         break;
                     case 2:
                         Niu_Nikonov(&vi, &va, Eeff, p);

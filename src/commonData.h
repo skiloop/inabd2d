@@ -27,6 +27,8 @@ extern "C" {
     static const MyDataF me = 9.110e-31; //electron mass
     static const MyDataF CFL_factor = CFL_FACTOR;
     static const MyDataF CourantFactor = COURANT_FACTOR;
+	static const MyDataF NeutralGasDensityCM=2.44e19; // neutral gas number density in cm^-3
+	static const MyDataF NeutralGasDensityM=2.44e25;	// neutral gas number density in m^-3
 
     extern MyDataF De;
     extern MyDataF Da;
