@@ -68,7 +68,7 @@ extern "C" {
 
     //是否通过振幅算Eeff
     //设为 1 算振幅
-   //const  int if_erms_E_max = 3; // if set niutype=4 then this is reset to 1
+    //const  int if_erms_E_max = 3; // if set niutype=4 then this is reset to 1
     // 在abd2d.c里改
 #define IF_ERMS_E_MAX 3 // default values for if_erms_E_max
 
@@ -111,9 +111,9 @@ extern "C" {
 #define ISCONNECT 1
 #define IF_WITH_DENSITY 1
 
-	////////////////////////////
-	// OUTPUT FILE TYPE
-	////////////////////////////
+    ////////////////////////////
+    // OUTPUT FILE TYPE
+    ////////////////////////////
 #define ORIGN_TYPE (1) // output for orgin
 #define MATLAB_TYPE (2) // output for matlab
 #define SAVE_TYPE (MATLAB_TYPE)

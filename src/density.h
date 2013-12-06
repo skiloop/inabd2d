@@ -12,22 +12,22 @@
 extern "C" {
 #endif
 
-//velocity functions
-void UpdateVelocity();
+    //velocity functions
+    void UpdateVelocity();
 
-// density functions
-void UpdateDensity() ;
-void DensityBound(MyStruct stru, int bndwidth, const int swidth) ;
+    // density functions
+    void UpdateDensity();
+    void DensityBound(MyStruct stru, int bndwidth, const int swidth);
 
-// Erms and Eeff functions
-void CalErmsAtCoarseGrid() ;
-void CalSumESqrt() ;
-void CalSumESqrt_Emax() ;
-void InterpolatErms() ;
-void calErmsAtCoarsePoint() ;
-void calErmsAtCoarsePoint_Max() ;
+    // Erms and Eeff functions
+    void CalErmsAtCoarseGrid();
+    void CalSumESqrt();
+    void CalSumESqrt_Emax();
+    void InterpolatErms();
+    void calErmsAtCoarsePoint();
+    void calErmsAtCoarsePoint_Max();
 
-void my_pause() ;
+    void my_pause();
 #ifdef	__cplusplus
 }
 #endif
