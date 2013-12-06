@@ -190,23 +190,23 @@ void SaveCapField(const int timestep) {
             CaptDataNoPML(cnt % 10, file, Hz_s, tpis, tpie, tpjs, tpje);
             saveEfieldCenterTMz(timestep);
         }
-        file[0] = 'n';
-        file[1] = 'e';
-        CaptDataMNoPML(cnt % 10, file, ne, 2, tpis*m, tpie*m, tpjs*m, tpje * m);
-        file[0] = 'n';
-        file[1] = 'c';
-        CaptDataCenter(cnt % 10, file, ne, ne.ny / 2, tpis*m, tpie * m);
-        file[0] = 'e';
-        file[1] = 'm';
-        CaptDataMNoPML(cnt % 10, file, Erms, 2, tpis*m, tpie*m, tpjs*m, tpje * m);
-        file[0] = 'm';
-        file[1] = 'c';
-        CaptDataCenter(cnt % 10, file, Erms, Erms.ny / 2, tpis*m, tpie * m);
-
+        if(IfWithDensity) {
+            file[0] = 'n';
+            file[1] = 'e';
+            CaptDataMNoPML(cnt % 10, file, ne, 2, tpis*m, tpie*m, tpjs*m, tpje * m);
+            file[0] = 'n';
+            file[1] = 'c';
+            CaptDataCenter(cnt % 10, file, ne, ne.ny / 2, tpis*m, tpie * m);
+            file[0] = 'e';
+            file[1] = 'm';
+            CaptDataMNoPML(cnt % 10, file, Erms, 2, tpis*m, tpie*m, tpjs*m, tpje * m);
+            file[0] = 'm';
+            file[1] = 'c';
+            CaptDataCenter(cnt % 10, file, Erms, Erms.ny / 2, tpis*m, tpie * m);
+        }
         cnt++;
     }
     scnt++;
-
 }
 
 void SaveErms(int nestep) {

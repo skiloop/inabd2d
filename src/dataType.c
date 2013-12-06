@@ -210,9 +210,16 @@ void CaptDataM(const int num, const char*fname, const MyStruct data, int p) {
             exit(0);
         }
         for (j = 0; j < data.ny; j += p) {
-            for (i = 0; i < data.nx; i += p)
+            for (i = 0; i < data.nx; i += p) {
+#if(SAVE_TYPE==MATLAB_TYPE)
+                fprintf(fp, "%4.4e\t", data.data[i * data.ny + j]);
+#else            
                 fprintf(fp, "%d %d %4.4e\n", i, j, data.data[i * data.ny + j]);
-            //fprintf(fp,"\n");
+#endif
+            }
+#if(SAVE_TYPE==MATLAB_TYPE)
+            fprintf(fp, "\n");
+#endif
         }
         fclose(fp);
     } else {
@@ -247,9 +254,16 @@ void CaptDataMNoPML(const int num, const char*fname, const MyStruct data, int p,
             exit(0);
         }
         for (j = 0, jn = js; jn <= je && jn < data.ny; jn += p, j += p) {
-            for (i = 0, in = is; in <= ie && in < data.nx; i += p, in += p)
+            for (i = 0, in = is; in <= ie && in < data.nx; i += p, in += p) {
+#if(SAVE_TYPE==MATLAB_TYPE)
+                fprintf(fp, "%4.4e\t", data.data[in * data.ny + jn]);
+#else            
                 fprintf(fp, "%d %d %4.4e\n", i, j, data.data[in * data.ny + jn]);
-            //fprintf(fp,"\n");
+#endif
+            }
+#if(SAVE_TYPE==MATLAB_TYPE)
+            fprintf(fp, "\n");
+#endif
         }
         fclose(fp);
     } else {
