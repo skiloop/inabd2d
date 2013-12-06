@@ -41,18 +41,17 @@ void UpdateDensity() {
     FILE *fp;
     //PrintData(Ez_i);
 
-    if (save_vi ) {
+    if (save_vi) {
         fp = fopen("vi.dat", "w");
         if (fp == NULL) {
             printf("Cannot open file vi.dat!\n");
             exit(-1);
         }
     }
-    BackupMyStruct(ne, ne_pre);
-//#ifdef _OPENMP
+    BackupMyStruct(ne, ne_pre);    
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic) \
-    private(i,j,k,ind, ne_ij, neip1, neim1, nejm1, nejp1,vi,va,opt1, opt2, opt3,alpha_t, Eeff, tau_m, kasi, Te) //shared(Hx,Ez,Ey,pml,DA,DB,dy)
-//#endif
+    private(i,j,k,ind, ne_ij, neip1, neim1, nejm1, nejp1,vi,va,opt1, opt2, opt3, \
+    alpha_t, Eeff, tau_m, kasi, Te) //shared(Hx,Ez,Ey,pml,DA,DB,dy)
     for (i = mt; i < ne.nx - mt; i++) {
         for (j = mt; j < ne.ny - mt; j++) {
             ind = i * ne.ny + j;

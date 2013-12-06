@@ -127,7 +127,7 @@ void UpdateMField() {
         }
     }
     if (IsTMx) {
-		int ind2;
+        int ind2;
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
 	private(i,j,index,ind,ind2)
         for (i = pis; i < pie; i++) {
@@ -139,8 +139,8 @@ void UpdateMField() {
                         Chzex * (Ex_s.data[ind + 1] - Ex_s.data[ind]) +
                         Chzey * (Ey_s.data[ind2 + Ey_s.ny] - Ey_s.data[ind2]);
 #ifdef _DEBUG
-				if (index == Hz_s.nx * Hz_s.ny / 2 + Hz_s.ny / 2)
-					j = j;
+                if (index == Hz_s.nx * Hz_s.ny / 2 + Hz_s.ny / 2)
+                    j = j;
 #endif
             }
         }
@@ -187,18 +187,9 @@ void fdtd() {
     printf("Density Time Step: %d\n", Density_Time_Step * m);
     printf("Step per half ns: %d\n", step_per_half_ns8);
     printf("\n*************************************************************\n");
-    //system("pause");
 
-    //InitCapture(((TotalTimeStep>TotalTimeStep*MultiSize)?(TotalTimeStep*MultiSize):TotalTimeStep));
-    //calsampos(&xpos,&ypos);
-    //CapEF=(MyDataF*)malloc(TotalTimeStep*MultiSize*sizeof(MyDataF));
-    //if(CapEF==NULL){
-    //	printf("Cannot callocate space for CapEf!\n");
-    //	exit(EXIT_FAILURE);
-    //}
-
-    sxpos = (int) (0.5 + nx / 2 + 0.125 * lamda / dx); //tpis+3;//tpis-SCATTER_FIELD_DOMAIN_BND_SIZE/2;//x position of sources
-    sypos = (int) (0.5 + (tpjs + tpje) / 2); //(ny/2); //y position of sources
+    sxpos = (int) (0.5 + nx / 2 + 0.125 * lamda / dx); 
+    sypos = (int) (0.5 + (tpjs + tpje) / 2); 
     filedat = fopen("neiter.dat", "w");
     if (filedat == NULL) {
         fprintf(stderr, "Cannot open neiter.dat for output!\n");

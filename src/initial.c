@@ -23,7 +23,6 @@ void initCommonData() {
     alpha = 0;
     //rei=0;
 
-
     //FDTD DATA
     dt = dt_F = dt_M = 0;
     ds_F = ds_M = 0;
@@ -92,9 +91,6 @@ void initCommonData() {
     dt_F = T; //CFL_factor*ds_F*ds_F*0.5/D_kasi_max;
     half_dt = dt / 2;
 
-
-    /*if(dt_F*1000<dt_M||dt_F>dt_M)
-            dt_F = dt_M/m;*/
     printf("\nT\t=\t%5.4e ns\nf\t=\t%-11lf GHz\n", T / 1e-9, f / 1e9);
     printf("mu_e\t=\t%5.4e\nmu_i\t=\t%5.4e\nDe\t=\t%5.4e\nDa\t=\t%5.4e\nrei\t=\t%5.4e\n", mu_e, mu_i, De, Da, rei);
     printf("lamda\t=\t%5.4e mm\nomega\t=\t%5.4e rad/s\n", lamda / 1e-3, omega);
@@ -113,7 +109,6 @@ void initCommonData() {
     printf("Save Time Step:%d\n", SaveTimeStep);
     printf("Total/Save:%d\n", TotalTimeStep / SaveTimeStep);
     printf("\n*************************************************************\n");
-    //system("pause");
 }
 
 void Init_ne() {
@@ -179,7 +174,6 @@ void InitCee(MyStruct beta) {
             }
         }
     }
-    //PrintData(Ceez);
 }
 
 void InitCeh(MyStruct beta) {
@@ -207,7 +201,6 @@ void InitCeh(MyStruct beta) {
             }
         }
     }
-    //PrintData(Cehz);
 }
 
 void InitCev(MyStruct beta, MyDataF alpha_ev) {

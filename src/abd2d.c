@@ -80,6 +80,8 @@ void input(int argc, char*argv[]) {
             isConnect = atoi(argv[i] + 13);
         } else if (strncmp(argv[i], "--with-density=", 15) == 0) {
             IfWithDensity = atoi(argv[i] + 15);
+        } else if (strncmp(argv[i], "--thread-count=", 15) == 0) {
+            thread_count = atoi(argv[i] + 15);
         }
     }
     if (niutype == 4) {
@@ -105,6 +107,7 @@ void help() {
     printf("--maxwell-grid=\thow many Maxwell cells per wavelength\n");
     printf("--is-connect=[0,1]\tuse connecting interface or not\n");
     printf("--with-density=[0,1]\twether with density\n");
+    printf("--thread-count=n\tset number of threads to run the job\n")
 }
 
 void PrintInput() {
@@ -117,5 +120,6 @@ void PrintInput() {
     printf("--total-time=%5.3e\n", totaltime);
     printf("--is-connect=%d\n", isConnect);
     printf("--with-density=%d\n", IfWithDensity);
+    printf("--thead-count=%d\n", thread_count);
 }
 
