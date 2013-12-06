@@ -100,3 +100,5 @@ int pjs = 0;
 int pje = 0;
 
 int if_erms_E_max = IF_ERMS_E_MAX; // if set niutype=4 then this is reset to 1
+
+int thread_count=DEFAULT_THREAD_COUNT;

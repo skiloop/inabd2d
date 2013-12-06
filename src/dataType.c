@@ -147,11 +147,10 @@ void CaptDataNoPML(const int num, const char * const fname, const MyStruct data,
                 fprintf(fp, "%d %d %4.4e\n", i, j, data.data[in * data.ny + jn]);
 #endif
             }
-
-        }
 #if(SAVE_TYPE==MATLAB_TYPE)
-        fprintf(fp, "\n");
+            fprintf(fp, "\n");
 #endif
+        }
         fclose(fp);
     } else {
         printf("num larger than or equals  to 10\n");

@@ -41,7 +41,7 @@ void UpdateDensity() {
     FILE *fp;
     //PrintData(Ez_i);
 
-    if (save_vi != 0) {
+    if (save_vi ) {
         fp = fopen("vi.dat", "w");
         if (fp == NULL) {
             printf("Cannot open file vi.dat!\n");
@@ -49,7 +49,10 @@ void UpdateDensity() {
         }
     }
     BackupMyStruct(ne, ne_pre);
-
+//#ifdef _OPENMP
+#pragma omp parallel for num_threads(thread_count) schedule(dynamic) \
+    private(i,j,k,ind, ne_ij, neip1, neim1, nejm1, nejp1,vi,va,opt1, opt2, opt3,alpha_t, Eeff, tau_m, kasi, Te) //shared(Hx,Ez,Ey,pml,DA,DB,dy)
+//#endif
     for (i = mt; i < ne.nx - mt; i++) {
         for (j = mt; j < ne.ny - mt; j++) {
             ind = i * ne.ny + j;
@@ -101,7 +104,6 @@ void UpdateDensity() {
                             rei = 1.0e-14;
                         }
                         Nu_c.data[ind] = collision(Eeff, p);
-
                         mu_e = e / me / Nu_c.data[ind]; //原来的是mu_e = e / me / vm; //
                         mu_i = mu_e / 100.0; //mu_e/mu_i ranges from 100 to 200//
                         De = mu_e*Te; //*1.6021e-19/e;//
@@ -149,8 +151,14 @@ void UpdateDensity() {
             // calculate average vi and va
             average_va += va / GridNum;
             average_vi += vi / GridNum;
-            if (vi > max_vi)max_vi = vi;
-            if (va > max_va)max_va = va;
+#pragma omp critical
+            {
+                if (vi > max_vi)max_vi = vi;
+            }
+#pragma omp critical
+            {
+                if (va > max_va)max_va = va;
+            }
         }
     }
     printf("%5.4e\t%5.4e\t%5.4e\t%5.4e\t", average_va, average_vi, max_va, max_vi);

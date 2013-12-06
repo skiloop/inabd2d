@@ -118,6 +118,11 @@ extern "C" {
 #define MATLAB_TYPE (2) // output for matlab
 #define SAVE_TYPE (MATLAB_TYPE)
 
+    
+    /////////////////////////////
+    // OPENMP
+    /////////////////////////////
+#define DEFAULT_THREAD_COUNT (2) // number of threads to run the jobs
 
 #ifdef	__cplusplus
 }
