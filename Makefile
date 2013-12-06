@@ -20,7 +20,7 @@ LIB+=-O4
 SRC=$(CURDIR)/src
 
 # matlab path 
-MATPATH=/opt/Matlab/R2011a# for local server
+MATPATH=/opt/Matlab/R2013b# for local server
 #MATPATH=/opt2/Matlab/R2011a# for servers of college
 
 # Matlab link path
