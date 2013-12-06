@@ -50,7 +50,7 @@ void UpdateDensity() {
     }
     BackupMyStruct(ne, ne_pre);
 
-    for (i = mt; i < ne.nx - mt; i++){
+    for (i = mt; i < ne.nx - mt; i++) {
         for (j = mt; j < ne.ny - mt; j++) {
             ind = i * ne.ny + j;
             if (niutype != 4 && niutype != 5) {
@@ -66,9 +66,9 @@ void UpdateDensity() {
             neim1 = ne_pre.data[ind - ne.ny];
             nejm1 = ne_pre.data[ind - 1];
             nejp1 = ne_pre.data[ind + 1];
-            if ((ne_ij <= 0 || fabs(Eeff) < 1e-10) && niutype != 4){
-				va = vi = 0;
-			} else {
+            if ((ne_ij <= 0 || fabs(Eeff) < 1e-10) && niutype != 4) {
+                va = vi = 0;
+            } else {
                 switch (niutype) {
                     case 1:
                         Niu_MorrowAndLowke(&vi, &va, Eeff, NeutralGasDensityCM);
@@ -81,7 +81,7 @@ void UpdateDensity() {
                         break;
                     case 4:
                         Te = ElectronTemperature(Erms.data[ind], p);
-						vi = (ne.data[ind] <= 0.0)?0:ionization(Erms.data[ind], p);					
+                        vi = (ne.data[ind] <= 0.0) ? 0 : ionization(Erms.data[ind], p);
                         Nu_c.data[ind] = collision(Erms.data[ind], p);
                         va = 0.0;
                         mu_e = e / me / Nu_c.data[ind]; //3.7e-2;
@@ -151,10 +151,9 @@ void UpdateDensity() {
             average_vi += vi / GridNum;
             if (vi > max_vi)max_vi = vi;
             if (va > max_va)max_va = va;
-		}
-	}
+        }
+    }
     printf("%5.4e\t%5.4e\t%5.4e\t%5.4e\t", average_va, average_vi, max_va, max_vi);
-
 }
 
 void InterpolatErms() {
@@ -185,10 +184,10 @@ void InterpolatErms() {
     //	//	if(k==cnepx && l== cnepy)
     //	//		printf("%4.4e\t%4.4e\t%4.4e\t%4.4e\n",Ez_s.data[ind],Ez_s.data[ind+1],Ez_s.data[ind+Ez_s.ny],Ez_s.data[ind+Ez_s.ny]);
     //	}
-    for (k = is; k < numx - 1; k++)
+    for (k = is; k < numx - 1; k++) {
         for (l = js; l < numy - 1; l++) {
             ind = k * m * Erms.ny + l*m;
-            for (nk = 1; nk <= m; nk++)
+            for (nk = 1; nk <= m; nk++) {
                 for (nl = 1; nl < m; nl++) {
                     Erms.data[ind + nk * Erms.ny + nl] = ((m - nl)*(m - nk) * Erms.data[ind]+(m - nl) * nk * Erms.data[ind + m * Erms.ny] +
                             nl * (m - nk) * Erms.data[ind + m] + nl * nk * Erms.data[ind + m * Erms.ny + m]) / m / m;
@@ -198,6 +197,7 @@ void InterpolatErms() {
                     }
 #endif
                 }
+            }
             for (nk = 1; nk < m; nk++) {
                 Erms.data[ind + nk * Erms.ny + m] = ((m - nk) * Erms.data[ind + m] + nk * Erms.data[ind + m * Erms.ny + m]) / m;
 #ifdef _DEBUG
@@ -207,6 +207,7 @@ void InterpolatErms() {
 #endif
             }
         }
+    }
     //printf("%4.4e\t%4.4e\t%4.4e\t%4.4e\n",Erms.data[cnepx*Erms.ny+cnepy],Erms.data[cnepx*Erms.ny+cnepy+m],
     //	Erms.data[cnepx*Erms.ny+cnepy+m*Erms.ny],Erms.data[cnepx*Erms.ny+cnepy+m*Erms.ny+m]);
 }
@@ -265,12 +266,10 @@ void CalErmsAtCoarseGrid() {
     }
 }
 
-//
-
 void CalSumESqrt() {
     int i, j, index, ind;
     if (IsTEx) {
-        for (i = tpis; i <= tpie; i++){
+        for (i = tpis; i <= tpie; i++) {
             for (j = tpjs; j <= tpje; j++) {
                 index = i * Ez_s.ny + j;
                 Erms.data[i * m * Erms.ny + j * m] += Ez_s.data[index] * Ez_s.data[index];
@@ -282,9 +281,9 @@ void CalSumESqrt() {
                 }
 #endif
             }
-		}
+        }
     } else if (IsTMx) {
-        for (i = tpis; i <= tpie; i++){
+        for (i = tpis; i <= tpie; i++) {
             for (j = tpjs; j <= tpje; j++) {
                 ind = i * m * Erms.ny + j*m;
                 index = i * Ex_s.ny + j;
@@ -297,7 +296,7 @@ void CalSumESqrt() {
                 }
 #endif
             }
-		}
+        }
     }
 }
 
@@ -307,7 +306,7 @@ void CalSumESqrt_Emax() {
     int i, j, index, ind;
     MyDataF tmp = 0;
     if (IsTEx) {
-        for (i = tpis; i <= tpie; i++)
+        for (i = tpis; i <= tpie; i++) {
             for (j = tpjs; j <= tpje; j++) {
                 index = i * Ez_s.ny + j;
                 ind = (i * Erms.ny + j) * m;
@@ -315,8 +314,9 @@ void CalSumESqrt_Emax() {
                 if (tmp > Erms.data[ind])
                     Erms.data[ind] = tmp;
             }
+        }
     } else if (IsTMx) {
-        for (i = tpis; i <= tpie; i++)
+        for (i = tpis; i <= tpie; i++) {
             for (j = tpjs; j <= tpje; j++) {
                 ind = i * m * Erms.ny + j*m;
                 index = i * Ex_s.ny + j;
@@ -329,6 +329,7 @@ void CalSumESqrt_Emax() {
                 //if(i == 141&&j==39)
                 //	printf("%5.4e\t%5.4e\t%5.4e\t%5.4e\n",Erms.data[i*m*Erms.ny+j*m],Ez_s.data[index],Ez_s.data[index+Ez_s.ny]);
             }
+        }
     }
 }
 
