@@ -123,7 +123,8 @@ void Init_ne() {
     MyDataF dx2, dy2;
     dx2 = dx / m;
     dy2 = dy / m;
-
+#pragma omp parallel for num_threads(thread_count) schedule(dynamic) \
+	private(i,j,ind)
     for (i = 0; i < ne.nx; i++) {
         for (j = 0; j < ne.ny; j++) {
             ind = i * ne.ny + j;

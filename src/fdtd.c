@@ -59,6 +59,8 @@ void UpdateEField() {
     if (IsTMx) {
         BackupMyStruct(Ex_s, Ex_s_pre);
         BackupMyStruct(Ey_s, Ey_s_pre);
+#pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
+	private(i,j,index,indx)
         for (i = 0; i < Ex_s.nx; i++) {
             for (j = pjs; j < pje; j++) {
                 index = i * Hz_s.ny + j;
@@ -68,22 +70,22 @@ void UpdateEField() {
                         (Hz_s.data[index] - Hz_s.data[index - 1]);
             }
         }
+#pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
+	private(i,j,index,indy)
         for (i = pis; i < pie; i++) {
             for (j = 0; j < Ey_s.ny; j++) {
                 indy = i * Ey_s.ny + j;
                 Ey_s.data[indy] = Ceey.data[indy]*(Ey_s.data[indy])
                         + Cevy.data[indy] * Vey.data[indy] + Cehy.data[indy]*
                         (Hz_s.data[indy] - Hz_s.data[indy - Hz_s.ny]);
-#ifdef _DEBUG
-                if (i == Ey_s.nx / 2 && j == Ey_s.ny / 2)
-                    i = i;
-#endif
             }
         }
         //AdjustEFieldAtCnntIntfc();
     }
     if (IsTEx) {
         BackupMyStruct(Ez_s, Ez_s_pre);
+#pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
+	private(i,j,index,indx,indy)
         for (i = pis + 1; i < pie; i++) {
             for (j = pjs + 1; j < pje; j++) {
                 index = i * Ez_s.ny + j;
@@ -102,9 +104,11 @@ void UpdateEField() {
 
 void UpdateMField() {
 
-    int i, j, index, ind, ind2;
+    int i, j, index, ind;
     //MyDataF tmp1,tmp2,tmp3;
     if (IsTEx) {
+#pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
+	private(i,j,index,ind)
         for (i = 0; i < Hx_s.nx; i++) {
             for (j = pjs; j < pje; j++) {
                 index = i * Hx_s.ny + j;
@@ -112,6 +116,8 @@ void UpdateMField() {
                 Hx_s.data[index] = Hx_s.data[index] + Chxez * (Ez_s.data[ind + 1] - Ez_s.data[ind]);
             }
         }
+#pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
+	private(i,j,index,ind)
         for (i = pis; i < pie; i++) {
             for (j = 0; j < Hy_s.ny; j++) {
                 index = i * Hy_s.ny + j;
@@ -121,7 +127,9 @@ void UpdateMField() {
         }
     }
     if (IsTMx) {
-
+		int ind2;
+#pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
+	private(i,j,index,ind,ind2)
         for (i = pis; i < pie; i++) {
             for (j = pjs; j < pje; j++) {
                 index = i * Hz_s.ny + j;
@@ -131,8 +139,8 @@ void UpdateMField() {
                         Chzex * (Ex_s.data[ind + 1] - Ex_s.data[ind]) +
                         Chzey * (Ey_s.data[ind2 + Ey_s.ny] - Ey_s.data[ind2]);
 #ifdef _DEBUG
-                if (index == Hz_s.nx * Hz_s.ny / 2 + Hz_s.ny / 2)
-                    i = i;
+				if (index == Hz_s.nx * Hz_s.ny / 2 + Hz_s.ny / 2)
+					j = j;
 #endif
             }
         }
