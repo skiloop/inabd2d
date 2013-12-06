@@ -84,12 +84,9 @@ void CalDomainSize() {
         //InitMyStr(nx,nyp1,&Hy_s_pre);
         InitMyStr(nxp1, nyp1, &Ez_s_pre);
 
-
-
         InitMyStr(nxp1, ny, &Hx_i);
         InitMyStr(nx, nyp1, &Hy_i);
         InitMyStr(nxp1, nyp1, &Ez_i);
-
 
         //InitMyStr(nxp1,ny,&Hx);
         //InitMyStr(nx,nyp1,&Hy);
@@ -128,6 +125,21 @@ void CalDomainSize() {
         InitMyStr(m*nxp1, m*nyp1, &ne);
         InitMyStr(m*nxp1, m*nyp1, &ne_pre);
         InitMyStr(m*nxp1, m*nyp1, &beta);
+        if (niutype == 5||niutype==4) {
+            InitMyStr(m*nxp1, m*nyp1, &Nu_c);
+            ResetStructDataR(Nu_c, 5e9 * 760.0);
+            if (IsTEx) {
+                InitMyStr(nxp1, nyp1, &Cvvz);
+                InitMyStr(nxp1, nyp1, &Cvez);
+            }
+            if (IsTMx) {
+                InitMyStr(nx, nyp1, &Cvvx);
+                InitMyStr(nx, nyp1, &Cvex);
+                InitMyStr(nxp1, ny, &Cvvy);
+                InitMyStr(nxp1, ny, &Cvey);
+            }
+            //InitMyStr(m*nxp1,m*nyp1,&Nu_c_pre);
+        }
     }
 }
 

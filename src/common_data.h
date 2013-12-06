@@ -2,6 +2,7 @@
 #define COMMOM_DATA_INCLUDE
 #pragma once
 #include"data_type_definetion.h"
+#include <math.h>
 
 
 MyDataF De;
@@ -12,10 +13,10 @@ MyDataF mu_i;
 MyDataF vi, va;
 MyDataF kasi;
 MyDataF alpha;
-MyDataF p = 760.0;
+MyDataF p = 760.0; //压强
 CMyDataF mu_0 = 1.257e-6;
 CMyDataF eps_0 = 8.854e-12;
-CMyDataF vm = 760 * 5.3e9;
+MyDataF vm = 760 * 5.3e9;
 CMyDataF length = 1.0;
 
 
@@ -55,7 +56,7 @@ MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;
 MyDataF Ratio_x, Ratio_y;
 MyDataF lamda;
 MyDataF omega;
-MyDataF phi = INC_ANGLE; //incidence wave inject angle on x-axis 
+MyDataF phi = 0; //incidence wave inject angle on x-axis 
 
 
 //EM field
@@ -67,6 +68,8 @@ MyStruct ne, ne_pre;
 MyStruct beta;
 MyStruct Erms;
 MyStruct Ermsx, Ermsy;
+MyStruct Nu_c; // 循环利用的碰撞率
+//MyStruct Nu_c_pre;//上一步的碰撞率（循环利用的碰撞率）
 //Coeffients
 /*******************************/
 MyDataF Chxez, Chyez, Chzex, Chzey;
@@ -76,6 +79,10 @@ MyStruct Ceex, Ceey, Ceez;
 MyStruct Cehx, Cehy, Cehz;
 
 MyDataF Cve;
+
+MyStruct Cvvx, Cvvy, Cvvz;
+MyStruct Cvex, Cvey, Cvez;
+
 /*******************************/
 
 int IsTMx = _SOURCE_TMX_;
@@ -88,7 +95,7 @@ MyDataF CurTime = 0; //current time
 int save_vi = 0;
 
 // type of niu function
-int niutype = 4;
+int niutype = NIU_TYPE;
 //Matlab simulation
 int IsMatlabSim = 0;
 FILE *filedat;
@@ -96,5 +103,9 @@ double totaltime = TOTAL_TIME; //in nane second
 int isConnect = ISCONNECT;
 int IfWithDensity = IF_WITH_DENSITY;
 int maxwellGridSize = MAXWELL_MESH_SIZE;
+double ionization(double Em, double p);
+double ElectronTemperature(double Em, double p);
+double collision(double Em, double p);
+double attachment(double Em, double p);
 #endif
 

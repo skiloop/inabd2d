@@ -74,9 +74,10 @@ void econnect(MyDataF t) {
     int i, index, ind;
     int di;
 
-    MyDataF ei_last, ei_last2, ds, df, d;
+    MyDataF ei_last, ei_last2,  df, d;
+    //MyDataF ds;
 
-    ds = dx;
+    //ds = dx;
     ei_last = Ei[eilen - 1];
     ei_last2 = Ei[eilen - 2];
     Ei[0] = E0 * Source(t);
@@ -160,13 +161,14 @@ void econnect(MyDataF t) {
 void mconnect(MyDataF t) {
 
     int i, ind, ind1, ind3;
-    MyDataF hi_last, hi_last2, ds;
+    MyDataF hi_last, hi_last2;
+    //MyDataF ds;
 
     int di;
     MyDataF df;
     //double tmp1;
 
-    ds = dx;
+    //ds = dx;
     hi_last = Hi[hilen - 1];
     hi_last2 = Hi[hilen - 2];
     for (i = 0; i < hilen - 1; i++)

@@ -12,6 +12,9 @@
 #define isnan _isnan
 #endif
 
+#ifndef M_PI
+#define M_PI 3.1415926
+#endif
 /////////////////////////////////
 //FDTD DEFINITION
 /////////////////////////////////
@@ -19,27 +22,51 @@
 #define NE_MAX_LIMIT 1E307
 #define COURANT_FACTOR 0.5
 #define CFL_FACTOR 0.4
+// maxwll 网格大小
 #define MAXWELL_MESH_SIZE 50
+//PML网格数
 #define NUMBER_OF_CELLS_IN_PML_BOUND 20
+//
 #define SCATTER_FIELD_DOMAIN_BND_SIZE 5
 #define NUMBER_OF_WAVELENGTHS_IN_DOMAIN 3
 #define DEN_TIME_STEPS 2000000
 
-#define TOTAL_TIME 50.0 // in nane second
+#define TOTAL_TIME 100.0 // in nane second
+//  间隔多少网格保存
 #define SAVE_LEAP 50	//sample electric field components and ne every SAVE_LEAP steps
+// 
 #define SAVE_ERMS_LEAP 110
 #define PULSE_LENGGTH_IN_TIME
+// 亚网格相对大小：一个Maxwell有多少个亚网格
 #define FINE_GRID_SIZE 10
 #define SCATTERED_FORMATION
-#define _SOURCE_TEX_ 0
-#define _SOURCE_TMX_ 1 
 
-#define E_0 6e6
+// 波的模式 
+// TEx --- Ez Hx Hy
+// TMx --- Hz Ex Ey
+// 单模式的话要设置下面两个一个为0另一个为1
+// 如选择 TEx 设置 _SOURCE_TEX_ 1
+// _SOURCE_TMX_ 0
+#define _SOURCE_TEX_ 1
+#define _SOURCE_TMX_ 0 
+
+// 电离公式
+// 1 ---- MorrowAndLowke
+// 2 ---- Nikonov
+// 3 ---- Kang
+// 其他 --- 唉里
+#define NIU_TYPE 5
+
+//是否通过振幅算Eeff
+//设为 1 算振幅
+int if_erms_E_max=3; // if set niutype=4 then this is reset to 1
+
+#define E_0 6.0e6
 #define NE0 1e13
 
 #define FREQUENCY 110E9
 #define MAX_NE 1E24
-#define INC_ANGLE 0.25*M_PI
+#define INC_ANGLE 0.0*M_PI
 //////////////////////////////////////
 //display definition
 /////////////////////////////////////
@@ -99,6 +126,9 @@ void input(int argc, char*argv[]);
 
 int main(int argc, char *argv[]) {
     input(argc, argv);
+    if(niutype==4){
+        if_erms_E_max=1;
+    }
     InitComData();
     CalDomainSize();
     InitBndCtrl();
@@ -120,9 +150,10 @@ int main(int argc, char *argv[]) {
 void input(int argc, char*argv[]) {
     void PrintInput();
     void help();
-    int i, cnt;
-    char buffer[MAX_BUFFER], *pstr;
-    double tdoub;
+    int i;
+    //int cnt;
+    //char buffer[MAX_BUFFER], *pstr;
+    //double tdoub;
     if (argc < 2) {
         fprintf(stderr, "Invalid input!\n");
         help();
