@@ -49,8 +49,8 @@ void UpdateDensity() {
         }
     }
     BackupMyStruct(ne, ne_pre);
-    //printf("%5.4e\t%5.4e\t",Erms.data[250*Erms.ny+250],ne.data[250*ne.ny+250]);
-    for (i = mt; i < ne.nx - mt; i++)
+
+    for (i = mt; i < ne.nx - mt; i++){
         for (j = mt; j < ne.ny - mt; j++) {
             ind = i * ne.ny + j;
             if (niutype != 4 && niutype != 5) {
@@ -66,8 +66,9 @@ void UpdateDensity() {
             neim1 = ne_pre.data[ind - ne.ny];
             nejm1 = ne_pre.data[ind - 1];
             nejp1 = ne_pre.data[ind + 1];
-            if ((ne_ij <= 0 || fabs(Eeff) < 1e-10) && niutype != 4)va = vi = 0;
-            else {
+            if ((ne_ij <= 0 || fabs(Eeff) < 1e-10) && niutype != 4){
+				va = vi = 0;
+			} else {
                 switch (niutype) {
                     case 1:
                         Niu_MorrowAndLowke(&vi, &va, Eeff, NeutralGasDensityCM);
@@ -80,9 +81,7 @@ void UpdateDensity() {
                         break;
                     case 4:
                         Te = ElectronTemperature(Erms.data[ind], p);
-                        if (ne.data[ind] <= 0.0)vi = 0;
-                        else
-                            vi = ionization(Erms.data[ind], p);
+						vi = (ne.data[ind] <= 0.0)?0:ionization(Erms.data[ind], p);					
                         Nu_c.data[ind] = collision(Erms.data[ind], p);
                         va = 0.0;
                         mu_e = e / me / Nu_c.data[ind]; //3.7e-2;
@@ -141,9 +140,6 @@ void UpdateDensity() {
                 kasi = vi * tau_m;
                 Deff = (kasi * De + Da) / (kasi + 1);
             }
-            /*temp2=ne.data[i*ne.ny+j]=A*pow(CTime,-1.5)*exp(vi*CTime-(dx*dx+dy*dy)/(4*Deff*CTime));
-             */
-
 
             opt1 = 1 + dt_F*vi;
             opt2 = Deff * dt_F * (neip1 + neim1 + nejm1 + nejp1 - 4 * ne_ij) / ds_F / ds_F;
@@ -155,25 +151,8 @@ void UpdateDensity() {
             average_vi += vi / GridNum;
             if (vi > max_vi)max_vi = vi;
             if (va > max_va)max_va = va;
-            //            if (maxne < ne.data[ind]) {
-            //                maxne = ne.data[ind];
-            //                mi = i;
-            //                mj = j;
-            //                mopt1 = opt1;
-            //                mopt2 = opt2;
-            //                mopt3 = opt3;
-            //                mvi = vi;
-            //                mva = va;
-            //                meff = Eeff;
-            //            }
-            //tmp = dt_F*vi;//(1+dt_F*vi)/(1+dt_F*va);//Deff*dt_F/ds_F/ds_F/(1+dt_F*va);
-            //            if (opt1 > max_dtmui) {
-            //                //printf("max_dtmui = %f\n",max_dtmui);
-            //                //                ci = i;
-            //                //                cj = j;
-            //                max_dtmui = opt1;
-            //            }
-        }
+		}
+	}
     printf("%5.4e\t%5.4e\t%5.4e\t%5.4e\t", average_va, average_vi, max_va, max_vi);
 
 }
@@ -291,7 +270,7 @@ void CalErmsAtCoarseGrid() {
 void CalSumESqrt() {
     int i, j, index, ind;
     if (IsTEx) {
-        for (i = tpis; i <= tpie; i++)
+        for (i = tpis; i <= tpie; i++){
             for (j = tpjs; j <= tpje; j++) {
                 index = i * Ez_s.ny + j;
                 Erms.data[i * m * Erms.ny + j * m] += Ez_s.data[index] * Ez_s.data[index];
@@ -303,8 +282,9 @@ void CalSumESqrt() {
                 }
 #endif
             }
+		}
     } else if (IsTMx) {
-        for (i = tpis; i <= tpie; i++)
+        for (i = tpis; i <= tpie; i++){
             for (j = tpjs; j <= tpje; j++) {
                 ind = i * m * Erms.ny + j*m;
                 index = i * Ex_s.ny + j;
@@ -317,6 +297,7 @@ void CalSumESqrt() {
                 }
 #endif
             }
+		}
     }
 }
 
