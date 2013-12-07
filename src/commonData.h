@@ -125,7 +125,7 @@ extern "C" {
 
     extern int if_erms_E_max; // if set niutype=4 then this is reset to 1
     
-    extern int thread_count;
+    extern int thread_count;    
 
 #ifdef	__cplusplus
 }

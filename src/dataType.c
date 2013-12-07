@@ -2,9 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <execinfo.h>
 
 #include "dataType.h"
 #include "common.h"
+
+
+//////////////////////
+// ERROR DEALING
+//////////////////////
+
+void *errMessage[ERROR_MESSAGE_SIZE];
 
 void ResetStructData(MyStruct mst) {
     int i, j;
@@ -31,8 +39,23 @@ void InitMyStr(int nnx, int nny, MyStruct* ms) {
     ms->data = (MyDataF*) malloc(nnx * nny * sizeof (MyDataF));
 
     if (ms->data == NULL) {
-        printf("Calloc fail!\n");
-        exit(0);
+        int j;
+        int msgSize=backtrace(errMessage,ERROR_MESSAGE_SIZE);
+        char **strings=NULL;
+        fprintf(stderr,"Calloc fail!\n");        
+        printf("============================================================\n");        
+        printf("backtrace() return %d address\n",msgSize);
+        strings=backtrace_symbols(errMessage,msgSize);
+        if(NULL==strings){
+            perror("backtrace_symbols");
+            exit(EXIT_FAILURE);
+        }
+        for(j=0;j<msgSize;j++){
+            printf("%s\n",strings[j]);
+        }        
+        printf("============================================================\n");
+        free(strings);
+        exit(EXIT_FAILURE);
     }
     ResetStructData(*ms);
 }
