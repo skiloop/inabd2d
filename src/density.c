@@ -40,7 +40,7 @@ void UpdateDensity() {
     MyDataF dtF_Div_dsF2 = dt_F / ds_F / ds_F;
     int GridNum = (ne.nx - mt - mt)*(ne.ny - mt - mt);
     FILE *fp;
-    MyDataF CErmsToEeff = 1.0*pow(1.0 / (1.0 + omega * omega / vm / vm), 0.5) / 100.0;
+    MyDataF CErmsToEeff = 1.0 * pow(1.0 / (1.0 + omega * omega / vm / vm), 0.5) / 100.0;
     //PrintData(Ez_i);
 
     if (save_vi) {
@@ -162,7 +162,7 @@ void UpdateDensity() {
             }
         }
     }
-    DensityBound(ne, mt, 2);
+    DensityBound(ne, (tpis-pis+1)*m, pis*m);
     printf("%5.4e\t%5.4e\t%5.4e\t%5.4e\t", average_va, average_vi, max_va, max_vi);
 }
 
@@ -225,43 +225,55 @@ void InterpolatErms() {
 void DensityBound(MyStruct stru, int bndwidth, const int swidth) {
 
     int i, j;
-    int ind;
-    int ii, i1, i2;
-    MyDataF tmp;
-    ii = swidth + bndwidth;
-    i1 = stru.nx - swidth - bndwidth;
-    i2 = stru.nx - swidth;
-    //Section 1
-    for (j = swidth; j < i1; j++) {
-        tmp = 2 * stru.data[ind + stru.ny] - stru.data[ind + 2 * stru.ny];
-        for (i = swidth; i <= ii; i++) {
-            stru.data[i * stru.ny + j] = tmp;
-        }
-    }
-    //Section 2
-    for (i = 0; i < i1; i++) {
-        //ind = i * stru.ny + i1;
-        tmp = 2 * stru.data[ind - 1] - stru.data[ind - 2];
-        for (j = i2 - 1; j >= i1; j--) {
-            stru.data[i * stru.ny + j] = tmp;
-        }
-    }
-    //Section 3
-    for (j = ii; j < i2; j++) {
-        ind = i1 * stru.ny + j;
-        tmp = 2 * stru.data[ind - stru.ny] - stru.data[ind - 2 * stru.ny];
-        for (i = i2 - 1; i >= i1; i--) {
-            stru.data[i * stru.ny + j] = tmp;
-        }
-    }
+    int innerDown = swidth + bndwidth;
+    int innerUp = stru.nx - 1 - innerDown;
 
-    //Section 4
-    for (i = i1; i < i2; i++) {
-        ind = ii + i * stru.ny;
-        tmp = 2 * stru.data[ind + 1] - stru.data[ind + 2];
-        for (j = swidth; j <= ii; j++) {
-            stru.data[i * stru.ny + j] = tmp;
+    while (innerDown >= swidth) {
+        int innerUpM1 = innerUp - 1;
+        int innerUpM2 = innerUp - 2;
+        int innerDownP1 = innerDown + 1;
+        int innerDownP2 = innerDown + 2;
+
+        // vertical lines
+        for (j = innerDownP1; j <= innerUpM1; j++) {
+            // left side line
+            stru.data[innerDown * stru.ny + j] = 2 * stru.data[innerDownP1 * stru.ny + j] - stru.data[innerDownP2 * stru.ny + j];
+            // right side line
+            stru.data[innerUp * stru.ny + j] = 2 * stru.data[innerUpM1 * stru.ny + j] - stru.data[innerUpM2 * stru.ny + j];
         }
+
+        // horizontal lines
+        for (i = innerDownP1; i <= innerUpM1; i++) {
+            // down side line
+            stru.data[i * stru.ny + innerDown] = 2 * stru.data[i * stru.ny + innerDownP1] - stru.data[i * stru.ny + innerDownP2];
+            // up side line
+            stru.data[i * stru.ny + innerUp] = 2 * stru.data[i * stru.ny + innerUpM1] - stru.data[i * stru.ny + innerUpM2];
+        }
+        // Conner s
+        //        stru.data[innerDown*stru.ny+innerDown]=2*stru.data[(innerDown+1)*stru.ny+innerDown+1]
+        //                -stru.data[(innerDown+2)*stru.ny+innerDown+2];
+        //        stru.data[innerDown*stru.ny+innerUp]=2*stru.data[(innerDown+1)*stru.ny+innerUp-1]
+        //                -stru.data[(innerDown+2)*stru.ny+innerUp-2];
+        //        stru.data[innerUp*stru.ny+innerDown]=2*stru.data[(innerUp-1)*stru.ny+innerDown+1]
+        //                -stru.data[(innerUp-2)*stru.ny+innerDown+2];
+        //        stru.data[innerUp*stru.ny+innerUp]=2*stru.data[(innerUp-1)*stru.ny+innerUp-1]
+        //                -stru.data[(innerUp-2)*stru.ny+innerUp-2];
+        // Conner s
+        stru.data[innerDown * stru.ny + innerDown] = 0.5 * (
+                2 * stru.data[(innerDownP1) * stru.ny + innerDown] - stru.data[(innerDownP2) * stru.ny + innerDown]
+                + 2 * stru.data[(innerDown) * stru.ny + innerDownP1] - stru.data[(innerDown) * stru.ny + innerDownP2]);
+        stru.data[innerDown * stru.ny + innerUp] = 0.5 * (
+                2 * stru.data[(innerDownP1) * stru.ny + innerUp] - stru.data[(innerDownP2) * stru.ny + innerUp]
+                + 2 * stru.data[(innerDown) * stru.ny + innerUpM1] - stru.data[(innerDown) * stru.ny + innerUpM2]);
+        stru.data[innerUp * stru.ny + innerDown] = 0.5 * (
+                2 * stru.data[(innerUpM1) * stru.ny + innerDown] - stru.data[(innerUpM2) * stru.ny + innerDown]
+                + 2 * stru.data[(innerUp) * stru.ny + innerDownP1] - stru.data[(innerUp) * stru.ny + innerDownP2]);
+        stru.data[innerUp * stru.ny + innerUp] = 0.5 * (
+                2 * stru.data[(innerUp) * stru.ny + innerUpM1] - stru.data[(innerUp) * stru.ny + innerUpM2]
+                + 2 * stru.data[(innerUpM1) * stru.ny + innerUp] - stru.data[(innerUpM2) * stru.ny + innerUp]);
+        // increasment
+        innerDown--;
+        innerUp++;
     }
 }
 
