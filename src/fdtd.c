@@ -190,12 +190,8 @@ void fdtd() {
 
     sxpos = (int) (0.5 + nx / 2 + 0.125 * lamda / dx); 
     sypos = (int) (0.5 + (tpjs + tpje) / 2); 
-    filedat = fopen("neiter.dat", "w");
-    if (filedat == NULL) {
-        fprintf(stderr, "Cannot open neiter.dat for output!\n");
-        exit(EXIT_FAILURE);
-    }
     CurTime = -half_dt;
+
     InitSim();
     //InitIncFdtd();
     if (isConnect)initconnect(); ////InitFields();////Init fields before marching  loop i.e. at t = 0
@@ -272,7 +268,6 @@ void fdtd() {
     //free(CapEF);
     end_connect();
     free(srcdat);
-    fclose(filedat);
 
 }//END OF FDTDLOOP
 

@@ -114,7 +114,7 @@ void initCommonData() {
 void Init_ne() {
     MyDataF temp = 2500e-12;
     int i, j, ind;
-    const int bndsz = NUMBER_OF_CELLS_IN_PML_BOUND + SCATTER_FIELD_DOMAIN_BND_SIZE;
+    const int bndsz = (NUMBER_OF_CELLS_IN_PML_BOUND + SCATTER_FIELD_DOMAIN_BND_SIZE) * m;
     MyDataF dx2, dy2;
     dx2 = dx / m;
     dy2 = dy / m;
@@ -124,7 +124,7 @@ void Init_ne() {
         for (j = 0; j < ne.ny; j++) {
             ind = i * ne.ny + j;
             ne_pre.data[ind] = ne.data[ind] = //1e6;
-                    NE0 * exp(-(((i - bndsz * m) * dx2 - 2.25 * lamda)*((i - bndsz * m) * dx2 - 2.25 * lamda)+(j - 0.5 * ne.ny)*(j - 0.5 * ne.ny) * dy2 * dy2) / temp);
+                    NE0 * exp(-(((i - bndsz) * dx2 - 2.25 * lamda)*((i - bndsz) * dx2 - 2.25 * lamda)+(j - 0.5 * ne.ny)*(j - 0.5 * ne.ny) * dy2 * dy2) / temp);
         }
     }
 }

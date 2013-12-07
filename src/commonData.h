@@ -106,7 +106,6 @@ extern "C" {
     extern int niutype;
     //Matlab simulation
     extern int IsMatlabSim;
-    extern FILE *filedat;
     extern MyDataF totaltime; //in nane second
     extern int isConnect;
     extern int IfWithDensity;

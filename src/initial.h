@@ -5,8 +5,8 @@
  * Created on 2013年5月9日, 上午10:42
  */
 
-#ifndef INIT_H
-#define	INIT_H
+#ifndef INITIAL_H
+#define	INITIAL_H
 
 #ifdef	__cplusplus
 extern "C" {
@@ -41,5 +41,5 @@ void FreeSpace();
 }
 #endif
 
-#endif	/* INIT_H */
+#endif	/* INITIAL_H */
 

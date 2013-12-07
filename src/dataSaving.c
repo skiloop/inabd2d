@@ -34,7 +34,7 @@ void InitCapture(int ttstep) {
     //MyDataF t_0;
     //MyDataF tau = 1.5166 / M_PI / f / 3 / 5;
     //t_0 = 1.8 * tau; //dt*ttstep/10;
-    omega = 2 * M_PI*f;
+    //omega = 2 * M_PI*f;
 
     printf("ttstep = %d\n", ttstep);
     if ((src = fopen("source.dat", "w")) == NULL) {

@@ -37,8 +37,10 @@ void UpdateDensity() {
     //int ci = 0, cj = 0, mi = 0, mj = 0;
     int ind;
     MyDataF average_vi = 0, average_va = 0, max_vi = 0, max_va = 0;
+    MyDataF dtF_Div_dsF2 = dt_F / ds_F / ds_F;
     int GridNum = (ne.nx - mt - mt)*(ne.ny - mt - mt);
     FILE *fp;
+    MyDataF CErmsToEeff = 1.0*pow(1.0 / (1.0 + omega * omega / vm / vm), 0.5) / 100.0;
     //PrintData(Ez_i);
 
     if (save_vi) {
@@ -48,7 +50,7 @@ void UpdateDensity() {
             exit(-1);
         }
     }
-    BackupMyStruct(ne, ne_pre);    
+    BackupMyStruct(ne, ne_pre);
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic) \
     private(i,j,k,ind, ne_ij, neip1, neim1, nejm1, nejp1,vi,va,opt1, opt2, opt3, \
     alpha_t, Eeff, tau_m, kasi, Te) //shared(Hx,Ez,Ey,pml,DA,DB,dy)
@@ -56,7 +58,7 @@ void UpdateDensity() {
         for (j = mt; j < ne.ny - mt; j++) {
             ind = i * ne.ny + j;
             if (niutype != 4 && niutype != 5) {
-                Eeff = Erms.data[ind] / 100 * pow(1 / (1 + omega * omega / vm / vm), 0.5);
+                Eeff = Erms.data[ind] * CErmsToEeff;
             } else if (niutype == 5) {
                 MyDataF tmp;
                 tmp = Nu_c.data[ind] * Nu_c.data[ind];
@@ -143,7 +145,7 @@ void UpdateDensity() {
             }
 
             opt1 = 1 + dt_F*vi;
-            opt2 = Deff * dt_F * (neip1 + neim1 + nejm1 + nejp1 - 4 * ne_ij) / ds_F / ds_F;
+            opt2 = Deff * (neip1 + neim1 + nejm1 + nejp1 - 4 * ne_ij) * dtF_Div_dsF2;
             opt3 = 1 + dt_F * (va + rei * ne_ij);
             ne.data[ind] = (ne_ij * opt1 + opt2) / opt3;
 
@@ -160,6 +162,7 @@ void UpdateDensity() {
             }
         }
     }
+    DensityBound(ne, mt, 2);
     printf("%5.4e\t%5.4e\t%5.4e\t%5.4e\t", average_va, average_vi, max_va, max_vi);
 }
 
@@ -222,7 +225,7 @@ void InterpolatErms() {
 void DensityBound(MyStruct stru, int bndwidth, const int swidth) {
 
     int i, j;
-    //int ind;
+    int ind;
     int ii, i1, i2;
     MyDataF tmp;
     ii = swidth + bndwidth;
@@ -230,7 +233,7 @@ void DensityBound(MyStruct stru, int bndwidth, const int swidth) {
     i2 = stru.nx - swidth;
     //Section 1
     for (j = swidth; j < i1; j++) {
-        tmp = 0; //2*stru.data[ind+stru.ny]-stru.data[ind+2*stru.ny];
+        tmp = 2 * stru.data[ind + stru.ny] - stru.data[ind + 2 * stru.ny];
         for (i = swidth; i <= ii; i++) {
             stru.data[i * stru.ny + j] = tmp;
         }
@@ -238,15 +241,15 @@ void DensityBound(MyStruct stru, int bndwidth, const int swidth) {
     //Section 2
     for (i = 0; i < i1; i++) {
         //ind = i * stru.ny + i1;
-        tmp = 0; //2*stru.data[ind-1]-stru.data[ind-2];
+        tmp = 2 * stru.data[ind - 1] - stru.data[ind - 2];
         for (j = i2 - 1; j >= i1; j--) {
             stru.data[i * stru.ny + j] = tmp;
         }
     }
     //Section 3
     for (j = ii; j < i2; j++) {
-        //ind = i1 * stru.ny + j;
-        tmp = 0; //2*stru.data[ind-stru.ny]-stru.data[ind-2*stru.ny];
+        ind = i1 * stru.ny + j;
+        tmp = 2 * stru.data[ind - stru.ny] - stru.data[ind - 2 * stru.ny];
         for (i = i2 - 1; i >= i1; i--) {
             stru.data[i * stru.ny + j] = tmp;
         }
@@ -254,8 +257,8 @@ void DensityBound(MyStruct stru, int bndwidth, const int swidth) {
 
     //Section 4
     for (i = i1; i < i2; i++) {
-        //ind = ii + i * stru.ny;
-        tmp = 0; //2*stru.data[ind+1]-stru.data[ind+2];
+        ind = ii + i * stru.ny;
+        tmp = 2 * stru.data[ind + 1] - stru.data[ind + 2];
         for (j = swidth; j <= ii; j++) {
             stru.data[i * stru.ny + j] = tmp;
         }

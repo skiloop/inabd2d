@@ -12,17 +12,17 @@
 extern "C" {
 #endif
 
-void initconnect() ;
-void econnect(MyDataF t) ;
-void mconnect(MyDataF t) ;
-void end_connect() ;
+    void initconnect();
+    void econnect(MyDataF t);
+    void mconnect(MyDataF t);
+    void end_connect();
 
-void IntTtlFldDmnBnd() ;
-void Adjust_E_Field(MyDataF pre_t) ;//adjust TEx electric field which at total fields boundary
-void Adjust_M_Field(MyDataF pre_t) ;
-void FreeDelayArrays() ;
+    void IntTtlFldDmnBnd();
+    void Adjust_E_Field(MyDataF pre_t); //adjust TEx electric field which at total fields boundary
+    void Adjust_M_Field(MyDataF pre_t);
+    void FreeDelayArrays();
 
-MyDataF Source(MyDataF t);
+    MyDataF Source(MyDataF t);
 
 
 #ifdef	__cplusplus

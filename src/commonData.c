@@ -82,7 +82,6 @@ int save_vi = 0;
 int niutype = NIU_TYPE;
 //Matlab simulation
 int IsMatlabSim = 0;
-FILE *filedat = NULL;
 MyDataF totaltime = TOTAL_TIME; //in nane second
 int isConnect = ISCONNECT;
 int IfWithDensity = IF_WITH_DENSITY;
@@ -101,4 +100,4 @@ int pje = 0;
 
 int if_erms_E_max = IF_ERMS_E_MAX; // if set niutype=4 then this is reset to 1
 
-int thread_count=DEFAULT_THREAD_COUNT;
+int thread_count = DEFAULT_THREAD_COUNT;
