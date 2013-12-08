@@ -124,9 +124,10 @@ extern "C" {
     extern int pje;
 
     extern int if_erms_E_max; // if set niutype=4 then this is reset to 1
+#ifdef _OPENMP
+    extern int thread_count;
+#endif
     
-    extern int thread_count;    
-
 #ifdef	__cplusplus
 }
 #endif

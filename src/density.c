@@ -51,9 +51,11 @@ void UpdateDensity() {
         }
     }
     BackupMyStruct(ne, ne_pre);
+#ifdef _OPENMP
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic) \
     private(i,j,k,ind, ne_ij, neip1, neim1, nejm1, nejp1,vi,va,opt1, opt2, opt3, \
     alpha_t, Eeff, tau_m, kasi, Te) //shared(Hx,Ez,Ey,pml,DA,DB,dy)
+#endif
     for (i = mt; i < ne.nx - mt; i++) {
         for (j = mt; j < ne.ny - mt; j++) {
             ind = i * ne.ny + j;
@@ -70,7 +72,7 @@ void UpdateDensity() {
             neim1 = ne_pre.data[ind - ne.ny];
             nejm1 = ne_pre.data[ind - 1];
             nejp1 = ne_pre.data[ind + 1];
-            if ((ne_ij <= 0 || fabs(Eeff) < 1e-10) && niutype != 4) {
+            if ((ne_ij < 0 || fabs(Eeff) < 1e-10) && niutype != 4) {
                 va = vi = 0;
             } else {
                 switch (niutype) {
@@ -152,17 +154,21 @@ void UpdateDensity() {
             // calculate average vi and va
             average_va += va / GridNum;
             average_vi += vi / GridNum;
+#ifdef _OPENMP
 #pragma omp critical
+#endif
             {
                 if (vi > max_vi)max_vi = vi;
             }
+#ifdef _OPENMP
 #pragma omp critical
+#endif           
             {
                 if (va > max_va)max_va = va;
             }
         }
     }
-    DensityBound(ne, (tpis-pis+1)*m, pis*m);
+    DensityBound(ne, (tpis - pis + 1) * m, pis * m);
     printf("%5.4e\t%5.4e\t%5.4e\t%5.4e\t", average_va, average_vi, max_va, max_vi);
 }
 

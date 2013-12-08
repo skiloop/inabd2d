@@ -10,7 +10,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#ifdef _OPENMP
+#include<omp.h>
+#endif
 #include "common.h"
 #include "initial.h"
 #include "fdtd.h"
@@ -59,8 +61,10 @@ void UpdateEField() {
     if (IsTMx) {
         BackupMyStruct(Ex_s, Ex_s_pre);
         BackupMyStruct(Ey_s, Ey_s_pre);
+#ifdef _OPENMP
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
 	private(i,j,index,indx)
+#endif
         for (i = 0; i < Ex_s.nx; i++) {
             for (j = pjs; j < pje; j++) {
                 index = i * Hz_s.ny + j;
@@ -70,8 +74,10 @@ void UpdateEField() {
                         (Hz_s.data[index] - Hz_s.data[index - 1]);
             }
         }
+#ifdef _OPENMP
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
 	private(i,j,index,indy)
+#endif
         for (i = pis; i < pie; i++) {
             for (j = 0; j < Ey_s.ny; j++) {
                 indy = i * Ey_s.ny + j;
@@ -84,8 +90,10 @@ void UpdateEField() {
     }
     if (IsTEx) {
         BackupMyStruct(Ez_s, Ez_s_pre);
+#ifdef _OPENMP
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
 	private(i,j,index,indx,indy)
+#endif
         for (i = pis + 1; i < pie; i++) {
             for (j = pjs + 1; j < pje; j++) {
                 index = i * Ez_s.ny + j;
@@ -107,8 +115,10 @@ void UpdateMField() {
     int i, j, index, ind;
     //MyDataF tmp1,tmp2,tmp3;
     if (IsTEx) {
+#ifdef _OPENMP
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
 	private(i,j,index,ind)
+#endif
         for (i = 0; i < Hx_s.nx; i++) {
             for (j = pjs; j < pje; j++) {
                 index = i * Hx_s.ny + j;
@@ -116,8 +126,10 @@ void UpdateMField() {
                 Hx_s.data[index] = Hx_s.data[index] + Chxez * (Ez_s.data[ind + 1] - Ez_s.data[ind]);
             }
         }
+#ifdef _OPENMP
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
 	private(i,j,index,ind)
+#endif
         for (i = pis; i < pie; i++) {
             for (j = 0; j < Hy_s.ny; j++) {
                 index = i * Hy_s.ny + j;
@@ -128,8 +140,10 @@ void UpdateMField() {
     }
     if (IsTMx) {
         int ind2;
+#ifdef _OPENMP
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
 	private(i,j,index,ind,ind2)
+#endif
         for (i = pis; i < pie; i++) {
             for (j = pjs; j < pje; j++) {
                 index = i * Hz_s.ny + j;
@@ -188,8 +202,8 @@ void fdtd() {
     printf("Step per half ns: %d\n", step_per_half_ns8);
     printf("\n*************************************************************\n");
 
-    sxpos = (int) (0.5 + nx / 2 + 0.125 * lamda / dx); 
-    sypos = (int) (0.5 + (tpjs + tpje) / 2); 
+    sxpos = (int) (0.5 + nx / 2 + 0.125 * lamda / dx);
+    sypos = (int) (0.5 + (tpjs + tpje) / 2);
     CurTime = -half_dt;
 
     InitSim();

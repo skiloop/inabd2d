@@ -10,8 +10,8 @@ SRC=./src
 VPATH= $(SRC)
 #
 # origin CFLAGS
-CFLAGS=-O2 -Wall#-Wunused-but-set-variable# run mode
-#CFLAGS=-g -Wall -DDEBUG#-Wunused-but-set-variable #debug mode
+#CFLAGS=-O2 -Wall#-Wunused-but-set-variable# run mode
+CFLAGS=-g -Wall -DDEBUG#-Wunused-but-set-variable #debug mode
 
 # origin link options
 LIB=-lm
@@ -37,8 +37,8 @@ LIB+=$(MATLIB)
 CFLAGS+=-DMATLAB_SIMULATION $(MATINC)# -g
 
 # openmp 
-CFLAGS+=-fopenmp
-LIB+=-fopenmp
+#CFLAGS+=-fopenmp
+#LIB+=-fopenmp
 
 # add -MMD
 CFLAGS+=-MMD

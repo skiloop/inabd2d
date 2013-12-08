@@ -1,6 +1,8 @@
 
 #include <math.h>
-
+#ifdef _OPENMP
+#include<omp.h>
+#endif
 #include "common.h"
 #include "dataType.h"
 #include "commonData.h"
@@ -118,8 +120,10 @@ void Init_ne() {
     MyDataF dx2, dy2;
     dx2 = dx / m;
     dy2 = dy / m;
+#ifdef _OPENMP
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic) \
 	private(i,j,ind)
+#endif
     for (i = 0; i < ne.nx; i++) {
         for (j = 0; j < ne.ny; j++) {
             ind = i * ne.ny + j;
