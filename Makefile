@@ -1,5 +1,5 @@
 # compiler
-CC=icc#icc#gcc
+CC=cc#icc#gcc
 
 # linker
 LD=ld
@@ -31,14 +31,14 @@ MATLIB=$(MATLINK) -L$(MATPATH)/bin/glnxa64 -lmx -leng
 MATINC=-I$(MATPATH)/extern/include
 
 # link option
-LIB+=$(MATLIB)
+#LIB+=$(MATLIB)
 
 # add Matlab simulation
-CFLAGS+=-DMATLAB_SIMULATION $(MATINC)# -g
+#CFLAGS+=-DMATLAB_SIMULATION $(MATINC)# -g
 
 # openmp 
-#CFLAGS+=-fopenmp
-#LIB+=-fopenmp
+CFLAGS+=-fopenmp
+LIB+=-fopenmp
 
 # add -MMD
 CFLAGS+=-MMD
