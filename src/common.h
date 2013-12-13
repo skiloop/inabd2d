@@ -72,7 +72,7 @@ extern "C" {
     // 在abd2d.c里改
 #define IF_ERMS_E_MAX 3 // default values for if_erms_E_max
 
-#define E_0 6.0e6
+#define E_MAX 6.0e6
 #define NE0 1e13
 
 #define FREQUENCY 110E9

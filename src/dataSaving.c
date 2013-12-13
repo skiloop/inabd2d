@@ -1,7 +1,7 @@
 
-#include <math.h>
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
 
 #include "common.h"
 #include "commonData.h"
@@ -259,31 +259,40 @@ void SaveRows(const MyStruct stru, int row, char *fname) {
 
 /******************************************************/
 
-void SaveData(MyStruct data, char* filename);
+void SaveData(MyStruct data, char* filename, FILE *hfile);
 
 /******************************************************/
 void SaveToFile() {
 
+    FILE *hfile;
+    char dlist[15] = "DataList.dat";
+
+    if ((hfile = fopen(dlist, "w")) == NULL) {
+        printf("Cannot open file: \t%s\n", dlist);
+        exit(0);
+    }
+    fprintf(hfile, "DataName\tnx\tny\n");
 
     if (IsTMx) {
-        SaveData(Ex_s, "Ex_s.dat");
-        SaveData(Ey_s, "Ey_s.dat");
-        SaveData(Hz_s, "Hz_s.dat");
+        SaveData(Ex_s, "Ex_s.dat", hfile);
+        SaveData(Ey_s, "Ey_s.dat", hfile);
+        SaveData(Hz_s, "Hz_s.dat", hfile);
 
-        SaveData(Vex, "Vex.dat");
-        SaveData(Vey, "Vey.dat");
+        SaveData(Vex, "Vex.dat", hfile);
+        SaveData(Vey, "Vey.dat", hfile);
     }
     if (IsTEx) {
-        SaveData(Hx_s, "Hx_s.dat");
-        SaveData(Hy_s, "Hy_s.dat");
-        SaveData(Ez_s, "Ez_s.dat");
+        SaveData(Hx_s, "Hx_s.dat", hfile);
+        SaveData(Hy_s, "Hy_s.dat", hfile);
+        SaveData(Ez_s, "Ez_s.dat", hfile);
 
-        SaveData(Vez, "Vez.dat");
+        SaveData(Vez, "Vez.dat", hfile);
     }
-    SaveData(ne, "ne.dat");
+    SaveData(ne, "ne.dat", hfile);
+    fclose(hfile);
 }
 
-void SaveData(MyStruct data, char* filename) {
+void SaveData(MyStruct data, char* filename, FILE *hfile) {
     int i, j;
     FILE *fp;
 
@@ -291,6 +300,8 @@ void SaveData(MyStruct data, char* filename) {
         printf("Cannot create file: \t%s\n", filename);
         exit(0);
     }
+
+    fprintf(hfile, "%s\t%d\t%d\n", filename, data.nx, data.ny);
 
     printf("\n%s\n", filename);
     //PrintData(data);

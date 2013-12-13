@@ -63,7 +63,7 @@ extern "C" {
     extern MyDataF f; //frequency
     extern MyDataF k; //
     extern MyDataF T; //
-    extern MyDataF E0, H0;
+    extern MyDataF E0, H0, E_0;
     extern MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;
     extern MyDataF Ratio_x, Ratio_y;
     extern MyDataF lamda;
@@ -127,7 +127,7 @@ extern "C" {
 #ifdef _OPENMP
     extern int thread_count;
 #endif
-    
+
 #ifdef	__cplusplus
 }
 #endif

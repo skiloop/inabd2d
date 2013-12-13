@@ -65,6 +65,8 @@ void UpdateDensity() {
                 MyDataF tmp;
                 tmp = Nu_c.data[ind] * Nu_c.data[ind];
                 Eeff = Erms.data[ind] * sqrt(tmp / (tmp + omega * omega));
+            } else {
+                Eeff = 0;
             }
 
             ne_ij = ne_pre.data[ind];

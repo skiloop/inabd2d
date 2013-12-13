@@ -38,6 +38,7 @@ int nbound;
 MyDataF f; //frequency
 MyDataF k; //
 MyDataF T; //
+MyDataF E_0 = E_MAX; // E field amptidute
 MyDataF E0, H0;
 MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;
 MyDataF Ratio_x, Ratio_y;

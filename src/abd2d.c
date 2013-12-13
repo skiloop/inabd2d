@@ -69,10 +69,10 @@ void input(int argc, char*argv[]) {
             IsTEx = 1;
         } else if (strncmp(argv[i], "--maxwell-grid=", 15) == 0) {
             maxwellGridSize = atoi(argv[i] + 12);
-            if (maxwellGridSize < 4 )maxwellGridSize = MAXWELL_MESH_SIZE;
+            if (maxwellGridSize < 4)maxwellGridSize = MAXWELL_MESH_SIZE;
         } else if (strncmp(argv[i], "--fine-grid=", 12) == 0) {
             m = atoi(argv[i] + 12);
-            if (m < 4 )m = FINE_GRID_SIZE;
+            if (m < 4)m = FINE_GRID_SIZE;
         } else if (strncmp(argv[i], "--total-time=", 13) == 0) {
             totaltime = atof(argv[i] + 13);
             if (totaltime <= 0)totaltime = TOTAL_TIME;
@@ -80,6 +80,8 @@ void input(int argc, char*argv[]) {
             isConnect = atoi(argv[i] + 13);
         } else if (strncmp(argv[i], "--with-density=", 15) == 0) {
             IfWithDensity = atoi(argv[i] + 15);
+        } else if (strncmp(argv[i], "--e-max=", 8) == 0) {
+            E_0 = atof(argv[i] + 8);
         }
 #ifdef _OPENMP
         else if (strncmp(argv[i], "--thread-count=", 15) == 0) {
@@ -110,6 +112,7 @@ void help() {
     printf("--maxwell-grid=\thow many Maxwell cells per wavelength\n");
     printf("--is-connect=[0,1]\tuse connecting interface or not\n");
     printf("--with-density=[0,1]\twether with density\n");
+    printf("--e-max= \tset E field amptidute\n");
 #ifdef _OPENMP
     printf("--thread-count=n\tset number of threads to run the job\n");
 #endif
@@ -125,6 +128,7 @@ void PrintInput() {
     printf("--total-time=%5.3e\n", totaltime);
     printf("--is-connect=%d\n", isConnect);
     printf("--with-density=%d\n", IfWithDensity);
+    printf("--e-max=%5.3e\n", E_0);
 #ifdef _OPENMP
     printf("--thead-count=%d\n", thread_count);
 #endif
