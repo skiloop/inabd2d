@@ -1,67 +1,47 @@
-# compiler
-CC=cc#icc#gcc
 
-# linker
-LD=ld
+include makefile.in
 
-# source path
-SRC=./src
+EXCUTABLE:=abd2d
+SRC_DIR:=src
+TEST_SRC_DIR:=test
+VPATH = $(SRC_DIR):$(TEST_SRC_DIR)
+SOURCES=$(shell find $(SRC_DIR) -name "*.c")
+OBJS:=$(patsubst $(SRC_DIR)/%.c,%.o,$(SOURCES))
+DEPS:=$(patsubst $(SRC_DIR)/%.c,%.d,$(SOURCES))
 
-VPATH= $(SRC)
-#
-# origin CFLAGS
-#CFLAGS=-O2 -Wall#-Wunused-but-set-variable# run mode
-CFLAGS=-g -Wall -DDEBUG#-Wunused-but-set-variable #debug mode
+#We don't need to clean up when we're making these targets
+NODEPS:=clean tags svn
+TEST:=
+PROJECTS=$(TEST) $(EXCUTABLE) #3DFormulaTransforming.pdf
+.PHONY:all clean test objs veryclean rebuild deps
+	
+all:$(PROJECTS) 
 
-# origin link options
-LIB=-lm
-#LIB+=-O2
+deps:$(DEPS)
 
-# matlab path 
-MATPATH=/opt/Matlab/R2013b# for local server
-#MATPATH=/opt2/Matlab/R2011a# for servers of college
+objs:$(OBJS)
 
-# Matlab link path
-MATLINK=-Wl,-rpath=$(MATPATH)/bin/glnxa64
+test:$(TEST)
 
-# Matlab link option
-MATLIB=$(MATLINK) -L$(MATPATH)/bin/glnxa64 -lmx -leng
+#This is the rule for creating the dependency files
+%.d:$(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) -MM -MT $*.o $< -MF $@
 
-# Matlab link path
-MATINC=-I$(MATPATH)/extern/include
+%.o:%.c %.d
+	$(CC) $(CFLAGS) -o $@ -c $<
 
-# link option
-#LIB+=$(MATLIB)
+#Don't create dependencies when we're cleaning, for instance
+ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEPS))))
+#Chances are, these files don't exist.  GMake will create them and
+#clean up automatically afterwards
+-include $(DEPS)
+endif
 
-# add Matlab simulation
-#CFLAGS+=-DMATLAB_SIMULATION $(MATINC)# -g
-
-# openmp 
-CFLAGS+=-fopenmp
-LIB+=-fopenmp
-
-# add -MMD
-CFLAGS+=-MMD
-
-OBJS=abd2d.o  \
-commonData.o \
-connectingInterface.o \
-dataSaving.o \
-dataType.o \
-density.o \
-fdtd.o \
-initial.o \
-breakdownFormula.o \
-matlabSimulation.o \
-pml.o 
-
-.PHONY: all clean
-all:abd2d
-abd2d:$(OBJS)
-	$(CC) -o abd2d $^ $(LIB)
-$(OBJS):%.o:%.c common.h
-	$(CC) $(CFLAGS) -c $<
+$(EXCUTABLE):$(OBJS)
+	$(CC) -o $@ $(OBJS) $(LIB)
 clean:
-	-rm -f *.o abd2d *.d
+	-rm -f $(DEPS) $(OBJS) $(PROJECTS) *.aux *.log
+veryclean:clean
 
+rebuild:veryclean all
 
