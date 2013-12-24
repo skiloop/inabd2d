@@ -1,51 +1,53 @@
-# compiler
-CC= gcc #icc#gcc
 
-# linker
-LD=ld
+include makefile.in
 
-# current path
-CURDIR=.
+EXCUTABLE:=abd2d
+SRC_DIR:=./src
+TEST_SRC_DIR:=./test
+VPATH = $(SRC_DIR):$(TEST_SRC_DIR)
+SOURCES=$(shell find $(SRC_DIR) -name "*.c")
+OBJS:=$(patsubst $(SRC_DIR)/%.c,%.o,$(SOURCES))
+DEPS:=$(patsubst $(SRC_DIR)/%.c,%.d,$(SOURCES))
+INC+=-I$(SRC_DIR)
+#We don't need to clean up when we're making these targets
+NODEPS:=clean tags svn
+TEST:=sourceTest
+TARGET_OBJS:=abd2d.o sourceTest.o
+NORMAL_OBJS:=$(filter-out $(TARGET_OBJS),$(OBJS))
+PROJECTS=$(TEST) $(EXCUTABLE) #3DFormulaTransforming.pdf
+.PHONY:all clean test objs veryclean rebuild deps
+	
+all:$(PROJECTS) 
 
-#
-# origin CFLAGS
-CFLAGS=-O4 -Wall #-Wunused-but-set-variable# run mode
-#CFLAGS=-g -Wall -DDEBUG #-Wunused-but-set-variable #debug mode
+deps:$(DEPS)
 
-# origin link options
-LIB=-lm
-LIB+=-O4
+objs:$(OBJS)
 
-# source path
-SRC=$(CURDIR)/src
+test:$(TEST)
 
-# matlab path 
-MATPATH=/opt/Matlab/R2013b# for local server
-#MATPATH=/opt2/Matlab/R2011a# for servers of college
+%.o:%.c %.d
+	$(CC) $(CFLAGS) $(INC) -o $@ -c $< 
+sourceTest.o:sourceTest.c
+	$(CC) $(CFLAGS) $(INC) -o $@ -c $< 
+#This is the rule for creating the dependency files
+%.d:$(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) -MM -MT $*.o $< -MF $@
 
-# Matlab link path
-MATLINK=-Wl,-rpath=$(MATPATH)/bin/glnxa64
+sourceTest:sourceTest.o $(NORMAL_OBJS)
+	$(CC) -o $@ $^ $(LIB)
 
-# Matlab link option
-MATLIB=$(MATLINK) -L$(MATPATH)/bin/glnxa64 -lmx -leng
+#Don't create dependencies when we're cleaning, for instance
+ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEPS))))
+#Chances are, these files don't exist.  GMake will create them and
+#clean up automatically afterwards
+-include $(DEPS)
+endif
 
-# Matlab link path
-MATINC=-I$(MATPATH)/extern/include
-
-# link option
-#LIB+=$(MATLIB)
-
-# add Matlab simulation
-#CFLAGS+=-DMATLAB_SIMULATION $(MATINC)# -g
-
-all:abd2d
-abd2d:abd2d-niu.o InonizationFormula.o
-	$(CC) -o abd2d abd2d-niu.o InonizationFormula.o $(LIB)
-abd2d-niu.o:$(SRC)/abd2d-niu.c $(SRC)/*.h
-	$(CC) $(CFLAGS) -c $(SRC)/abd2d-niu.c
-InonizationFormula.o:$(SRC)/InonizationFormula.c $(SRC)/*.h
-	$(CC) $(CFLAGS) -c $(SRC)/InonizationFormula.c
+$(EXCUTABLE):$(OBJS)
+	$(CC) -o $@ $(OBJS) $(LIB) 
 clean:
-	rm -f *.o abd2d *.d
+	-rm -f $(DEPS) $(OBJS) $(PROJECTS) *.aux *.log *.o
+veryclean:clean
 
+rebuild:veryclean all
 

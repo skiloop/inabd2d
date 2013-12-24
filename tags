@@ -4,707 +4,913 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-AddBndEFieldTEx	src/murbound.h	/^void AddBndEFieldTEx(){$/;"	f
-AddBndEFieldTMx	src/murbound.h	/^void AddBndEFieldTMx(){$/;"	f
-AddBndMFieldTEx	src/murbound.h	/^void AddBndMFieldTEx(){$/;"	f
-AddBndMFieldTMx	src/murbound.h	/^void AddBndMFieldTMx(){$/;"	f
-AddBndMurXN	src/murbndtofields.h	/^void AddBndMurXN(MyStruct nf,MyStruct pf,int nbd){$/;"	f
-AddBndMurXNYN	src/murbndtofields.h	/^void AddBndMurXNYN(MyStruct nf,MyStruct pf,int nbd){$/;"	f
-AddBndMurXNYP	src/murbndtofields.h	/^void AddBndMurXNYP(MyStruct nf,MyStruct pf,int nbd){$/;"	f
-AddBndMurXP	src/murbndtofields.h	/^void AddBndMurXP(MyStruct nf,MyStruct pf,int nbd){$/;"	f
-AddBndMurXPYN	src/murbndtofields.h	/^void AddBndMurXPYN(MyStruct nf,MyStruct pf,int nbd){$/;"	f
-AddBndMurXPYP	src/murbndtofields.h	/^void AddBndMurXPYP(MyStruct nf,MyStruct pf,int nbd){$/;"	f
-AddBndMurYN	src/murbndtofields.h	/^void AddBndMurYN(MyStruct nf,MyStruct pf,int nbd){$/;"	f
-AddBndMurYP	src/murbndtofields.h	/^void AddBndMurYP(MyStruct nf,MyStruct pf,int nbd){$/;"	f
-AddEInc	src/source.h	/^void AddEInc(MyDataF t)$/;"	f
-Adjust_E_Field	src/scatter_total_bnd.h	/^void Adjust_E_Field(MyDataF pre_t)$/;"	f
-Adjust_M_Field	src/scatter_total_bnd.h	/^void Adjust_M_Field(MyDataF pre_t){$/;"	f
-Alpha_Kang	src/InonizationFormula.c	/^double Alpha_Kang(double E)$/;"	f
-Alpha_MorrowAndLowke	src/InonizationFormula.c	/^double Alpha_MorrowAndLowke(double E, double N)$/;"	f
-Alpha_Nikonov	src/InonizationFormula.c	/^double Alpha_Nikonov(double E, double P)$/;"	f
-BOUNDARY_CONTROL_INCLUDE	src/bndctrl.h	2;"	d
-BackupMyStruct	src/data_type_definetion.h	/^int BackupMyStruct(MyStruct st,MyStruct stpre){$/;"	f
-CALCULATE_DOMAIN_SIZE	src/calculate_domain_size.h	2;"	d
-CAPTURE_FIELD	src/abd2d-mat.c	59;"	d	file:
-CAPTURE_FIELD	src/abd2d-miu.c	59;"	d	file:
-CAPTURE_FIELD	src/abd2d-niu.c	63;"	d	file:
-CAPTURE_FIELD	src/abd2d.c	59;"	d	file:
-CAPTURE_FIELD	src/miu-mat.c	59;"	d	file:
-CC	makefile	/^CC= gcc #icc#gcc$/;"	m
-CELLS_INSIDE_I	src/abd2d-mat.c	64;"	d	file:
-CELLS_INSIDE_I	src/abd2d-miu.c	64;"	d	file:
-CELLS_INSIDE_I	src/abd2d-niu.c	68;"	d	file:
-CELLS_INSIDE_I	src/abd2d.c	64;"	d	file:
-CELLS_INSIDE_I	src/miu-mat.c	64;"	d	file:
-CELLS_INSIDE_S	src/abd2d-mat.c	65;"	d	file:
-CELLS_INSIDE_S	src/abd2d-miu.c	65;"	d	file:
-CELLS_INSIDE_S	src/abd2d-niu.c	69;"	d	file:
-CELLS_INSIDE_S	src/abd2d.c	65;"	d	file:
-CELLS_INSIDE_S	src/miu-mat.c	65;"	d	file:
-CFLAGS	makefile	/^CFLAGS=-O3 -DMATLAB_SIMULATION -g$/;"	m
-CFL_FACTOR	src/abd2d-mat.c	21;"	d	file:
-CFL_FACTOR	src/abd2d-miu.c	21;"	d	file:
-CFL_FACTOR	src/abd2d-niu.c	21;"	d	file:
-CFL_FACTOR	src/abd2d.c	21;"	d	file:
-CFL_FACTOR	src/miu-mat.c	21;"	d	file:
-CFL_factor	src/common_data.h	/^CMyDataF CFL_factor = CFL_FACTOR;$/;"	v
-CMur	src/connecting.h	/^MyDataF CMur;$/;"	v
-CMyDataF	src/data_type_definetion.h	/^typedef const MyDataF CMyDataF;$/;"	t
-COMMOM_DATA_INCLUDE	src/common_data.h	2;"	d
-COORDINATES	src/defbnd.h	3;"	d
-COORDINATES	src/defbndi.h	5;"	d
-COURANT_FACTOR	src/abd2d-mat.c	20;"	d	file:
-COURANT_FACTOR	src/abd2d-miu.c	20;"	d	file:
-COURANT_FACTOR	src/abd2d-niu.c	20;"	d	file:
-COURANT_FACTOR	src/abd2d.c	20;"	d	file:
-COURANT_FACTOR	src/miu-mat.c	20;"	d	file:
-CURDIR	makefile	/^CURDIR=.$/;"	m
-CalDelays	src/source.h	/^void CalDelays()$/;"	f
-CalDomainSize	src/calculate_domain_size.h	/^void CalDomainSize(){$/;"	f
-CalErmsAtCoarseGrid	src/updatedensity.h	/^void CalErmsAtCoarseGrid()$/;"	f
-CalSumESqrt	src/updatedensity.h	/^void CalSumESqrt()$/;"	f
-CaptData	src/data_type_definetion.h	/^void CaptData(const int num,const char * const fname,const MyStruct data)$/;"	f
-CaptDataM	src/data_type_definetion.h	/^void CaptDataM(const int num,const char*fname,const MyStruct data,int p)$/;"	f
-CaptureE	src/captureefield.h	/^void CaptureE(MyDataF *CapEf,int CurTimeStep,int i, int j){$/;"	f
-Ceex	src/common_data.h	/^MyStruct Ceex,Ceey,Ceez;$/;"	v
-Ceey	src/common_data.h	/^MyStruct Ceex,Ceey,Ceez;$/;"	v
-Ceez	src/common_data.h	/^MyStruct Ceex,Ceey,Ceez;$/;"	v
-Cehx	src/common_data.h	/^MyStruct Cehx,Cehy,Cehz;$/;"	v
-Cehy	src/common_data.h	/^MyStruct Cehx,Cehy,Cehz;$/;"	v
-Cehz	src/common_data.h	/^MyStruct Cehx,Cehy,Cehz;$/;"	v
-Cevx	src/common_data.h	/^MyStruct Cevx,Cevy,Cevz;$/;"	v
-Cevy	src/common_data.h	/^MyStruct Cevx,Cevy,Cevz;$/;"	v
-Cevz	src/common_data.h	/^MyStruct Cevx,Cevy,Cevz;$/;"	v
-Cexe_yn	src/defbnd.h	/^COORDINATES Cexe_yn;$/;"	v
-Cexe_yn_i	src/defbndi.h	/^COORDINATES Cexe_yn_i;$/;"	v
-Cexe_yp	src/defbnd.h	/^COORDINATES Cexe_yp;$/;"	v
-Cexe_yp_i	src/defbndi.h	/^COORDINATES Cexe_yp_i;$/;"	v
-Cexhz	src/connecting.h	/^MyDataF Cexhz;$/;"	v
-Cexhz_yn	src/defbnd.h	/^COORDINATES Cexhz_yn;$/;"	v
-Cexhz_yn_i	src/defbndi.h	/^COORDINATES Cexhz_yn_i;$/;"	v
-Cexhz_yp	src/defbnd.h	/^COORDINATES Cexhz_yp;$/;"	v
-Cexhz_yp_i	src/defbndi.h	/^COORDINATES Cexhz_yp_i;$/;"	v
-Ceye_xn	src/defbnd.h	/^COORDINATES Ceye_xn;$/;"	v
-Ceye_xn_i	src/defbndi.h	/^COORDINATES Ceye_xn_i;$/;"	v
-Ceye_xp	src/defbnd.h	/^COORDINATES Ceye_xp;$/;"	v
-Ceye_xp_i	src/defbndi.h	/^COORDINATES Ceye_xp_i;$/;"	v
-Ceyhz	src/connecting.h	/^MyDataF Ceyhz;$/;"	v
-Ceyhz_xn	src/defbnd.h	/^COORDINATES Ceyhz_xn;$/;"	v
-Ceyhz_xn_i	src/defbndi.h	/^COORDINATES Ceyhz_xn_i;$/;"	v
-Ceyhz_xp	src/defbnd.h	/^COORDINATES Ceyhz_xp;$/;"	v
-Ceyhz_xp_i	src/defbndi.h	/^COORDINATES Ceyhz_xp_i;$/;"	v
-Cezxe_xn	src/defbnd.h	/^COORDINATES Cezxe_xn;$/;"	v
-Cezxe_xn_i	src/defbndi.h	/^COORDINATES Cezxe_xn_i;$/;"	v
-Cezxe_xp	src/defbnd.h	/^COORDINATES Cezxe_xp;$/;"	v
-Cezxe_xp_i	src/defbndi.h	/^COORDINATES Cezxe_xp_i;$/;"	v
-Cezxe_yn	src/defbnd.h	/^COORDINATES Cezxe_yn;$/;"	v
-Cezxe_yn_i	src/defbndi.h	/^COORDINATES Cezxe_yn_i;$/;"	v
-Cezxe_yp	src/defbnd.h	/^COORDINATES Cezxe_yp;$/;"	v
-Cezxe_yp_i	src/defbndi.h	/^COORDINATES Cezxe_yp_i;$/;"	v
-Cezxhy_xn	src/defbnd.h	/^COORDINATES Cezxhy_xn;$/;"	v
-Cezxhy_xn_i	src/defbndi.h	/^COORDINATES Cezxhy_xn_i;$/;"	v
-Cezxhy_xp	src/defbnd.h	/^COORDINATES Cezxhy_xp;$/;"	v
-Cezxhy_xp_i	src/defbndi.h	/^COORDINATES Cezxhy_xp_i;$/;"	v
-Cezxhy_yn	src/defbnd.h	/^COORDINATES Cezxhy_yn;$/;"	v
-Cezxhy_yn_i	src/defbndi.h	/^COORDINATES Cezxhy_yn_i;$/;"	v
-Cezxhy_yp	src/defbnd.h	/^COORDINATES Cezxhy_yp;$/;"	v
-Cezxhy_yp_i	src/defbndi.h	/^COORDINATES Cezxhy_yp_i;$/;"	v
-Cezye_xn	src/defbnd.h	/^COORDINATES Cezye_xn;$/;"	v
-Cezye_xn_i	src/defbndi.h	/^COORDINATES Cezye_xn_i;$/;"	v
-Cezye_xp	src/defbnd.h	/^COORDINATES Cezye_xp;$/;"	v
-Cezye_xp_i	src/defbndi.h	/^COORDINATES Cezye_xp_i;$/;"	v
-Cezye_yn	src/defbnd.h	/^COORDINATES Cezye_yn;$/;"	v
-Cezye_yn_i	src/defbndi.h	/^COORDINATES Cezye_yn_i;$/;"	v
-Cezye_yp	src/defbnd.h	/^COORDINATES Cezye_yp;$/;"	v
-Cezye_yp_i	src/defbndi.h	/^COORDINATES Cezye_yp_i;$/;"	v
-Cezyhx_xn	src/defbnd.h	/^COORDINATES Cezyhx_xn;$/;"	v
-Cezyhx_xn_i	src/defbndi.h	/^COORDINATES Cezyhx_xn_i;$/;"	v
-Cezyhx_xp	src/defbnd.h	/^COORDINATES Cezyhx_xp;$/;"	v
-Cezyhx_xp_i	src/defbndi.h	/^COORDINATES Cezyhx_xp_i;$/;"	v
-Cezyhx_yn	src/defbnd.h	/^COORDINATES Cezyhx_yn;$/;"	v
-Cezyhx_yn_i	src/defbndi.h	/^COORDINATES Cezyhx_yn_i;$/;"	v
-Cezyhx_yp	src/defbnd.h	/^COORDINATES Cezyhx_yp;$/;"	v
-Cezyhx_yp_i	src/defbndi.h	/^COORDINATES Cezyhx_yp_i;$/;"	v
-CheckIfNeOverLimit	src/test.h	/^void CheckIfNeOverLimit(int i,int j,MyDataF data) {$/;"	f
-CheckIfNonZeros	src/test.h	/^void CheckIfNonZeros(MyStruct stru) {$/;"	f
-CheckIfOverLimit	src/test.h	/^void CheckIfOverLimit(int i,int j,MyDataF data) {$/;"	f
-CheckStruct	src/data_type_definetion.h	/^void CheckStruct(const MyStruct stru)$/;"	f
-Chxez	src/common_data.h	/^MyDataF Chxez,Chyez,Chzex,Chzey;$/;"	v
-Chxez_yn	src/defbnd.h	/^COORDINATES Chxez_yn;$/;"	v
-Chxez_yn_i	src/defbndi.h	/^COORDINATES Chxez_yn_i;$/;"	v
-Chxez_yp	src/defbnd.h	/^COORDINATES Chxez_yp;$/;"	v
-Chxez_yp_i	src/defbndi.h	/^COORDINATES Chxez_yp_i;$/;"	v
-Chxh_yn	src/defbnd.h	/^COORDINATES Chxh_yn;$/;"	v
-Chxh_yn_i	src/defbndi.h	/^COORDINATES Chxh_yn_i;$/;"	v
-Chxh_yp	src/defbnd.h	/^COORDINATES Chxh_yp;$/;"	v
-Chxh_yp_i	src/defbndi.h	/^COORDINATES Chxh_yp_i;$/;"	v
-Chyez	src/common_data.h	/^MyDataF Chxez,Chyez,Chzex,Chzey;$/;"	v
-Chyez_xn	src/defbnd.h	/^COORDINATES Chyez_xn;$/;"	v
-Chyez_xn_i	src/defbndi.h	/^COORDINATES Chyez_xn_i;$/;"	v
-Chyez_xp	src/defbnd.h	/^COORDINATES Chyez_xp;$/;"	v
-Chyez_xp_i	src/defbndi.h	/^COORDINATES Chyez_xp_i;$/;"	v
-Chyh_xn	src/defbnd.h	/^COORDINATES Chyh_xn;$/;"	v
-Chyh_xn_i	src/defbndi.h	/^COORDINATES Chyh_xn_i;$/;"	v
-Chyh_xp	src/defbnd.h	/^COORDINATES Chyh_xp;$/;"	v
-Chyh_xp_i	src/defbndi.h	/^COORDINATES Chyh_xp_i;$/;"	v
-Chzex	src/common_data.h	/^MyDataF Chxez,Chyez,Chzex,Chzey;$/;"	v
-Chzey	src/common_data.h	/^MyDataF Chxez,Chyez,Chzex,Chzey;$/;"	v
-Chzxey_xn	src/defbnd.h	/^COORDINATES Chzxey_xn;$/;"	v
-Chzxey_xn_i	src/defbndi.h	/^COORDINATES Chzxey_xn_i;$/;"	v
-Chzxey_xp	src/defbnd.h	/^COORDINATES Chzxey_xp;$/;"	v
-Chzxey_xp_i	src/defbndi.h	/^COORDINATES Chzxey_xp_i;$/;"	v
-Chzxey_yn	src/defbnd.h	/^COORDINATES Chzxey_yn;$/;"	v
-Chzxey_yn_i	src/defbndi.h	/^COORDINATES Chzxey_yn_i;$/;"	v
-Chzxey_yp	src/defbnd.h	/^COORDINATES Chzxey_yp;$/;"	v
-Chzxey_yp_i	src/defbndi.h	/^COORDINATES Chzxey_yp_i;$/;"	v
-Chzxh_xn	src/defbnd.h	/^COORDINATES Chzxh_xn;$/;"	v
-Chzxh_xn_i	src/defbndi.h	/^COORDINATES Chzxh_xn_i;$/;"	v
-Chzxh_xp	src/defbnd.h	/^COORDINATES Chzxh_xp;$/;"	v
-Chzxh_xp_i	src/defbndi.h	/^COORDINATES Chzxh_xp_i;$/;"	v
-Chzxh_yn	src/defbnd.h	/^COORDINATES Chzxh_yn;$/;"	v
-Chzxh_yn_i	src/defbndi.h	/^COORDINATES Chzxh_yn_i;$/;"	v
-Chzxh_yp	src/defbnd.h	/^COORDINATES Chzxh_yp;$/;"	v
-Chzxh_yp_i	src/defbndi.h	/^COORDINATES Chzxh_yp_i;$/;"	v
-Chzyex_xn	src/defbnd.h	/^COORDINATES Chzyex_xn;$/;"	v
-Chzyex_xn_i	src/defbndi.h	/^COORDINATES Chzyex_xn_i;$/;"	v
-Chzyex_xp	src/defbnd.h	/^COORDINATES Chzyex_xp;$/;"	v
-Chzyex_xp_i	src/defbndi.h	/^COORDINATES Chzyex_xp_i;$/;"	v
-Chzyex_yn	src/defbnd.h	/^COORDINATES Chzyex_yn;$/;"	v
-Chzyex_yn_i	src/defbndi.h	/^COORDINATES Chzyex_yn_i;$/;"	v
-Chzyex_yp	src/defbnd.h	/^COORDINATES Chzyex_yp;$/;"	v
-Chzyex_yp_i	src/defbndi.h	/^COORDINATES Chzyex_yp_i;$/;"	v
-Chzyh_xn	src/defbnd.h	/^COORDINATES Chzyh_xn;$/;"	v
-Chzyh_xn_i	src/defbndi.h	/^COORDINATES Chzyh_xn_i;$/;"	v
-Chzyh_xp	src/defbnd.h	/^COORDINATES Chzyh_xp;$/;"	v
-Chzyh_xp_i	src/defbndi.h	/^COORDINATES Chzyh_xp_i;$/;"	v
-Chzyh_yn	src/defbnd.h	/^COORDINATES Chzyh_yn;$/;"	v
-Chzyh_yn_i	src/defbndi.h	/^COORDINATES Chzyh_yn_i;$/;"	v
-Chzyh_yp	src/defbnd.h	/^COORDINATES Chzyh_yp;$/;"	v
-Chzyh_yp_i	src/defbndi.h	/^COORDINATES Chzyh_yp_i;$/;"	v
-CourantFactor	src/common_data.h	/^CMyDataF CourantFactor = COURANT_FACTOR;$/;"	v
-CurTime	src/common_data.h	/^MyDataF CurTime=0;\/\/current time$/;"	v
-Cve	src/common_data.h	/^MyDataF Cve;$/;"	v
-DATA_TYPE_DEFINITION_INCLUDE	src/data_type_definetion.h	2;"	d
-DD	src/scatfdtd.h	4;"	d
-DEN_TIME_STEPS	src/abd2d-mat.c	26;"	d	file:
-DEN_TIME_STEPS	src/abd2d-miu.c	26;"	d	file:
-DEN_TIME_STEPS	src/abd2d-niu.c	26;"	d	file:
-DEN_TIME_STEPS	src/abd2d.c	26;"	d	file:
-DEN_TIME_STEPS	src/miu-mat.c	26;"	d	file:
-DISPLAY_NE	src/abd2d-mat.c	50;"	d	file:
-DISPLAY_NE	src/abd2d-miu.c	50;"	d	file:
-DISPLAY_NE	src/abd2d-niu.c	54;"	d	file:
-DISPLAY_NE	src/abd2d.c	50;"	d	file:
-DISPLAY_NE	src/miu-mat.c	50;"	d	file:
-DTF_VI_LIMIT	src/abd2d-mat.c	57;"	d	file:
-DTF_VI_LIMIT	src/abd2d-miu.c	57;"	d	file:
-DTF_VI_LIMIT	src/abd2d-niu.c	61;"	d	file:
-DTF_VI_LIMIT	src/abd2d.c	57;"	d	file:
-DTF_VI_LIMIT	src/miu-mat.c	57;"	d	file:
-D_kasi_max	src/common_data.h	/^MyDataF D_kasi_max;$/;"	v
-Da	src/common_data.h	/^MyDataF Da;$/;"	v
-De	src/common_data.h	/^MyDataF De;$/;"	v
-DelayEx	src/delays.h	/^MyDataF **DelayEx,**DelayEy,**DelayEz;$/;"	v
-DelayEy	src/delays.h	/^MyDataF **DelayEx,**DelayEy,**DelayEz;$/;"	v
-DelayEz	src/delays.h	/^MyDataF **DelayEx,**DelayEy,**DelayEz;$/;"	v
-DelayHx	src/delays.h	/^MyDataF **DelayHx,**DelayHy,**DelayHz;$/;"	v
-DelayHy	src/delays.h	/^MyDataF **DelayHx,**DelayHy,**DelayHz;$/;"	v
-DelayHz	src/delays.h	/^MyDataF **DelayHx,**DelayHy,**DelayHz;$/;"	v
-DensityBound	src/updatedensity.h	/^void DensityBound(MyStruct stru,int bndwidth,const int swidth) {$/;"	f
-Density_Time_Step	src/common_data.h	/^int Density_Time_Step = DEN_TIME_STEPS;$/;"	v
-Dexb	src/source.h	/^MyDataF *Dexb,*Dext;$/;"	v
-Dext	src/source.h	/^MyDataF *Dexb,*Dext;$/;"	v
-Deyl	src/source.h	/^MyDataF *Deyl,*Deyr;$/;"	v
-Deyr	src/source.h	/^MyDataF *Deyl,*Deyr;$/;"	v
-Dezb	src/source.h	/^MyDataF *Dezb,*Dezt,*Dezl,*Dezr;$/;"	v
-Dezl	src/source.h	/^MyDataF *Dezb,*Dezt,*Dezl,*Dezr;$/;"	v
-Dezr	src/source.h	/^MyDataF *Dezb,*Dezt,*Dezl,*Dezr;$/;"	v
-Dezt	src/source.h	/^MyDataF *Dezb,*Dezt,*Dezl,*Dezr;$/;"	v
-Dhxb	src/source.h	/^MyDataF *Dhxb,*Dhxt;$/;"	v
-Dhxt	src/source.h	/^MyDataF *Dhxb,*Dhxt;$/;"	v
-Dhyl	src/source.h	/^MyDataF *Dhyl,*Dhyr;$/;"	v
-Dhyr	src/source.h	/^MyDataF *Dhyl,*Dhyr;$/;"	v
-Dhzb	src/source.h	/^MyDataF *Dhzb,*Dhzt,*Dhzl,*Dhzr;$/;"	v
-Dhzl	src/source.h	/^MyDataF *Dhzb,*Dhzt,*Dhzl,*Dhzr;$/;"	v
-Dhzr	src/source.h	/^MyDataF *Dhzb,*Dhzt,*Dhzl,*Dhzr;$/;"	v
-Dhzt	src/source.h	/^MyDataF *Dhzb,*Dhzt,*Dhzl,*Dhzr;$/;"	v
-DispEMFields	src/simulate.h	/^void DispEMFields(const int timestep){$/;"	f
-DispNe	src/simulate.h	/^void DispNe(const int timestep){$/;"	f
-E0	src/common_data.h	/^MyDataF E0,H0;$/;"	v
-EFieldMurAB	src/murbnd.h	/^void EFieldMurAB(){$/;"	f
-EFieldMurAB2	src/murnontol.h	/^void EFieldMurAB2(){$/;"	f
-E_0	src/abd2d-mat.c	38;"	d	file:
-E_0	src/abd2d-miu.c	38;"	d	file:
-E_0	src/abd2d-niu.c	37;"	d	file:
-E_0	src/abd2d.c	38;"	d	file:
-E_0	src/miu-mat.c	38;"	d	file:
-Ei	src/connecting.h	/^MyDataF *Ei,*Hi;$/;"	v
-EndMatlabSim	src/simulate.h	/^void EndMatlabSim(){$/;"	f
-Erms	src/common_data.h	/^MyStruct Erms;$/;"	v
-Ermsx	src/common_data.h	/^MyStruct Ermsx,Ermsy;$/;"	v
-Ermsy	src/common_data.h	/^MyStruct Ermsx,Ermsy;$/;"	v
-Eta_Kang	src/InonizationFormula.c	/^double Eta_Kang(double E)$/;"	f
-Eta_MorrowAndLowke	src/InonizationFormula.c	/^double Eta_MorrowAndLowke(double E, double N)$/;"	f
-Eta_Nikonov	src/InonizationFormula.c	/^double Eta_Nikonov(double E, double P)$/;"	f
-Ex0	src/common_data.h	/^MyDataF Hx0,Hz0,Hy0,Ez0,Ex0,Ey0;$/;"	v
-Ex_i	src/common_data.h	/^MyStruct Ey_i,Ex_i,Ez_i,Hx_i,Hy_i,Hz_i;$/;"	v
-Ex_s	src/common_data.h	/^MyStruct Ey_s,Ex_s,Ez_s,Hx_s,Hy_s,Hz_s;$/;"	v
-Ex_s_pre	src/common_data.h	/^MyStruct Ey_s_pre,Ex_s_pre,Ez_s_pre;$/;"	v
-Ey0	src/common_data.h	/^MyDataF Hx0,Hz0,Hy0,Ez0,Ex0,Ey0;$/;"	v
-Ey_i	src/common_data.h	/^MyStruct Ey_i,Ex_i,Ez_i,Hx_i,Hy_i,Hz_i;$/;"	v
-Ey_s	src/common_data.h	/^MyStruct Ey_s,Ex_s,Ez_s,Hx_s,Hy_s,Hz_s;$/;"	v
-Ey_s_pre	src/common_data.h	/^MyStruct Ey_s_pre,Ex_s_pre,Ez_s_pre;$/;"	v
-Ez0	src/common_data.h	/^MyDataF Hx0,Hz0,Hy0,Ez0,Ex0,Ey0;$/;"	v
-Ez_i	src/common_data.h	/^MyStruct Ey_i,Ex_i,Ez_i,Hx_i,Hy_i,Hz_i;$/;"	v
-Ez_s	src/common_data.h	/^MyStruct Ey_s,Ex_s,Ez_s,Hx_s,Hy_s,Hz_s;$/;"	v
-Ez_s_pre	src/common_data.h	/^MyStruct Ey_s_pre,Ex_s_pre,Ez_s_pre;$/;"	v
-Ezx_xn	src/defbnd.h	/^COORDINATES Ezx_xn;$/;"	v
-Ezx_xn_i	src/defbndi.h	/^COORDINATES Ezx_xn_i;$/;"	v
-Ezx_xp	src/defbnd.h	/^COORDINATES Ezx_xp;$/;"	v
-Ezx_xp_i	src/defbndi.h	/^COORDINATES Ezx_xp_i;$/;"	v
-Ezx_yn	src/defbnd.h	/^COORDINATES Ezx_yn;$/;"	v
-Ezx_yn_i	src/defbndi.h	/^COORDINATES Ezx_yn_i;$/;"	v
-Ezx_yp	src/defbnd.h	/^COORDINATES Ezx_yp;$/;"	v
-Ezx_yp_i	src/defbndi.h	/^COORDINATES Ezx_yp_i;$/;"	v
-Ezy_xn	src/defbnd.h	/^COORDINATES Ezy_xn;$/;"	v
-Ezy_xn_i	src/defbndi.h	/^COORDINATES Ezy_xn_i;$/;"	v
-Ezy_xp	src/defbnd.h	/^COORDINATES Ezy_xp;$/;"	v
-Ezy_xp_i	src/defbndi.h	/^COORDINATES Ezy_xp_i;$/;"	v
-Ezy_yn	src/defbnd.h	/^COORDINATES Ezy_yn;$/;"	v
-Ezy_yn_i	src/defbndi.h	/^COORDINATES Ezy_yn_i;$/;"	v
-Ezy_yp	src/defbnd.h	/^COORDINATES Ezy_yp;$/;"	v
-Ezy_yp_i	src/defbndi.h	/^COORDINATES Ezy_yp_i;$/;"	v
-FIELD_TO_DISPLAY0	src/abd2d-mat.c	47;"	d	file:
-FIELD_TO_DISPLAY0	src/abd2d-miu.c	47;"	d	file:
-FIELD_TO_DISPLAY0	src/abd2d-niu.c	46;"	d	file:
-FIELD_TO_DISPLAY0	src/abd2d.c	47;"	d	file:
-FIELD_TO_DISPLAY0	src/miu-mat.c	47;"	d	file:
-FIELD_TO_DISPLAY1	src/abd2d-mat.c	48;"	d	file:
-FIELD_TO_DISPLAY1	src/abd2d-miu.c	48;"	d	file:
-FIELD_TO_DISPLAY1	src/abd2d-niu.c	47;"	d	file:
-FIELD_TO_DISPLAY1	src/abd2d.c	48;"	d	file:
-FIELD_TO_DISPLAY1	src/miu-mat.c	48;"	d	file:
-FIELD_TO_DISPLAY2	src/abd2d-niu.c	48;"	d	file:
-FIELD_TO_DISPLAY2_	src/abd2d-mat.c	49;"	d	file:
-FIELD_TO_DISPLAY2_	src/abd2d-miu.c	49;"	d	file:
-FIELD_TO_DISPLAY2_	src/abd2d.c	49;"	d	file:
-FIELD_TO_DISPLAY2_	src/miu-mat.c	49;"	d	file:
-FIELD_TO_DISPLAY3	src/abd2d-niu.c	50;"	d	file:
-FIELD_TO_DISPLAY4	src/abd2d-niu.c	51;"	d	file:
-FIELD_TO_DISPLAY5	src/abd2d-niu.c	52;"	d	file:
-FINE_GRID_SIZE	src/abd2d-mat.c	32;"	d	file:
-FINE_GRID_SIZE	src/abd2d-miu.c	32;"	d	file:
-FINE_GRID_SIZE	src/abd2d-niu.c	32;"	d	file:
-FINE_GRID_SIZE	src/abd2d.c	32;"	d	file:
-FINE_GRID_SIZE	src/miu-mat.c	32;"	d	file:
-FREQUENCY	src/abd2d-mat.c	41;"	d	file:
-FREQUENCY	src/abd2d-miu.c	41;"	d	file:
-FREQUENCY	src/abd2d-niu.c	40;"	d	file:
-FREQUENCY	src/abd2d.c	41;"	d	file:
-FREQUENCY	src/miu-mat.c	41;"	d	file:
-FreeDelayArrays	src/source.h	/^void FreeDelayArrays()$/;"	f
-FreePMLSpace	src/boundary.h	/^void FreePMLSpace(){$/;"	f
-FreePMLSpacei	src/IncBound.h	/^void FreePMLSpacei(){$/;"	f
-FreeSpace	src/freespace.h	/^void FreeSpace(){$/;"	f
-GetD	src/savedata.h	2;"	d
-H0	src/common_data.h	/^MyDataF E0,H0;$/;"	v
-Hi	src/connecting.h	/^MyDataF *Ei,*Hi;$/;"	v
-Hx0	src/common_data.h	/^MyDataF Hx0,Hz0,Hy0,Ez0,Ex0,Ey0;$/;"	v
-Hx_i	src/common_data.h	/^MyStruct Ey_i,Ex_i,Ez_i,Hx_i,Hy_i,Hz_i;$/;"	v
-Hx_s	src/common_data.h	/^MyStruct Ey_s,Ex_s,Ez_s,Hx_s,Hy_s,Hz_s;$/;"	v
-Hy0	src/common_data.h	/^MyDataF Hx0,Hz0,Hy0,Ez0,Ex0,Ey0;$/;"	v
-Hy_i	src/common_data.h	/^MyStruct Ey_i,Ex_i,Ez_i,Hx_i,Hy_i,Hz_i;$/;"	v
-Hy_s	src/common_data.h	/^MyStruct Ey_s,Ex_s,Ez_s,Hx_s,Hy_s,Hz_s;$/;"	v
-Hz0	src/common_data.h	/^MyDataF Hx0,Hz0,Hy0,Ez0,Ex0,Ey0;$/;"	v
-Hz_i	src/common_data.h	/^MyStruct Ey_i,Ex_i,Ez_i,Hx_i,Hy_i,Hz_i;$/;"	v
-Hz_s	src/common_data.h	/^MyStruct Ey_s,Ex_s,Ez_s,Hx_s,Hy_s,Hz_s;$/;"	v
-Hzx_xn	src/defbnd.h	/^COORDINATES Hzx_xn;$/;"	v
-Hzx_xn_i	src/defbndi.h	/^COORDINATES Hzx_xn_i;$/;"	v
-Hzx_xp	src/defbnd.h	/^COORDINATES Hzx_xp;$/;"	v
-Hzx_xp_i	src/defbndi.h	/^COORDINATES Hzx_xp_i;$/;"	v
-Hzx_yn	src/defbnd.h	/^COORDINATES Hzx_yn;$/;"	v
-Hzx_yn_i	src/defbndi.h	/^COORDINATES Hzx_yn_i;$/;"	v
-Hzx_yp	src/defbnd.h	/^COORDINATES Hzx_yp;$/;"	v
-Hzx_yp_i	src/defbndi.h	/^COORDINATES Hzx_yp_i;$/;"	v
-Hzy_xn	src/defbnd.h	/^COORDINATES Hzy_xn;$/;"	v
-Hzy_xn_i	src/defbndi.h	/^COORDINATES Hzy_xn_i;$/;"	v
-Hzy_xp	src/defbnd.h	/^COORDINATES Hzy_xp;$/;"	v
-Hzy_xp_i	src/defbndi.h	/^COORDINATES Hzy_xp_i;$/;"	v
-Hzy_yn	src/defbnd.h	/^COORDINATES Hzy_yn;$/;"	v
-Hzy_yn_i	src/defbndi.h	/^COORDINATES Hzy_yn_i;$/;"	v
-Hzy_yp	src/defbnd.h	/^COORDINATES Hzy_yp;$/;"	v
-Hzy_yp_i	src/defbndi.h	/^COORDINATES Hzy_yp_i;$/;"	v
-IF_WITH_DENSITY	src/abd2d-niu.c	74;"	d	file:
-INC_ANGLE	src/abd2d-mat.c	43;"	d	file:
-INC_ANGLE	src/abd2d-miu.c	43;"	d	file:
-INC_ANGLE	src/abd2d-niu.c	42;"	d	file:
-INC_ANGLE	src/abd2d.c	43;"	d	file:
-INC_ANGLE	src/miu-mat.c	43;"	d	file:
-INC_SIZE	src/connecting.h	14;"	d
-INIT_COMMOM_DATA_INCLUDE	src/init_com_data.h	3;"	d
-INIT_DATA_INCLUDE	src/init_data.h	4;"	d
-ISCONNECT	src/abd2d-niu.c	73;"	d	file:
-IfWithDensity	src/common_data.h	/^int IfWithDensity = IF_WITH_DENSITY;$/;"	v
-InitBeta	src/init_data.h	/^void InitBeta(MyStruct* stru,MyDataF gamma){$/;"	f
-InitBndCtrl	src/bndctrl.h	/^void InitBndCtrl(){$/;"	f
-InitCapture	src/captureefield.h	/^void InitCapture(int ttstep){$/;"	f
-InitCee	src/init_data.h	/^void InitCee(MyStruct beta){$/;"	f
-InitCeeNoDen	src/init_data.h	/^void InitCeeNoDen(){$/;"	f
-InitCeh	src/init_data.h	/^void InitCeh(MyStruct beta){$/;"	f
-InitCehNoDen	src/init_data.h	/^void InitCehNoDen(){$/;"	f
-InitCev	src/init_data.h	/^void InitCev(MyStruct beta,MyDataF alpha_ev){$/;"	f
-InitCevNoDen	src/init_data.h	/^void InitCevNoDen(){$/;"	f
-InitCoeff	src/init_data.h	/^void InitCoeff(){$/;"	f
-InitComData	src/init_com_data.h	/^void InitComData(){$/;"	f
-InitFields	src/source.h	/^void InitFields()$/;"	f
-InitMyStr	src/data_type_definetion.h	/^void InitMyStr(int nnx,int nny,MyStruct* ms){$/;"	f
-InitPMLBound	src/initbnd.h	/^void InitPMLBound(){$/;"	f
-InitPMLBoundTEx	src/initbnd.h	/^void InitPMLBoundTEx(){$/;"	f
-InitPMLBoundTExi	src/initbndi.h	/^void InitPMLBoundTExi(){$/;"	f
-InitPMLBoundTMx	src/initbnd.h	/^void InitPMLBoundTMx(){$/;"	f
-InitPMLBoundTMxi	src/initbndi.h	/^void InitPMLBoundTMxi(){$/;"	f
-InitPMLBoundi	src/initbndi.h	/^void InitPMLBoundi(){$/;"	f
-InitSim	src/simulate.h	/^void InitSim(){$/;"	f
-Init_ne	src/init_data.h	/^void Init_ne(){$/;"	f
-IntTtlFldDmnBnd	src/scatter_total_bnd.h	/^void IntTtlFldDmnBnd(){$/;"	f
-InterpolatErms	src/updatedensity.h	/^void InterpolatErms() {$/;"	f
-IsAnySidePML	src/bndctrl.h	/^int IsAnySidePML = 0;$/;"	v
-IsMatlabSim	src/common_data.h	/^int IsMatlabSim = 0;$/;"	v
-IsPMLxn	src/bndctrl.h	/^int IsPMLxn = 0;$/;"	v
-IsPMLxp	src/bndctrl.h	/^int IsPMLxp = 0;$/;"	v
-IsPMLyn	src/bndctrl.h	/^int IsPMLyn = 0;$/;"	v
-IsPMLyp	src/bndctrl.h	/^int IsPMLyp = 0;$/;"	v
-IsTEx	src/common_data.h	/^int IsTEx = _SOURCE_TEX_;$/;"	v
-IsTMx	src/common_data.h	/^int IsTMx = _SOURCE_TMX_;$/;"	v
-LD	makefile	/^LD=ld$/;"	m
-LEAPSTEP_OF_CAPTURE	src/abd2d-mat.c	58;"	d	file:
-LEAPSTEP_OF_CAPTURE	src/abd2d-miu.c	58;"	d	file:
-LEAPSTEP_OF_CAPTURE	src/abd2d-niu.c	62;"	d	file:
-LEAPSTEP_OF_CAPTURE	src/abd2d.c	58;"	d	file:
-LEAPSTEP_OF_CAPTURE	src/miu-mat.c	58;"	d	file:
-LEAPSTEP_OF_DISPLAY	src/abd2d-mat.c	56;"	d	file:
-LEAPSTEP_OF_DISPLAY	src/abd2d-miu.c	56;"	d	file:
-LEAPSTEP_OF_DISPLAY	src/abd2d-niu.c	60;"	d	file:
-LEAPSTEP_OF_DISPLAY	src/abd2d.c	56;"	d	file:
-LEAPSTEP_OF_DISPLAY	src/miu-mat.c	56;"	d	file:
-LIB	makefile	/^LIB=-lm $(MATLIB)$/;"	m
-MATINC	makefile	/^MATINC=-I$(MATPATH)\/extern\/include$/;"	m
-MATLAB_SIMULATION	src/abd2d-mat.c	34;"	d	file:
-MATLAB_SIMULATION	src/miu-mat.c	34;"	d	file:
-MATLAB_SIMULATION_	src/abd2d-miu.c	34;"	d	file:
-MATLAB_SIMULATION_	src/abd2d.c	34;"	d	file:
-MATLIB	makefile	/^MATLIB=$(MATLINK) -L$(MATPATH)\/bin\/glnxa64 -lmx -leng$/;"	m
-MATLINK	makefile	/^MATLINK=-Wl,-rpath=$(MATPATH)\/bin\/glnxa64$/;"	m
-MATPATH	makefile	/^MATPATH=\/opt\/Matlab\/R2011a# for local server$/;"	m
-MAXWELL_MESH_SIZE	src/abd2d-mat.c	22;"	d	file:
-MAXWELL_MESH_SIZE	src/abd2d-miu.c	22;"	d	file:
-MAXWELL_MESH_SIZE	src/abd2d-niu.c	22;"	d	file:
-MAXWELL_MESH_SIZE	src/abd2d.c	22;"	d	file:
-MAXWELL_MESH_SIZE	src/miu-mat.c	22;"	d	file:
-MAX_BUFFER	src/abd2d-niu.c	117;"	d	file:
-MAX_LIMIT	src/abd2d-mat.c	18;"	d	file:
-MAX_LIMIT	src/abd2d-miu.c	18;"	d	file:
-MAX_LIMIT	src/abd2d-niu.c	18;"	d	file:
-MAX_LIMIT	src/abd2d.c	18;"	d	file:
-MAX_LIMIT	src/miu-mat.c	18;"	d	file:
-MAX_NE	src/abd2d-mat.c	42;"	d	file:
-MAX_NE	src/abd2d-miu.c	42;"	d	file:
-MAX_NE	src/abd2d-niu.c	41;"	d	file:
-MAX_NE	src/abd2d.c	42;"	d	file:
-MAX_NE	src/miu-mat.c	42;"	d	file:
-MDOUBLE	src/captureefield.h	4;"	d
-MDOUBLE	src/defbnd.h	4;"	d
-MDOUBLE	src/defbndi.h	6;"	d
-MFieldMurAB	src/murbnd.h	/^void MFieldMurAB(){$/;"	f
-MFieldMurAB2	src/murnontol.h	/^void MFieldMurAB2(){$/;"	f
-MTimeStep	src/scatfdtd.h	/^int MTimeStep=1,MultiSize;$/;"	v
-MultiSize	src/scatfdtd.h	/^int MTimeStep=1,MultiSize;$/;"	v
-MurBndToStru	src/murbound.h	/^void MurBndToStru(MyStruct mystr,int nbd){$/;"	f
-MurBoundEField	src/murbound.h	/^void MurBoundEField(){$/;"	f
-MurBoundMField	src/murbound.h	/^void MurBoundMField(){$/;"	f
-MyDataF	src/data_type_definetion.h	/^typedef double MyDataF;$/;"	t
-MyStruct	src/data_type_definetion.h	/^} MyStruct;$/;"	t	typeref:struct:__anon1
-NE0	src/abd2d-mat.c	39;"	d	file:
-NE0	src/abd2d-miu.c	39;"	d	file:
-NE0	src/abd2d-niu.c	38;"	d	file:
-NE0	src/abd2d.c	39;"	d	file:
-NE0	src/miu-mat.c	39;"	d	file:
-NE_MAX_LIMIT	src/abd2d-mat.c	19;"	d	file:
-NE_MAX_LIMIT	src/abd2d-miu.c	19;"	d	file:
-NE_MAX_LIMIT	src/abd2d-niu.c	19;"	d	file:
-NE_MAX_LIMIT	src/abd2d.c	19;"	d	file:
-NE_MAX_LIMIT	src/miu-mat.c	19;"	d	file:
-NUMBER_OF_CELLS_IN_PML_BOUND	src/abd2d-mat.c	23;"	d	file:
-NUMBER_OF_CELLS_IN_PML_BOUND	src/abd2d-miu.c	23;"	d	file:
-NUMBER_OF_CELLS_IN_PML_BOUND	src/abd2d-niu.c	23;"	d	file:
-NUMBER_OF_CELLS_IN_PML_BOUND	src/abd2d.c	23;"	d	file:
-NUMBER_OF_CELLS_IN_PML_BOUND	src/miu-mat.c	23;"	d	file:
-NUMBER_OF_WAVELENGTHS_IN_DOMAIN	src/abd2d-mat.c	25;"	d	file:
-NUMBER_OF_WAVELENGTHS_IN_DOMAIN	src/abd2d-miu.c	25;"	d	file:
-NUMBER_OF_WAVELENGTHS_IN_DOMAIN	src/abd2d-niu.c	25;"	d	file:
-NUMBER_OF_WAVELENGTHS_IN_DOMAIN	src/abd2d.c	25;"	d	file:
-NUMBER_OF_WAVELENGTHS_IN_DOMAIN	src/miu-mat.c	25;"	d	file:
-Niu_Kang	src/InonizationFormula.c	/^void Niu_Kang(double *pNiu_i,double *pNiu_a,double E)$/;"	f
-Niu_MorrowAndLowke	src/InonizationFormula.c	/^void Niu_MorrowAndLowke(double *pNiu_i,double *pNiu_a,double E,double N)$/;"	f
-Niu_Nikonov	src/InonizationFormula.c	/^void Niu_Nikonov(double *pNiu_i,double *pNiu_a,double E,double P)$/;"	f
-Niu_a_Kang	src/InonizationFormula.c	/^double Niu_a_Kang(double E)$/;"	f
-Niu_a_MorrowAndLowke	src/InonizationFormula.c	/^double Niu_a_MorrowAndLowke(double E,double N)$/;"	f
-Niu_a_Nikonov	src/InonizationFormula.c	/^double Niu_a_Nikonov(double E,double P)$/;"	f
-Niu_i_Kang	src/InonizationFormula.c	/^double Niu_i_Kang(double E)$/;"	f
-Niu_i_MorrowAndLowke	src/InonizationFormula.c	/^double Niu_i_MorrowAndLowke(double E,double N)$/;"	f
-Niu_i_Nikonov	src/InonizationFormula.c	/^double Niu_i_Nikonov(double E,double P)$/;"	f
-PMLCellxn	src/bndctrl.h	/^int PMLCellxn = 0;$/;"	v
-PMLCellxp	src/bndctrl.h	/^int PMLCellxp = 0;$/;"	v
-PMLCellyn	src/bndctrl.h	/^int PMLCellyn = 0;$/;"	v
-PMLCellyp	src/bndctrl.h	/^int PMLCellyp = 0;$/;"	v
-PULSE_LENGGTH_IN_TIME	src/abd2d-mat.c	31;"	d	file:
-PULSE_LENGGTH_IN_TIME	src/abd2d-miu.c	31;"	d	file:
-PULSE_LENGGTH_IN_TIME	src/abd2d-niu.c	31;"	d	file:
-PULSE_LENGGTH_IN_TIME	src/abd2d.c	31;"	d	file:
-PULSE_LENGGTH_IN_TIME	src/miu-mat.c	31;"	d	file:
-PhaseVelRatio	src/connecting.h	/^MyDataF PhaseVelRatio(MyDataF angle)$/;"	f
-PreSimuAdd0	src/matlabsim.h	/^void PreSimuAdd0(Engine *ep,const MyStruct stru){$/;"	f
-PreSimuAdd1	src/matlabsim.h	/^void PreSimuAdd1(Engine *ep,const MyStruct stru){$/;"	f
-PreSimuAdd2	src/matlabsim.h	/^void PreSimuAdd2(Engine *ep,const MyStruct stru){$/;"	f
-PreSimuAddNE	src/matlabsim.h	/^void PreSimuAddNE(Engine *ep,const MyStruct stru){$/;"	f
-PrintData	src/data_type_definetion.h	/^void PrintData(MyStruct mst){$/;"	f
-PrintInput	src/abd2d-niu.c	/^void PrintInput()$/;"	f
-PrintSourceSize	src/scatfdtd.h	/^void PrintSourceSize(int xpos,int ypos,int sxpos,int sypos){$/;"	f
-Ratio_x	src/common_data.h	/^MyDataF Ratio_x,Ratio_y;$/;"	v
-Ratio_y	src/common_data.h	/^MyDataF Ratio_x,Ratio_y;$/;"	v
-ResetStructData	src/data_type_definetion.h	/^void ResetStructData(MyStruct mst){$/;"	f
-ResetStructData2	src/data_type_definetion.h	/^void ResetStructData2(MyStruct mst){$/;"	f
-SAVE_ERMS_LEAP	src/abd2d-mat.c	30;"	d	file:
-SAVE_ERMS_LEAP	src/abd2d-miu.c	30;"	d	file:
-SAVE_ERMS_LEAP	src/abd2d-niu.c	30;"	d	file:
-SAVE_ERMS_LEAP	src/abd2d.c	30;"	d	file:
-SAVE_ERMS_LEAP	src/miu-mat.c	30;"	d	file:
-SAVE_LEAP	src/abd2d-mat.c	29;"	d	file:
-SAVE_LEAP	src/abd2d-miu.c	29;"	d	file:
-SAVE_LEAP	src/abd2d-niu.c	29;"	d	file:
-SAVE_LEAP	src/abd2d.c	29;"	d	file:
-SAVE_LEAP	src/miu-mat.c	29;"	d	file:
-SCATTERED_FORMATION	src/abd2d-mat.c	33;"	d	file:
-SCATTERED_FORMATION	src/abd2d-miu.c	33;"	d	file:
-SCATTERED_FORMATION	src/abd2d-niu.c	33;"	d	file:
-SCATTERED_FORMATION	src/abd2d.c	33;"	d	file:
-SCATTERED_FORMATION	src/miu-mat.c	33;"	d	file:
-SCATTER_FIELD_DOMAIN_BND_SIZE	src/abd2d-mat.c	24;"	d	file:
-SCATTER_FIELD_DOMAIN_BND_SIZE	src/abd2d-miu.c	24;"	d	file:
-SCATTER_FIELD_DOMAIN_BND_SIZE	src/abd2d-niu.c	24;"	d	file:
-SCATTER_FIELD_DOMAIN_BND_SIZE	src/abd2d.c	24;"	d	file:
-SCATTER_FIELD_DOMAIN_BND_SIZE	src/miu-mat.c	24;"	d	file:
-SCATTER_FIELD_DOMAIN_BND_SIZE	src/scatter_total_bnd.h	5;"	d
-SCATTER_TOTAL_BOUNDARY_INCLUDE	src/scatter_total_bnd.h	2;"	d
-SD	src/scatfdtd.h	184;"	d
-SD	src/scatfdtd.h	3;"	d
-SOURCES_SIZE	src/abd2d-mat.c	68;"	d	file:
-SOURCES_SIZE	src/abd2d-miu.c	68;"	d	file:
-SOURCES_SIZE	src/abd2d-niu.c	72;"	d	file:
-SOURCES_SIZE	src/abd2d.c	68;"	d	file:
-SOURCES_SIZE	src/miu-mat.c	68;"	d	file:
-SOURCE_POS_IN_X	src/abd2d-mat.c	67;"	d	file:
-SOURCE_POS_IN_X	src/abd2d-miu.c	67;"	d	file:
-SOURCE_POS_IN_X	src/abd2d-niu.c	71;"	d	file:
-SOURCE_POS_IN_X	src/abd2d.c	67;"	d	file:
-SOURCE_POS_IN_X	src/miu-mat.c	67;"	d	file:
-SOURCE_POS_IN_Y	src/abd2d-mat.c	66;"	d	file:
-SOURCE_POS_IN_Y	src/abd2d-miu.c	66;"	d	file:
-SOURCE_POS_IN_Y	src/abd2d-niu.c	70;"	d	file:
-SOURCE_POS_IN_Y	src/abd2d.c	66;"	d	file:
-SOURCE_POS_IN_Y	src/miu-mat.c	66;"	d	file:
-SRC	makefile	/^SRC=$(CURDIR)\/src$/;"	m
-SaveCapField	src/test.h	/^void SaveCapField(const int timestep)$/;"	f
-SaveData	src/savedata.h	/^void SaveData(MyStruct data,char* filename,FILE *hfile){$/;"	f
-SaveErms	src/test.h	/^void SaveErms(int nestep)$/;"	f
-SaveRows	src/test.h	/^void SaveRows(const MyStruct stru,int row,char *fname)$/;"	f
-SaveTimeStep	src/common_data.h	/^int SaveTimeStep=SAVE_LEAP;$/;"	v
-SaveToFile	src/savedata.h	/^void SaveToFile(){$/;"	f
-SetOriginPoint	src/delays.h	/^void SetOriginPoint()$/;"	f
-Simulate0	src/matlabsim.h	/^void Simulate0(Engine *ep,const MyStruct stru){$/;"	f
-Simulate1	src/matlabsim.h	/^void Simulate1(Engine *ep,const MyStruct stru){$/;"	f
-Simulate2	src/matlabsim.h	/^void Simulate2(Engine *ep,const MyStruct stru){$/;"	f
-SimulateNe	src/matlabsim.h	/^void SimulateNe( Engine *ep,const MyStruct stru){$/;"	f
-Source	src/delays.h	/^MyDataF Source(MyDataF t)$/;"	f
-Source	src/source.h	/^MyDataF Source(MyDataF t)$/;"	f
-Step	src/scatfdtd.h	/^int Step=1;$/;"	v
-T	src/common_data.h	/^MyDataF T;\/\/$/;"	v
-TExEFieldMur	src/murbnd.h	/^void TExEFieldMur(){$/;"	f
-TExEFieldMur2	src/murnontol.h	/^void TExEFieldMur2(){$/;"	f
-TExMFieldMur	src/murbnd.h	/^void TExMFieldMur(){$/;"	f
-TExMFieldMur2	src/murnontol.h	/^void TExMFieldMur2(){$/;"	f
-TMxEFieldMur	src/murbnd.h	/^void TMxEFieldMur(){$/;"	f
-TMxEFieldMur2	src/murnontol.h	/^void TMxEFieldMur2(){$/;"	f
-TMxMFieldMur	src/murbnd.h	/^void TMxMFieldMur(){$/;"	f
-TMxMFieldMur2	src/murnontol.h	/^void TMxMFieldMur2(){$/;"	f
-TOTAL_TIME	src/abd2d-mat.c	28;"	d	file:
-TOTAL_TIME	src/abd2d-miu.c	28;"	d	file:
-TOTAL_TIME	src/abd2d-niu.c	28;"	d	file:
-TOTAL_TIME	src/abd2d.c	28;"	d	file:
-TOTAL_TIME	src/miu-mat.c	28;"	d	file:
-TotalTimeStep	src/common_data.h	/^int TotalTimeStep;$/;"	v
-UpdEltFldForPML_TEz	src/updbnd.h	/^void UpdEltFldForPML_TEz(MyStruct ez,MyStruct hx,MyStruct hy){$/;"	f
-UpdEltFldForPML_TMz	src/updbnd.h	/^void UpdEltFldForPML_TMz(MyStruct ex,MyStruct ey,MyStruct hz)$/;"	f
-UpdMagFldForPML_TEz	src/updbnd.h	/^void UpdMagFldForPML_TEz(MyStruct hx,MyStruct hy,MyStruct ez){$/;"	f
-UpdMagFldForPML_TMz	src/updbnd.h	/^void UpdMagFldForPML_TMz(MyStruct hz,MyStruct ex,MyStruct ey){$/;"	f
-UpdateCoeff	src/updatecoef.h	/^void UpdateCoeff(){$/;"	f
-UpdateDensity	src/updatedensity.h	/^void UpdateDensity() {$/;"	f
-UpdateEField	src/updatescafield.h	/^void UpdateEField(){$/;"	f
-UpdateEFieldForPML	src/updbnd.h	/^void UpdateEFieldForPML(MyStruct hx,MyStruct hy,MyStruct hz,MyStruct ex,MyStruct ey,MyStruct ez){$/;"	f
-UpdateMField	src/updatescafield.h	/^void UpdateMField(){$/;"	f
-UpdateMFieldForPML	src/updbnd.h	/^void UpdateMFieldForPML(MyStruct hx,MyStruct hy,MyStruct hz,MyStruct ex,MyStruct ey,MyStruct ez){$/;"	f
-UpdateVelocity	src/updatevelocity.h	/^void UpdateVelocity(){$/;"	f
-Vex	src/common_data.h	/^MyStruct Vey,Vex,Vez;$/;"	v
-Vey	src/common_data.h	/^MyStruct Vey,Vex,Vez;$/;"	v
-Vez	src/common_data.h	/^MyStruct Vey,Vex,Vez;$/;"	v
-Vp_ratio	src/connecting.h	/^MyDataF Vp_ratio;\/\/phase velocity ratio$/;"	v
-We_Kang	src/InonizationFormula.c	/^double We_Kang(double E)$/;"	f
-We_MorrowAndLowke	src/InonizationFormula.c	/^double We_MorrowAndLowke(double E, double N){$/;"	f
-We_Nikonov	src/InonizationFormula.c	/^double We_Nikonov(double E, double P){$/;"	f
-_BOUNDARY_H_	src/boundary.h	2;"	d
-_CRT_SECURE_NO_DEPRECATE	src/abd2d-mat.c	1;"	d	file:
-_CRT_SECURE_NO_DEPRECATE	src/abd2d-miu.c	1;"	d	file:
-_CRT_SECURE_NO_DEPRECATE	src/abd2d-niu.c	1;"	d	file:
-_CRT_SECURE_NO_DEPRECATE	src/abd2d.c	1;"	d	file:
-_CRT_SECURE_NO_DEPRECATE	src/miu-mat.c	1;"	d	file:
-_DEFBND_H_	src/defbnd.h	2;"	d
-_INIT_BNDI_H_	src/initbndi.h	2;"	d
-_INIT_BND_H_	src/initbnd.h	2;"	d
-_MATLAB_SIM_H_	src/matlabsim.h	2;"	d
-_SIMULATE_H_	src/simulate.h	3;"	d
-_SOURCE_TEX_	src/abd2d-mat.c	35;"	d	file:
-_SOURCE_TEX_	src/abd2d-miu.c	35;"	d	file:
-_SOURCE_TEX_	src/abd2d-niu.c	34;"	d	file:
-_SOURCE_TEX_	src/abd2d.c	35;"	d	file:
-_SOURCE_TEX_	src/miu-mat.c	35;"	d	file:
-_SOURCE_TMX_	src/abd2d-mat.c	36;"	d	file:
-_SOURCE_TMX_	src/abd2d-miu.c	36;"	d	file:
-_SOURCE_TMX_	src/abd2d-niu.c	35;"	d	file:
-_SOURCE_TMX_	src/abd2d.c	36;"	d	file:
-_SOURCE_TMX_	src/miu-mat.c	36;"	d	file:
-_UPDATE_COEF_H_	src/updatecoef.h	2;"	d
-_USE_MATH_DEFINES	src/abd2d-mat.c	5;"	d	file:
-_USE_MATH_DEFINES	src/abd2d-miu.c	5;"	d	file:
-_USE_MATH_DEFINES	src/abd2d-niu.c	5;"	d	file:
-_USE_MATH_DEFINES	src/abd2d.c	5;"	d	file:
-_USE_MATH_DEFINES	src/miu-mat.c	5;"	d	file:
-__CONNECTING_H__	src/connecting.h	2;"	d
-__DEFBNDI_H__	src/defbndi.h	2;"	d
-__DELAYS_H__	src/delays.h	11;"	d
-__INC_BOUND_H__	src/IncBound.h	2;"	d
-__SOURCE_H__	src/source.h	2;"	d
-__UPDBND_H__	src/updbnd.h	2;"	d
-alpha	src/common_data.h	/^MyDataF alpha;$/;"	v
-beta	src/common_data.h	/^MyStruct beta;$/;"	v
-c	src/common_data.h	/^CMyDataF c=2.998E8;$/;"	v
-calErmsAtCoarsePoint	src/updateerms.h	/^void calErmsAtCoarsePoint()$/;"	f
-calsampos	src/captureefield.h	/^void calsampos(int *xpos,int *ypos){$/;"	f
-ceihi	src/connecting.h	/^MyDataF chiei,ceihi;$/;"	v
-chiei	src/connecting.h	/^MyDataF chiei,ceihi;$/;"	v
-chkgrad	src/test.h	/^void chkgrad(MyDataF str,MyDataF strpre ,int i,int j) {$/;"	f
-cnepx	src/init_data.h	/^int cnepx,cnepy;$/;"	v
-cnepy	src/init_data.h	/^int cnepx,cnepy;$/;"	v
-cos_phi	src/source.h	/^MyDataF cos_phi,sin_phi;$/;"	v
-data	src/data_type_definetion.h	/^	MyDataF* data;$/;"	m	struct:__anon1
-delays	src/delays.h	/^MyDataF delays(MyDataF px,MyDataF py)$/;"	f
-delays	src/source.h	/^MyDataF delays(MyDataF px,MyDataF py)$/;"	f
-ds_F	src/common_data.h	/^MyDataF ds_F,ds_M;$/;"	v
-ds_M	src/common_data.h	/^MyDataF ds_F,ds_M;$/;"	v
-dt	src/common_data.h	/^MyDataF dt,dt_F,dt_M;$/;"	v
-dt_F	src/common_data.h	/^MyDataF dt,dt_F,dt_M;$/;"	v
-dt_M	src/common_data.h	/^MyDataF dt,dt_F,dt_M;$/;"	v
-dx	src/common_data.h	/^MyDataF dx;$/;"	v
-dy	src/common_data.h	/^MyDataF dy;$/;"	v
-e	src/common_data.h	/^CMyDataF e=1.602e-19;$/;"	v
-econnect	src/connecting.h	/^void econnect(MyDataF t)$/;"	f
-eilen	src/connecting.h	/^int eilen,hilen;$/;"	v
-end_connect	src/connecting.h	/^void end_connect()$/;"	f
-ep	src/simulate.h	/^Engine *ep=NULL;$/;"	v
-eps_0	src/common_data.h	/^CMyDataF eps_0	=	8.854e-12;$/;"	v
-f	src/common_data.h	/^MyDataF f;\/\/frequency$/;"	v
-filedat	src/common_data.h	/^FILE *filedat;$/;"	v
-first	src/init_com_data.h	/^int first,second,third;$/;"	v
-half_dt	src/common_data.h	/^MyDataF half_dt;$/;"	v
-help	src/abd2d-niu.c	/^void help()$/;"	f
-hilen	src/connecting.h	/^int eilen,hilen;$/;"	v
-init_coordinates	src/defbnd.h	/^void init_coordinates(COORDINATES *coo,int nx,int ny,MDOUBLE InitValue){$/;"	f
-initconnect	src/connecting.h	/^void initconnect()$/;"	f
-input	src/abd2d-niu.c	/^void input(int argc, char*argv[])$/;"	f
-isConnect	src/common_data.h	/^int isConnect = ISCONNECT;$/;"	v
-isnan	src/abd2d-mat.c	12;"	d	file:
-isnan	src/abd2d-miu.c	12;"	d	file:
-isnan	src/abd2d-niu.c	12;"	d	file:
-isnan	src/abd2d.c	12;"	d	file:
-isnan	src/miu-mat.c	12;"	d	file:
-k	src/common_data.h	/^MyDataF k;\/\/$/;"	v
-kasi	src/common_data.h	/^MyDataF kasi;$/;"	v
-lamda	src/common_data.h	/^MyDataF lamda;$/;"	v
-length	src/common_data.h	/^CMyDataF length	=	1.0;$/;"	v
-lenmx	src/delays.h	/^int lenmx,lenmy;$/;"	v
-lenmy	src/delays.h	/^int lenmx,lenmy;$/;"	v
-lenx	src/delays.h	/^int lenx,leny;$/;"	v
-leny	src/delays.h	/^int lenx,leny;$/;"	v
-m	src/common_data.h	/^int m = FINE_GRID_SIZE;$/;"	v
-main	src/abd2d-mat.c	/^int main(int argc,char *argv[]) {$/;"	f
-main	src/abd2d-miu.c	/^int main(int argc,char *argv[]) {$/;"	f
-main	src/abd2d-niu.c	/^int main(int argc,char *argv[]) {$/;"	f
-main	src/abd2d.c	/^int main(int argc,char *argv[]) {$/;"	f
-main	src/miu-mat.c	/^int main(int argc,char *argv[]) {$/;"	f
-mconnect	src/connecting.h	/^void mconnect(MyDataF t)$/;"	f
-me	src/common_data.h	/^CMyDataF me=9.110e-31;$/;"	v
-mu_0	src/common_data.h	/^CMyDataF mu_0	=	1.257e-6;$/;"	v
-mu_e	src/common_data.h	/^MyDataF mu_e;$/;"	v
-mu_i	src/common_data.h	/^MyDataF mu_i;$/;"	v
-my_pause	src/updatedensity.h	/^void my_pause() {$/;"	f
-n	src/common_data.h	/^int n;$/;"	v
-nbound	src/common_data.h	/^int nbound;$/;"	v
-ne	src/common_data.h	/^MyStruct ne,ne_pre;$/;"	v
-ne_pre	src/common_data.h	/^MyStruct ne,ne_pre;$/;"	v
-niutype	src/common_data.h	/^int niutype = 4;$/;"	v
-nx	src/common_data.h	/^int nx,nxp1,nxm1;$/;"	v
-nx	src/data_type_definetion.h	/^	int nx;$/;"	m	struct:__anon1
-nxm1	src/common_data.h	/^int nx,nxp1,nxm1;$/;"	v
-nxp1	src/common_data.h	/^int nx,nxp1,nxm1;$/;"	v
-ny	src/common_data.h	/^int ny,nyp1,nym1;$/;"	v
-ny	src/data_type_definetion.h	/^	int ny;$/;"	m	struct:__anon1
-nym1	src/common_data.h	/^int ny,nyp1,nym1;$/;"	v
-nyp1	src/common_data.h	/^int ny,nyp1,nym1;$/;"	v
-omega	src/common_data.h	/^MyDataF omega;$/;"	v
-p	src/common_data.h	/^MyDataF p	=	760.0;$/;"	v
-phi	src/common_data.h	/^MyDataF phi=INC_ANGLE;\/\/incidence wave inject angle on x-axis $/;"	v
-pie	src/bndctrl.h	/^int pis,pie;$/;"	v
-pis	src/bndctrl.h	/^int pis,pie;$/;"	v
-pje	src/bndctrl.h	/^int pjs,pje;$/;"	v
-pjs	src/bndctrl.h	/^int pjs,pje;$/;"	v
-pml_R_0	src/bndctrl.h	/^MyDataF pml_R_0 = 1e-8;$/;"	v
-pml_order	src/bndctrl.h	/^int pml_order = 2;$/;"	v
-printf	src/matlabsim.h	10;"	d
-printf	src/updatedensity.h	13;"	d
-rei	src/common_data.h	/^MyDataF rei;$/;"	v
-save_vi	src/common_data.h	/^int save_vi = 0;$/;"	v
-scatfdtd	src/scatfdtd.h	/^void scatfdtd(){$/;"	f
-scpfld	src/captureefield.h	/^void scpfld(MyDataF *CapEf,int ttstep){$/;"	f
-second	src/init_com_data.h	/^int first,second,third;$/;"	v
-sign	src/InonizationFormula.c	/^int sign(double val)$/;"	f
-sin_phi	src/source.h	/^MyDataF cos_phi,sin_phi;$/;"	v
-srcdat	src/captureefield.h	/^MDOUBLE *srcdat;$/;"	v
-start_index_x	src/connecting.h	/^int start_index_x;$/;"	v
-start_index_y	src/connecting.h	/^int start_index_y;$/;"	v
-t_per_cell	src/source.h	/^MyDataF t_per_cell; \/\/time wave propagates per Yee cell$/;"	v
-third	src/init_com_data.h	/^int first,second,third;$/;"	v
-totaltime	src/common_data.h	/^double totaltime = TOTAL_TIME;\/\/in nane second$/;"	v
-tpie	src/data_type_definetion.h	/^int tpie;$/;"	v
-tpis	src/data_type_definetion.h	/^int tpis;$/;"	v
-tpje	src/data_type_definetion.h	/^int tpje;$/;"	v
-tpjs	src/data_type_definetion.h	/^int tpjs;$/;"	v
-va	src/common_data.h	/^MyDataF vi,va;$/;"	v
-vi	src/common_data.h	/^MyDataF vi,va;$/;"	v
-vm	src/common_data.h	/^CMyDataF vm	=	760*5.3e9;$/;"	v
-xe	src/delays.h	/^int xs,ys,xe,ye;$/;"	v
-xe	src/source.h	/^int xs,ys,xe,ye;\/\/$/;"	v
-xs	src/delays.h	/^int xs,ys,xe,ye;$/;"	v
-xs	src/source.h	/^int xs,ys,xe,ye;\/\/$/;"	v
-ye	src/delays.h	/^int xs,ys,xe,ye;$/;"	v
-ye	src/source.h	/^int xs,ys,xe,ye;\/\/$/;"	v
-ys	src/delays.h	/^int xs,ys,xe,ye;$/;"	v
-ys	src/source.h	/^int xs,ys,xe,ye;\/\/$/;"	v
+ABSORTBOUND_H	otest/src/pml.h	9;"	d
+AddEInc	otest/src/connectingInterface.c	/^void AddEInc(MyDataF t) {$/;"	f
+AddEInc	src/connectingInterface.c	/^void AddEInc(MyDataF t) {$/;"	f
+Alpha_Kang	otest/src/breakdownFormula.c	/^MyDataF Alpha_Kang(MyDataF E) {$/;"	f
+Alpha_Kang	src/breakdownFormula.c	/^MyDataF Alpha_Kang(MyDataF E) {$/;"	f
+Alpha_MorrowAndLowke	otest/src/breakdownFormula.c	/^MyDataF Alpha_MorrowAndLowke(MyDataF E, MyDataF N) {$/;"	f
+Alpha_MorrowAndLowke	src/breakdownFormula.c	/^MyDataF Alpha_MorrowAndLowke(MyDataF E, MyDataF N) {$/;"	f
+Alpha_Nikonov	otest/src/breakdownFormula.c	/^MyDataF Alpha_Nikonov(MyDataF E, MyDataF P) {$/;"	f
+Alpha_Nikonov	src/breakdownFormula.c	/^MyDataF Alpha_Nikonov(MyDataF E, MyDataF P) {$/;"	f
+BackupMyStruct	otest/src/dataType.c	/^int BackupMyStruct(MyStruct st, MyStruct stpre) {$/;"	f
+BackupMyStruct	src/dataType.c	/^int BackupMyStruct(MyStruct st, MyStruct stpre) {$/;"	f
+CAPTURE_FIELD	otest/src/common.h	101;"	d
+CAPTURE_FIELD	src/common.h	107;"	d
+CC	otest/Makefile	/^CC=icc#icc#gcc$/;"	m
+CELLS_INSIDE_I	otest/src/common.h	106;"	d
+CELLS_INSIDE_I	src/common.h	112;"	d
+CELLS_INSIDE_S	otest/src/common.h	107;"	d
+CELLS_INSIDE_S	src/common.h	113;"	d
+CFLAGS	otest/Makefile	/^CFLAGS=-O2 -Wall#-Wunused-but-set-variable# run mode$/;"	m
+CFL_FACTOR	otest/src/common.h	31;"	d
+CFL_FACTOR	src/common.h	31;"	d
+CFL_factor	otest/src/commonData.h	/^    static const MyDataF CFL_factor = CFL_FACTOR;$/;"	v
+CFL_factor	src/commonData.h	/^    static const MyDataF CFL_factor = CFL_FACTOR;$/;"	v
+CMur	otest/src/connectingInterface.c	/^MyDataF CMur;$/;"	v
+CMur	src/connectingInterface.c	/^MyDataF CMur;$/;"	v
+CMyDataF	otest/src/dataType.h	/^    typedef const MyDataF CMyDataF;$/;"	t
+CMyDataF	src/dataType.h	/^    typedef const MyDataF CMyDataF;$/;"	t
+COMMONDATA_H	otest/src/commonData.h	9;"	d
+COMMONDATA_H	src/commonData.h	9;"	d
+COMMON_H	otest/src/common.h	9;"	d
+COMMON_H	src/common.h	9;"	d
+CONNECTINGITERFACE_H	otest/src/connectingInterface.h	9;"	d
+CONNECTINGITERFACE_H	src/connectingInterface.h	9;"	d
+COSINE	src/common.h	78;"	d
+COURANT_FACTOR	otest/src/common.h	30;"	d
+COURANT_FACTOR	src/common.h	30;"	d
+CalDelays	otest/src/connectingInterface.c	/^void CalDelays() {$/;"	f
+CalDelays	src/connectingInterface.c	/^void CalDelays() {$/;"	f
+CalDomainSize	otest/src/initial.c	/^void CalDomainSize() {$/;"	f
+CalDomainSize	src/initial.c	/^void CalDomainSize() {$/;"	f
+CalErmsAtCoarseGrid	otest/src/density.c	/^void CalErmsAtCoarseGrid() {$/;"	f
+CalErmsAtCoarseGrid	src/density.c	/^void CalErmsAtCoarseGrid() {$/;"	f
+CalSumESqrt	otest/src/density.c	/^void CalSumESqrt() {$/;"	f
+CalSumESqrt	src/density.c	/^void CalSumESqrt() {$/;"	f
+CalSumESqrt_Emax	otest/src/density.c	/^void CalSumESqrt_Emax() {$/;"	f
+CalSumESqrt_Emax	src/density.c	/^void CalSumESqrt_Emax() {$/;"	f
+CaptData	otest/src/dataType.c	/^void CaptData(const int num, const char * const fname, const MyStruct data) {$/;"	f
+CaptData	src/dataType.c	/^void CaptData(const int num, const char * const fname, const MyStruct data) {$/;"	f
+CaptDataCenter	otest/src/dataType.c	/^void CaptDataCenter(const int num, const char * const fname, const MyStruct data, int jcenter, int is, int ie) {$/;"	f
+CaptDataCenter	src/dataType.c	/^void CaptDataCenter(const int num, const char * const fname, const MyStruct data, int jcenter, int is, int ie) {$/;"	f
+CaptDataM	otest/src/dataType.c	/^void CaptDataM(const int num, const char*fname, const MyStruct data, int p) {$/;"	f
+CaptDataM	src/dataType.c	/^void CaptDataM(const int num, const char*fname, const MyStruct data, int p) {$/;"	f
+CaptDataMNoPML	otest/src/dataType.c	/^void CaptDataMNoPML(const int num, const char*fname, const MyStruct data, int p, int is, int ie, int js, int je) {$/;"	f
+CaptDataMNoPML	src/dataType.c	/^void CaptDataMNoPML(const int num, const char*fname, const MyStruct data, int p, int is, int ie, int js, int je) {$/;"	f
+CaptDataNoPML	otest/src/dataType.c	/^void CaptDataNoPML(const int num, const char * const fname, const MyStruct data, int is, int ie, int js, int je) {$/;"	f
+CaptDataNoPML	src/dataType.c	/^void CaptDataNoPML(const int num, const char * const fname, const MyStruct data, int is, int ie, int js, int je) {$/;"	f
+CaptureE	otest/src/dataSaving.c	/^void CaptureE(MyDataF *CapEf, int CurTimeStep, int i, int j) {$/;"	f
+CaptureE	src/dataSaving.c	/^void CaptureE(MyDataF *CapEf, int CurTimeStep, int i, int j) {$/;"	f
+Ceex	otest/src/fdtd.c	/^MyStruct Ceex, Ceey, Ceez;$/;"	v
+Ceex	src/fdtd.c	/^MyStruct Ceex, Ceey, Ceez;$/;"	v
+Ceey	otest/src/fdtd.c	/^MyStruct Ceex, Ceey, Ceez;$/;"	v
+Ceey	src/fdtd.c	/^MyStruct Ceex, Ceey, Ceez;$/;"	v
+Ceez	otest/src/fdtd.c	/^MyStruct Ceex, Ceey, Ceez;$/;"	v
+Ceez	src/fdtd.c	/^MyStruct Ceex, Ceey, Ceez;$/;"	v
+Cehx	otest/src/fdtd.c	/^MyStruct Cehx, Cehy, Cehz;$/;"	v
+Cehx	src/fdtd.c	/^MyStruct Cehx, Cehy, Cehz;$/;"	v
+Cehy	otest/src/fdtd.c	/^MyStruct Cehx, Cehy, Cehz;$/;"	v
+Cehy	src/fdtd.c	/^MyStruct Cehx, Cehy, Cehz;$/;"	v
+Cehz	otest/src/fdtd.c	/^MyStruct Cehx, Cehy, Cehz;$/;"	v
+Cehz	src/fdtd.c	/^MyStruct Cehx, Cehy, Cehz;$/;"	v
+Cevx	otest/src/fdtd.c	/^MyStruct Cevx, Cevy, Cevz;$/;"	v
+Cevx	src/fdtd.c	/^MyStruct Cevx, Cevy, Cevz;$/;"	v
+Cevy	otest/src/fdtd.c	/^MyStruct Cevx, Cevy, Cevz;$/;"	v
+Cevy	src/fdtd.c	/^MyStruct Cevx, Cevy, Cevz;$/;"	v
+Cevz	otest/src/fdtd.c	/^MyStruct Cevx, Cevy, Cevz;$/;"	v
+Cevz	src/fdtd.c	/^MyStruct Cevx, Cevy, Cevz;$/;"	v
+Cexe_yn	otest/src/pml.c	/^MyStruct Cexe_yn;$/;"	v
+Cexe_yn	src/pml.c	/^MyStruct Cexe_yn;$/;"	v
+Cexe_yp	otest/src/pml.c	/^MyStruct Cexe_yp;$/;"	v
+Cexe_yp	src/pml.c	/^MyStruct Cexe_yp;$/;"	v
+Cexhz	otest/src/connectingInterface.c	/^MyDataF Cexhz;$/;"	v
+Cexhz	src/connectingInterface.c	/^MyDataF Cexhz;$/;"	v
+Cexhz_yn	otest/src/pml.c	/^MyStruct Cexhz_yn;$/;"	v
+Cexhz_yn	src/pml.c	/^MyStruct Cexhz_yn;$/;"	v
+Cexhz_yp	otest/src/pml.c	/^MyStruct Cexhz_yp;$/;"	v
+Cexhz_yp	src/pml.c	/^MyStruct Cexhz_yp;$/;"	v
+Ceye_xn	otest/src/pml.c	/^MyStruct Ceye_xn;$/;"	v
+Ceye_xn	src/pml.c	/^MyStruct Ceye_xn;$/;"	v
+Ceye_xp	otest/src/pml.c	/^MyStruct Ceye_xp;$/;"	v
+Ceye_xp	src/pml.c	/^MyStruct Ceye_xp;$/;"	v
+Ceyhz	otest/src/connectingInterface.c	/^MyDataF Ceyhz;$/;"	v
+Ceyhz	src/connectingInterface.c	/^MyDataF Ceyhz;$/;"	v
+Ceyhz_xn	otest/src/pml.c	/^MyStruct Ceyhz_xn;$/;"	v
+Ceyhz_xn	src/pml.c	/^MyStruct Ceyhz_xn;$/;"	v
+Ceyhz_xp	otest/src/pml.c	/^MyStruct Ceyhz_xp;$/;"	v
+Ceyhz_xp	src/pml.c	/^MyStruct Ceyhz_xp;$/;"	v
+Cezxe_xn	otest/src/pml.c	/^MyStruct Cezxe_xn;$/;"	v
+Cezxe_xn	src/pml.c	/^MyStruct Cezxe_xn;$/;"	v
+Cezxe_xp	otest/src/pml.c	/^MyStruct Cezxe_xp;$/;"	v
+Cezxe_xp	src/pml.c	/^MyStruct Cezxe_xp;$/;"	v
+Cezxe_yn	otest/src/pml.c	/^MyStruct Cezxe_yn;$/;"	v
+Cezxe_yn	src/pml.c	/^MyStruct Cezxe_yn;$/;"	v
+Cezxe_yp	otest/src/pml.c	/^MyStruct Cezxe_yp;$/;"	v
+Cezxe_yp	src/pml.c	/^MyStruct Cezxe_yp;$/;"	v
+Cezxhy_xn	otest/src/pml.c	/^MyStruct Cezxhy_xn;$/;"	v
+Cezxhy_xn	src/pml.c	/^MyStruct Cezxhy_xn;$/;"	v
+Cezxhy_xp	otest/src/pml.c	/^MyStruct Cezxhy_xp;$/;"	v
+Cezxhy_xp	src/pml.c	/^MyStruct Cezxhy_xp;$/;"	v
+Cezxhy_yn	otest/src/pml.c	/^MyStruct Cezxhy_yn;$/;"	v
+Cezxhy_yn	src/pml.c	/^MyStruct Cezxhy_yn;$/;"	v
+Cezxhy_yp	otest/src/pml.c	/^MyStruct Cezxhy_yp;$/;"	v
+Cezxhy_yp	src/pml.c	/^MyStruct Cezxhy_yp;$/;"	v
+Cezye_xn	otest/src/pml.c	/^MyStruct Cezye_xn;$/;"	v
+Cezye_xn	src/pml.c	/^MyStruct Cezye_xn;$/;"	v
+Cezye_xp	otest/src/pml.c	/^MyStruct Cezye_xp;$/;"	v
+Cezye_xp	src/pml.c	/^MyStruct Cezye_xp;$/;"	v
+Cezye_yn	otest/src/pml.c	/^MyStruct Cezye_yn;$/;"	v
+Cezye_yn	src/pml.c	/^MyStruct Cezye_yn;$/;"	v
+Cezye_yp	otest/src/pml.c	/^MyStruct Cezye_yp;$/;"	v
+Cezye_yp	src/pml.c	/^MyStruct Cezye_yp;$/;"	v
+Cezyhx_xn	otest/src/pml.c	/^MyStruct Cezyhx_xn;$/;"	v
+Cezyhx_xn	src/pml.c	/^MyStruct Cezyhx_xn;$/;"	v
+Cezyhx_xp	otest/src/pml.c	/^MyStruct Cezyhx_xp;$/;"	v
+Cezyhx_xp	src/pml.c	/^MyStruct Cezyhx_xp;$/;"	v
+Cezyhx_yn	otest/src/pml.c	/^MyStruct Cezyhx_yn;$/;"	v
+Cezyhx_yn	src/pml.c	/^MyStruct Cezyhx_yn;$/;"	v
+Cezyhx_yp	otest/src/pml.c	/^MyStruct Cezyhx_yp;$/;"	v
+Cezyhx_yp	src/pml.c	/^MyStruct Cezyhx_yp;$/;"	v
+CheckIfNeOverLimit	otest/src/dataSaving.c	/^void CheckIfNeOverLimit(int i, int j, MyDataF data) {$/;"	f
+CheckIfNeOverLimit	src/dataSaving.c	/^void CheckIfNeOverLimit(int i, int j, MyDataF data) {$/;"	f
+CheckIfNonZeros	otest/src/dataSaving.c	/^void CheckIfNonZeros(MyStruct stru) {$/;"	f
+CheckIfNonZeros	src/dataSaving.c	/^void CheckIfNonZeros(MyStruct stru) {$/;"	f
+CheckIfOverLimit	otest/src/dataSaving.c	/^void CheckIfOverLimit(int i, int j, MyDataF data) {$/;"	f
+CheckIfOverLimit	src/dataSaving.c	/^void CheckIfOverLimit(int i, int j, MyDataF data) {$/;"	f
+CheckStruct	otest/src/dataType.c	/^void CheckStruct(const MyStruct stru) {$/;"	f
+CheckStruct	src/dataType.c	/^void CheckStruct(const MyStruct stru) {$/;"	f
+Chxez	otest/src/fdtd.c	/^MyDataF Chxez, Chyez, Chzex, Chzey;$/;"	v
+Chxez	src/fdtd.c	/^MyDataF Chxez, Chyez, Chzex, Chzey;$/;"	v
+Chxez_yn	otest/src/pml.c	/^MyStruct Chxez_yn;$/;"	v
+Chxez_yn	src/pml.c	/^MyStruct Chxez_yn;$/;"	v
+Chxez_yp	otest/src/pml.c	/^MyStruct Chxez_yp;$/;"	v
+Chxez_yp	src/pml.c	/^MyStruct Chxez_yp;$/;"	v
+Chxh_yn	otest/src/pml.c	/^MyStruct Chxh_yn;$/;"	v
+Chxh_yn	src/pml.c	/^MyStruct Chxh_yn;$/;"	v
+Chxh_yp	otest/src/pml.c	/^MyStruct Chxh_yp;$/;"	v
+Chxh_yp	src/pml.c	/^MyStruct Chxh_yp;$/;"	v
+Chyez	otest/src/fdtd.c	/^MyDataF Chxez, Chyez, Chzex, Chzey;$/;"	v
+Chyez	src/fdtd.c	/^MyDataF Chxez, Chyez, Chzex, Chzey;$/;"	v
+Chyez_xn	otest/src/pml.c	/^MyStruct Chyez_xn;$/;"	v
+Chyez_xn	src/pml.c	/^MyStruct Chyez_xn;$/;"	v
+Chyez_xp	otest/src/pml.c	/^MyStruct Chyez_xp;$/;"	v
+Chyez_xp	src/pml.c	/^MyStruct Chyez_xp;$/;"	v
+Chyh_xn	otest/src/pml.c	/^MyStruct Chyh_xn;$/;"	v
+Chyh_xn	src/pml.c	/^MyStruct Chyh_xn;$/;"	v
+Chyh_xp	otest/src/pml.c	/^MyStruct Chyh_xp;$/;"	v
+Chyh_xp	src/pml.c	/^MyStruct Chyh_xp;$/;"	v
+Chzex	otest/src/fdtd.c	/^MyDataF Chxez, Chyez, Chzex, Chzey;$/;"	v
+Chzex	src/fdtd.c	/^MyDataF Chxez, Chyez, Chzex, Chzey;$/;"	v
+Chzey	otest/src/fdtd.c	/^MyDataF Chxez, Chyez, Chzex, Chzey;$/;"	v
+Chzey	src/fdtd.c	/^MyDataF Chxez, Chyez, Chzex, Chzey;$/;"	v
+Chzxey_xn	otest/src/pml.c	/^MyStruct Chzxey_xn;$/;"	v
+Chzxey_xn	src/pml.c	/^MyStruct Chzxey_xn;$/;"	v
+Chzxey_xp	otest/src/pml.c	/^MyStruct Chzxey_xp;$/;"	v
+Chzxey_xp	src/pml.c	/^MyStruct Chzxey_xp;$/;"	v
+Chzxey_yn	otest/src/pml.c	/^MyStruct Chzxey_yn;$/;"	v
+Chzxey_yn	src/pml.c	/^MyStruct Chzxey_yn;$/;"	v
+Chzxey_yp	otest/src/pml.c	/^MyStruct Chzxey_yp;$/;"	v
+Chzxey_yp	src/pml.c	/^MyStruct Chzxey_yp;$/;"	v
+Chzxh_xn	otest/src/pml.c	/^MyStruct Chzxh_xn;$/;"	v
+Chzxh_xn	src/pml.c	/^MyStruct Chzxh_xn;$/;"	v
+Chzxh_xp	otest/src/pml.c	/^MyStruct Chzxh_xp;$/;"	v
+Chzxh_xp	src/pml.c	/^MyStruct Chzxh_xp;$/;"	v
+Chzxh_yn	otest/src/pml.c	/^MyStruct Chzxh_yn;$/;"	v
+Chzxh_yn	src/pml.c	/^MyStruct Chzxh_yn;$/;"	v
+Chzxh_yp	otest/src/pml.c	/^MyStruct Chzxh_yp;$/;"	v
+Chzxh_yp	src/pml.c	/^MyStruct Chzxh_yp;$/;"	v
+Chzyex_xn	otest/src/pml.c	/^MyStruct Chzyex_xn;$/;"	v
+Chzyex_xn	src/pml.c	/^MyStruct Chzyex_xn;$/;"	v
+Chzyex_xp	otest/src/pml.c	/^MyStruct Chzyex_xp;$/;"	v
+Chzyex_xp	src/pml.c	/^MyStruct Chzyex_xp;$/;"	v
+Chzyex_yn	otest/src/pml.c	/^MyStruct Chzyex_yn;$/;"	v
+Chzyex_yn	src/pml.c	/^MyStruct Chzyex_yn;$/;"	v
+Chzyex_yp	otest/src/pml.c	/^MyStruct Chzyex_yp;$/;"	v
+Chzyex_yp	src/pml.c	/^MyStruct Chzyex_yp;$/;"	v
+Chzyh_xn	otest/src/pml.c	/^MyStruct Chzyh_xn;$/;"	v
+Chzyh_xn	src/pml.c	/^MyStruct Chzyh_xn;$/;"	v
+Chzyh_xp	otest/src/pml.c	/^MyStruct Chzyh_xp;$/;"	v
+Chzyh_xp	src/pml.c	/^MyStruct Chzyh_xp;$/;"	v
+Chzyh_yn	otest/src/pml.c	/^MyStruct Chzyh_yn;$/;"	v
+Chzyh_yn	src/pml.c	/^MyStruct Chzyh_yn;$/;"	v
+Chzyh_yp	otest/src/pml.c	/^MyStruct Chzyh_yp;$/;"	v
+Chzyh_yp	src/pml.c	/^MyStruct Chzyh_yp;$/;"	v
+CosineSource	src/connectingInterface.c	/^MyDataF CosineSource(MyDataF t) {$/;"	f
+CourantFactor	otest/src/commonData.h	/^    static const MyDataF CourantFactor = COURANT_FACTOR;$/;"	v
+CourantFactor	src/commonData.h	/^    static const MyDataF CourantFactor = COURANT_FACTOR;$/;"	v
+CurTime	otest/src/commonData.c	/^MyDataF CurTime = 0; \/\/current time$/;"	v
+CurTime	src/commonData.c	/^MyDataF CurTime = 0; \/\/current time$/;"	v
+Cve	otest/src/fdtd.c	/^MyDataF Cve;$/;"	v
+Cve	src/fdtd.c	/^MyDataF Cve;$/;"	v
+Cvex	otest/src/fdtd.c	/^MyStruct Cvex, Cvey, Cvez;$/;"	v
+Cvex	src/fdtd.c	/^MyStruct Cvex, Cvey, Cvez;$/;"	v
+Cvey	otest/src/fdtd.c	/^MyStruct Cvex, Cvey, Cvez;$/;"	v
+Cvey	src/fdtd.c	/^MyStruct Cvex, Cvey, Cvez;$/;"	v
+Cvez	otest/src/fdtd.c	/^MyStruct Cvex, Cvey, Cvez;$/;"	v
+Cvez	src/fdtd.c	/^MyStruct Cvex, Cvey, Cvez;$/;"	v
+Cvvx	otest/src/fdtd.c	/^MyStruct Cvvx, Cvvy, Cvvz;$/;"	v
+Cvvx	src/fdtd.c	/^MyStruct Cvvx, Cvvy, Cvvz;$/;"	v
+Cvvy	otest/src/fdtd.c	/^MyStruct Cvvx, Cvvy, Cvvz;$/;"	v
+Cvvy	src/fdtd.c	/^MyStruct Cvvx, Cvvy, Cvvz;$/;"	v
+Cvvz	otest/src/fdtd.c	/^MyStruct Cvvx, Cvvy, Cvvz;$/;"	v
+Cvvz	src/fdtd.c	/^MyStruct Cvvx, Cvvy, Cvvz;$/;"	v
+DATADEFINITION_H	otest/src/dataType.h	9;"	d
+DATADEFINITION_H	src/dataType.h	9;"	d
+DATASAVING_H	otest/src/dataSaving.h	9;"	d
+DATASAVING_H	src/dataSaving.h	9;"	d
+DEFAULT_THREAD_COUNT	otest/src/common.h	125;"	d
+DEFAULT_THREAD_COUNT	src/common.h	131;"	d
+DEFAULT_WAVEFORM	src/common.h	79;"	d
+DEN_TIME_STEPS	otest/src/common.h	39;"	d
+DEN_TIME_STEPS	src/common.h	39;"	d
+DEPS	Makefile	/^DEPS:=$(patsubst $(SRC_DIR)\/%.c,%.d,$(SOURCES))$/;"	m
+DEPS	makefile	/^DEPS:=$(patsubst $(SRC_DIR)\/%.c,%.d,$(SOURCES))$/;"	m
+DISPLAY_NE	otest/src/common.h	92;"	d
+DISPLAY_NE	src/common.h	98;"	d
+DTF_VI_LIMIT	otest/src/common.h	99;"	d
+DTF_VI_LIMIT	src/common.h	105;"	d
+D_kasi_max	otest/src/commonData.c	/^MyDataF D_kasi_max;$/;"	v
+D_kasi_max	src/commonData.c	/^MyDataF D_kasi_max;$/;"	v
+Da	otest/src/commonData.c	/^MyDataF Da;$/;"	v
+Da	src/commonData.c	/^MyDataF Da;$/;"	v
+De	otest/src/commonData.c	/^MyDataF De;$/;"	v
+De	src/commonData.c	/^MyDataF De;$/;"	v
+DensityBound	otest/src/density.c	/^void DensityBound(MyStruct stru, int bndwidth, const int swidth) {$/;"	f
+DensityBound	src/density.c	/^void DensityBound(MyStruct stru, int bndwidth, const int swidth) {$/;"	f
+Density_Time_Step	otest/src/commonData.c	/^int Density_Time_Step = DEN_TIME_STEPS;$/;"	v
+Density_Time_Step	src/commonData.c	/^int Density_Time_Step = DEN_TIME_STEPS;$/;"	v
+Dexb	otest/src/connectingInterface.c	/^MyDataF *Dexb, *Dext;$/;"	v
+Dexb	src/connectingInterface.c	/^MyDataF *Dexb, *Dext;$/;"	v
+Dext	otest/src/connectingInterface.c	/^MyDataF *Dexb, *Dext;$/;"	v
+Dext	src/connectingInterface.c	/^MyDataF *Dexb, *Dext;$/;"	v
+Deyl	otest/src/connectingInterface.c	/^MyDataF *Deyl, *Deyr;$/;"	v
+Deyl	src/connectingInterface.c	/^MyDataF *Deyl, *Deyr;$/;"	v
+Deyr	otest/src/connectingInterface.c	/^MyDataF *Deyl, *Deyr;$/;"	v
+Deyr	src/connectingInterface.c	/^MyDataF *Deyl, *Deyr;$/;"	v
+Dezb	otest/src/connectingInterface.c	/^MyDataF *Dezb, *Dezt, *Dezl, *Dezr;$/;"	v
+Dezb	src/connectingInterface.c	/^MyDataF *Dezb, *Dezt, *Dezl, *Dezr;$/;"	v
+Dezl	otest/src/connectingInterface.c	/^MyDataF *Dezb, *Dezt, *Dezl, *Dezr;$/;"	v
+Dezl	src/connectingInterface.c	/^MyDataF *Dezb, *Dezt, *Dezl, *Dezr;$/;"	v
+Dezr	otest/src/connectingInterface.c	/^MyDataF *Dezb, *Dezt, *Dezl, *Dezr;$/;"	v
+Dezr	src/connectingInterface.c	/^MyDataF *Dezb, *Dezt, *Dezl, *Dezr;$/;"	v
+Dezt	otest/src/connectingInterface.c	/^MyDataF *Dezb, *Dezt, *Dezl, *Dezr;$/;"	v
+Dezt	src/connectingInterface.c	/^MyDataF *Dezb, *Dezt, *Dezl, *Dezr;$/;"	v
+Dhxb	otest/src/connectingInterface.c	/^MyDataF *Dhxb, *Dhxt;$/;"	v
+Dhxb	src/connectingInterface.c	/^MyDataF *Dhxb, *Dhxt;$/;"	v
+Dhxt	otest/src/connectingInterface.c	/^MyDataF *Dhxb, *Dhxt;$/;"	v
+Dhxt	src/connectingInterface.c	/^MyDataF *Dhxb, *Dhxt;$/;"	v
+Dhyl	otest/src/connectingInterface.c	/^MyDataF *Dhyl, *Dhyr;$/;"	v
+Dhyl	src/connectingInterface.c	/^MyDataF *Dhyl, *Dhyr;$/;"	v
+Dhyr	otest/src/connectingInterface.c	/^MyDataF *Dhyl, *Dhyr;$/;"	v
+Dhyr	src/connectingInterface.c	/^MyDataF *Dhyl, *Dhyr;$/;"	v
+Dhzb	otest/src/connectingInterface.c	/^MyDataF *Dhzb, *Dhzt, *Dhzl, *Dhzr;$/;"	v
+Dhzb	src/connectingInterface.c	/^MyDataF *Dhzb, *Dhzt, *Dhzl, *Dhzr;$/;"	v
+Dhzl	otest/src/connectingInterface.c	/^MyDataF *Dhzb, *Dhzt, *Dhzl, *Dhzr;$/;"	v
+Dhzl	src/connectingInterface.c	/^MyDataF *Dhzb, *Dhzt, *Dhzl, *Dhzr;$/;"	v
+Dhzr	otest/src/connectingInterface.c	/^MyDataF *Dhzb, *Dhzt, *Dhzl, *Dhzr;$/;"	v
+Dhzr	src/connectingInterface.c	/^MyDataF *Dhzb, *Dhzt, *Dhzl, *Dhzr;$/;"	v
+Dhzt	otest/src/connectingInterface.c	/^MyDataF *Dhzb, *Dhzt, *Dhzl, *Dhzr;$/;"	v
+Dhzt	src/connectingInterface.c	/^MyDataF *Dhzb, *Dhzt, *Dhzl, *Dhzr;$/;"	v
+DispEMFields	otest/src/matlabSimulation.c	/^void DispEMFields(const int timestep) {$/;"	f
+DispEMFields	src/matlabSimulation.c	/^void DispEMFields(const int timestep) {$/;"	f
+DispNe	otest/src/matlabSimulation.c	/^void DispNe(const int timestep) {$/;"	f
+DispNe	src/matlabSimulation.c	/^void DispNe(const int timestep) {$/;"	f
+E0	otest/src/commonData.c	/^MyDataF E0, H0;$/;"	v
+E0	src/commonData.c	/^MyDataF E0, H0;$/;"	v
+ERROR_MESSAGE_SIZE	src/common.h	136;"	d
+EXCUTABLE	Makefile	/^EXCUTABLE:=abd2d$/;"	m
+EXCUTABLE	makefile	/^EXCUTABLE:=abd2d$/;"	m
+E_0	otest/src/common.h	75;"	d
+E_0	src/commonData.c	/^MyDataF E_0 = E_MAX; \/\/ E field amptidute$/;"	v
+E_MAX	src/common.h	81;"	d
+Ei	otest/src/connectingInterface.c	/^MyDataF *Ei, *Hi;$/;"	v
+Ei	src/connectingInterface.c	/^MyDataF *Ei, *Hi;$/;"	v
+ElectronTemperature	otest/src/breakdownFormula.c	/^MyDataF ElectronTemperature(MyDataF Em, MyDataF p) {$/;"	f
+ElectronTemperature	src/breakdownFormula.c	/^MyDataF ElectronTemperature(MyDataF Em, MyDataF p) {$/;"	f
+EndMatlabSim	otest/src/matlabSimulation.c	/^void EndMatlabSim() {$/;"	f
+EndMatlabSim	src/matlabSimulation.c	/^void EndMatlabSim() {$/;"	f
+Erms	otest/src/fdtd.c	/^MyStruct Erms;$/;"	v
+Erms	src/fdtd.c	/^MyStruct Erms;$/;"	v
+Ermsx	otest/src/fdtd.c	/^MyStruct Ermsx, Ermsy;$/;"	v
+Ermsx	src/fdtd.c	/^MyStruct Ermsx, Ermsy;$/;"	v
+Ermsy	otest/src/fdtd.c	/^MyStruct Ermsx, Ermsy;$/;"	v
+Ermsy	src/fdtd.c	/^MyStruct Ermsx, Ermsy;$/;"	v
+Eta_Kang	otest/src/breakdownFormula.c	/^MyDataF Eta_Kang(MyDataF E) {$/;"	f
+Eta_Kang	src/breakdownFormula.c	/^MyDataF Eta_Kang(MyDataF E) {$/;"	f
+Eta_MorrowAndLowke	otest/src/breakdownFormula.c	/^MyDataF Eta_MorrowAndLowke(MyDataF E, MyDataF N) {$/;"	f
+Eta_MorrowAndLowke	src/breakdownFormula.c	/^MyDataF Eta_MorrowAndLowke(MyDataF E, MyDataF N) {$/;"	f
+Eta_Nikonov	otest/src/breakdownFormula.c	/^MyDataF Eta_Nikonov(MyDataF E, MyDataF P) {$/;"	f
+Eta_Nikonov	src/breakdownFormula.c	/^MyDataF Eta_Nikonov(MyDataF E, MyDataF P) {$/;"	f
+Ex	src/fdtd.c	/^MyStruct Ey, Ex, Ez, Hx, Hy, Hz;$/;"	v
+Ex0	otest/src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Ex0	src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Ex_i	otest/src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Ex_i	src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Ex_pre	src/fdtd.c	/^MyStruct Ey_pre, Ex_pre, Ez_pre;$/;"	v
+Ex_s	otest/src/fdtd.c	/^MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;$/;"	v
+Ex_s_pre	otest/src/fdtd.c	/^MyStruct Ey_s_pre, Ex_s_pre, Ez_s_pre;$/;"	v
+Ey	src/fdtd.c	/^MyStruct Ey, Ex, Ez, Hx, Hy, Hz;$/;"	v
+Ey0	otest/src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Ey0	src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Ey_i	otest/src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Ey_i	src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Ey_pre	src/fdtd.c	/^MyStruct Ey_pre, Ex_pre, Ez_pre;$/;"	v
+Ey_s	otest/src/fdtd.c	/^MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;$/;"	v
+Ey_s_pre	otest/src/fdtd.c	/^MyStruct Ey_s_pre, Ex_s_pre, Ez_s_pre;$/;"	v
+Ez	src/fdtd.c	/^MyStruct Ey, Ex, Ez, Hx, Hy, Hz;$/;"	v
+Ez0	otest/src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Ez0	src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Ez_i	otest/src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Ez_i	src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Ez_pre	src/fdtd.c	/^MyStruct Ey_pre, Ex_pre, Ez_pre;$/;"	v
+Ez_s	otest/src/fdtd.c	/^MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;$/;"	v
+Ez_s_pre	otest/src/fdtd.c	/^MyStruct Ey_s_pre, Ex_s_pre, Ez_s_pre;$/;"	v
+Ezx_xn	otest/src/pml.c	/^MyStruct Ezx_xn;$/;"	v
+Ezx_xn	src/pml.c	/^MyStruct Ezx_xn;$/;"	v
+Ezx_xp	otest/src/pml.c	/^MyStruct Ezx_xp;$/;"	v
+Ezx_xp	src/pml.c	/^MyStruct Ezx_xp;$/;"	v
+Ezx_yn	otest/src/pml.c	/^MyStruct Ezx_yn;$/;"	v
+Ezx_yn	src/pml.c	/^MyStruct Ezx_yn;$/;"	v
+Ezx_yp	otest/src/pml.c	/^MyStruct Ezx_yp;$/;"	v
+Ezx_yp	src/pml.c	/^MyStruct Ezx_yp;$/;"	v
+Ezy_xn	otest/src/pml.c	/^MyStruct Ezy_xn;$/;"	v
+Ezy_xn	src/pml.c	/^MyStruct Ezy_xn;$/;"	v
+Ezy_xp	otest/src/pml.c	/^MyStruct Ezy_xp;$/;"	v
+Ezy_xp	src/pml.c	/^MyStruct Ezy_xp;$/;"	v
+Ezy_yn	otest/src/pml.c	/^MyStruct Ezy_yn;$/;"	v
+Ezy_yn	src/pml.c	/^MyStruct Ezy_yn;$/;"	v
+Ezy_yp	otest/src/pml.c	/^MyStruct Ezy_yp;$/;"	v
+Ezy_yp	src/pml.c	/^MyStruct Ezy_yp;$/;"	v
+FDTD_H	otest/src/fdtd.h	9;"	d
+FDTD_H	src/fdtd.h	9;"	d
+FIELD_TO_DISPLAY0	otest/src/common.h	84;"	d
+FIELD_TO_DISPLAY0	src/common.h	90;"	d
+FIELD_TO_DISPLAY1	otest/src/common.h	85;"	d
+FIELD_TO_DISPLAY1	src/common.h	91;"	d
+FIELD_TO_DISPLAY2	otest/src/common.h	86;"	d
+FIELD_TO_DISPLAY2	src/common.h	92;"	d
+FIELD_TO_DISPLAY3	otest/src/common.h	88;"	d
+FIELD_TO_DISPLAY3	src/common.h	94;"	d
+FIELD_TO_DISPLAY4	otest/src/common.h	89;"	d
+FIELD_TO_DISPLAY4	src/common.h	95;"	d
+FIELD_TO_DISPLAY5	otest/src/common.h	90;"	d
+FIELD_TO_DISPLAY5	src/common.h	96;"	d
+FINE_GRID_SIZE	otest/src/common.h	48;"	d
+FINE_GRID_SIZE	src/common.h	48;"	d
+FLUID_H	otest/src/density.h	9;"	d
+FLUID_H	src/density.h	9;"	d
+FREQUENCY	otest/src/common.h	78;"	d
+FREQUENCY	src/common.h	84;"	d
+FreeDelayArrays	otest/src/connectingInterface.c	/^void FreeDelayArrays() {$/;"	f
+FreeDelayArrays	src/connectingInterface.c	/^void FreeDelayArrays() {$/;"	f
+FreePMLSpace	otest/src/pml.c	/^void FreePMLSpace() {$/;"	f
+FreePMLSpace	src/pml.c	/^void FreePMLSpace() {$/;"	f
+FreeSpace	otest/src/fdtd.c	/^void FreeSpace() {$/;"	f
+FreeSpace	src/fdtd.c	/^void FreeSpace() {$/;"	f
+GAUSSIAN	src/common.h	77;"	d
+GaussianSource	src/connectingInterface.c	/^MyDataF GaussianSource(MyDataF t) {$/;"	f
+GetD	otest/src/dataSaving.c	257;"	d	file:
+GetD	otest/src/dataSaving.c	318;"	d	file:
+GetD	src/dataSaving.c	257;"	d	file:
+GetD	src/dataSaving.c	318;"	d	file:
+H0	otest/src/commonData.c	/^MyDataF E0, H0;$/;"	v
+H0	src/commonData.c	/^MyDataF E0, H0;$/;"	v
+Hi	otest/src/connectingInterface.c	/^MyDataF *Ei, *Hi;$/;"	v
+Hi	src/connectingInterface.c	/^MyDataF *Ei, *Hi;$/;"	v
+Hx	src/fdtd.c	/^MyStruct Ey, Ex, Ez, Hx, Hy, Hz;$/;"	v
+Hx0	otest/src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Hx0	src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Hx_i	otest/src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Hx_i	src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Hx_s	otest/src/fdtd.c	/^MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;$/;"	v
+Hy	src/fdtd.c	/^MyStruct Ey, Ex, Ez, Hx, Hy, Hz;$/;"	v
+Hy0	otest/src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Hy0	src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Hy_i	otest/src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Hy_i	src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Hy_s	otest/src/fdtd.c	/^MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;$/;"	v
+Hz	src/fdtd.c	/^MyStruct Ey, Ex, Ez, Hx, Hy, Hz;$/;"	v
+Hz0	otest/src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Hz0	src/commonData.c	/^MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;$/;"	v
+Hz_i	otest/src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Hz_i	src/fdtd.c	/^MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;$/;"	v
+Hz_s	otest/src/fdtd.c	/^MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;$/;"	v
+Hzx_xn	otest/src/pml.c	/^MyStruct Hzx_xn;$/;"	v
+Hzx_xn	src/pml.c	/^MyStruct Hzx_xn;$/;"	v
+Hzx_xp	otest/src/pml.c	/^MyStruct Hzx_xp;$/;"	v
+Hzx_xp	src/pml.c	/^MyStruct Hzx_xp;$/;"	v
+Hzx_yn	otest/src/pml.c	/^MyStruct Hzx_yn;$/;"	v
+Hzx_yn	src/pml.c	/^MyStruct Hzx_yn;$/;"	v
+Hzx_yp	otest/src/pml.c	/^MyStruct Hzx_yp;$/;"	v
+Hzx_yp	src/pml.c	/^MyStruct Hzx_yp;$/;"	v
+Hzy_xn	otest/src/pml.c	/^MyStruct Hzy_xn;$/;"	v
+Hzy_xn	src/pml.c	/^MyStruct Hzy_xn;$/;"	v
+Hzy_xp	otest/src/pml.c	/^MyStruct Hzy_xp;$/;"	v
+Hzy_xp	src/pml.c	/^MyStruct Hzy_xp;$/;"	v
+Hzy_yn	otest/src/pml.c	/^MyStruct Hzy_yn;$/;"	v
+Hzy_yn	src/pml.c	/^MyStruct Hzy_yn;$/;"	v
+Hzy_yp	otest/src/pml.c	/^MyStruct Hzy_yp;$/;"	v
+Hzy_yp	src/pml.c	/^MyStruct Hzy_yp;$/;"	v
+IF_ERMS_E_MAX	otest/src/common.h	73;"	d
+IF_ERMS_E_MAX	src/common.h	73;"	d
+IF_WITH_DENSITY	otest/src/common.h	112;"	d
+IF_WITH_DENSITY	src/common.h	118;"	d
+INC_ANGLE	otest/src/common.h	80;"	d
+INC_ANGLE	src/common.h	86;"	d
+INC_SIZE	otest/src/connectingInterface.c	42;"	d	file:
+INC_SIZE	src/connectingInterface.c	42;"	d	file:
+INITIAL_H	src/initial.h	9;"	d
+INIT_H	otest/src/initial.h	9;"	d
+ISCONNECT	otest/src/common.h	111;"	d
+ISCONNECT	src/common.h	117;"	d
+IfWithDensity	otest/src/commonData.c	/^int IfWithDensity = IF_WITH_DENSITY;$/;"	v
+IfWithDensity	src/commonData.c	/^int IfWithDensity = IF_WITH_DENSITY;$/;"	v
+InitBeta	otest/src/initial.c	/^void InitBeta(MyStruct* stru, MyDataF gamma) {$/;"	f
+InitBeta	src/initial.c	/^void InitBeta(MyStruct* stru, MyDataF gamma) {$/;"	f
+InitBndCtrl	otest/src/pml.c	/^void InitBndCtrl() {$/;"	f
+InitBndCtrl	src/pml.c	/^void InitBndCtrl() {$/;"	f
+InitCapture	otest/src/dataSaving.c	/^void InitCapture(int ttstep) {$/;"	f
+InitCapture	src/dataSaving.c	/^void InitCapture(int ttstep) {$/;"	f
+InitCee	otest/src/initial.c	/^void InitCee(MyStruct beta) {$/;"	f
+InitCee	src/initial.c	/^void InitCee(MyStruct beta) {$/;"	f
+InitCeeNoDen	otest/src/initial.c	/^void InitCeeNoDen() {$/;"	f
+InitCeeNoDen	src/initial.c	/^void InitCeeNoDen() {$/;"	f
+InitCeh	otest/src/initial.c	/^void InitCeh(MyStruct beta) {$/;"	f
+InitCeh	src/initial.c	/^void InitCeh(MyStruct beta) {$/;"	f
+InitCehNoDen	otest/src/initial.c	/^void InitCehNoDen() {$/;"	f
+InitCehNoDen	src/initial.c	/^void InitCehNoDen() {$/;"	f
+InitCev	otest/src/initial.c	/^void InitCev(MyStruct beta, MyDataF alpha_ev) {$/;"	f
+InitCev	src/initial.c	/^void InitCev(MyStruct beta, MyDataF alpha_ev) {$/;"	f
+InitCevNoDen	otest/src/initial.c	/^void InitCevNoDen() {$/;"	f
+InitCevNoDen	src/initial.c	/^void InitCevNoDen() {$/;"	f
+InitCoeff	otest/src/initial.c	/^void InitCoeff() {$/;"	f
+InitCoeff	src/initial.c	/^void InitCoeff() {$/;"	f
+InitFields	otest/src/connectingInterface.c	/^void InitFields() {$/;"	f
+InitFields	src/connectingInterface.c	/^void InitFields() {$/;"	f
+InitMyStr	otest/src/dataType.c	/^void InitMyStr(int nnx, int nny, MyStruct* ms) {$/;"	f
+InitMyStr	src/dataType.c	/^void InitMyStr(int nnx, int nny, MyStruct* ms) {$/;"	f
+InitPMLBound	otest/src/pml.c	/^void InitPMLBound() {$/;"	f
+InitPMLBound	src/pml.c	/^void InitPMLBound() {$/;"	f
+InitPMLBoundTEx	otest/src/pml.c	/^void InitPMLBoundTEx() {$/;"	f
+InitPMLBoundTEx	src/pml.c	/^void InitPMLBoundTEx() {$/;"	f
+InitPMLBoundTMx	otest/src/pml.c	/^void InitPMLBoundTMx() {$/;"	f
+InitPMLBoundTMx	src/pml.c	/^void InitPMLBoundTMx() {$/;"	f
+InitSim	otest/src/matlabSimulation.c	/^void InitSim() {$/;"	f
+InitSim	src/matlabSimulation.c	/^void InitSim() {$/;"	f
+InitVelocityCoeff_Equatioan_Five	otest/src/initial.c	/^void InitVelocityCoeff_Equatioan_Five() {$/;"	f
+InitVelocityCoeff_Equatioan_Five	src/initial.c	/^void InitVelocityCoeff_Equatioan_Five() {$/;"	f
+Init_ne	otest/src/initial.c	/^void Init_ne() {$/;"	f
+Init_ne	src/initial.c	/^void Init_ne() {$/;"	f
+IntTtlFldDmnBnd	otest/src/connectingInterface.c	/^void IntTtlFldDmnBnd() {$/;"	f
+IntTtlFldDmnBnd	src/connectingInterface.c	/^void IntTtlFldDmnBnd() {$/;"	f
+InterpolatErms	otest/src/density.c	/^void InterpolatErms() {$/;"	f
+InterpolatErms	src/density.c	/^void InterpolatErms() {$/;"	f
+IsAnySidePML	otest/src/pml.c	/^int IsAnySidePML = 0;$/;"	v
+IsAnySidePML	src/pml.c	/^int IsAnySidePML = 0;$/;"	v
+IsMatlabSim	otest/src/commonData.c	/^int IsMatlabSim = 0;$/;"	v
+IsMatlabSim	src/commonData.c	/^int IsMatlabSim = 0;$/;"	v
+IsPMLxn	otest/src/pml.c	/^int IsPMLxn = 0;$/;"	v
+IsPMLxn	src/pml.c	/^int IsPMLxn = 0;$/;"	v
+IsPMLxp	otest/src/pml.c	/^int IsPMLxp = 0;$/;"	v
+IsPMLxp	src/pml.c	/^int IsPMLxp = 0;$/;"	v
+IsPMLyn	otest/src/pml.c	/^int IsPMLyn = 0;$/;"	v
+IsPMLyn	src/pml.c	/^int IsPMLyn = 0;$/;"	v
+IsPMLyp	otest/src/pml.c	/^int IsPMLyp = 0;$/;"	v
+IsPMLyp	src/pml.c	/^int IsPMLyp = 0;$/;"	v
+IsTEx	otest/src/commonData.c	/^int IsTEx = _SOURCE_TEX_;$/;"	v
+IsTEx	src/commonData.c	/^int IsTEx = _SOURCE_TEX_;$/;"	v
+IsTMx	otest/src/commonData.c	/^int IsTMx = _SOURCE_TMX_;$/;"	v
+IsTMx	src/commonData.c	/^int IsTMx = _SOURCE_TMX_;$/;"	v
+LD	otest/Makefile	/^LD=ld$/;"	m
+LEAPSTEP_OF_CAPTURE	otest/src/common.h	100;"	d
+LEAPSTEP_OF_CAPTURE	src/common.h	106;"	d
+LEAPSTEP_OF_DISPLAY	otest/src/common.h	98;"	d
+LEAPSTEP_OF_DISPLAY	src/common.h	104;"	d
+LIB	otest/Makefile	/^LIB=-lm$/;"	m
+MATINC	otest/Makefile	/^MATINC=-I$(MATPATH)\/extern\/include$/;"	m
+MATLABSIMULATION_H	otest/src/matlabSimulation.h	9;"	d
+MATLABSIMULATION_H	src/matlabSimulation.h	9;"	d
+MATLAB_TYPE	otest/src/common.h	118;"	d
+MATLAB_TYPE	src/common.h	124;"	d
+MATLIB	otest/Makefile	/^MATLIB=$(MATLINK) -L$(MATPATH)\/bin\/glnxa64 -lmx -leng$/;"	m
+MATLINK	otest/Makefile	/^MATLINK=-Wl,-rpath=$(MATPATH)\/bin\/glnxa64$/;"	m
+MATPATH	otest/Makefile	/^MATPATH=\/opt\/Matlab\/R2013b# for local server$/;"	m
+MAXWELL_MESH_SIZE	otest/src/common.h	33;"	d
+MAXWELL_MESH_SIZE	src/common.h	33;"	d
+MAX_BUFFER	otest/src/abd2d.c	44;"	d	file:
+MAX_BUFFER	src/abd2d.c	44;"	d	file:
+MAX_LIMIT	otest/src/common.h	28;"	d
+MAX_LIMIT	src/common.h	28;"	d
+MAX_NE	otest/src/common.h	79;"	d
+MAX_NE	src/common.h	85;"	d
+MTimeStep	otest/src/fdtd.c	/^int MTimeStep = 1;$/;"	v
+MTimeStep	src/fdtd.c	/^int MTimeStep = 1;$/;"	v
+M_PI	otest/src/common.h	23;"	d
+M_PI	src/common.h	23;"	d
+MultiSize	otest/src/commonData.c	/^int MultiSize;$/;"	v
+MultiSize	src/commonData.c	/^int MultiSize;$/;"	v
+MyDataF	otest/src/dataType.h	/^    typedef double MyDataF;$/;"	t
+MyDataF	src/dataType.h	/^    typedef double MyDataF;$/;"	t
+MyStruct	otest/src/dataType.h	/^    } MyStruct;$/;"	t	typeref:struct:__anon1
+MyStruct	src/dataType.h	/^    } MyStruct;$/;"	t	typeref:struct:__anon2
+NE0	otest/src/common.h	76;"	d
+NE0	src/common.h	82;"	d
+NE_MAX_LIMIT	otest/src/common.h	29;"	d
+NE_MAX_LIMIT	src/common.h	29;"	d
+NIU_TYPE	otest/src/common.h	67;"	d
+NIU_TYPE	src/common.h	67;"	d
+NODEPS	Makefile	/^NODEPS:=clean tags svn$/;"	m
+NODEPS	makefile	/^NODEPS:=clean tags svn$/;"	m
+NUMBER_OF_CELLS_IN_PML_BOUND	otest/src/common.h	35;"	d
+NUMBER_OF_CELLS_IN_PML_BOUND	src/common.h	35;"	d
+NUMBER_OF_WAVELENGTHS_IN_DOMAIN	otest/src/common.h	38;"	d
+NUMBER_OF_WAVELENGTHS_IN_DOMAIN	src/common.h	38;"	d
+NeutralGasDensityCM	otest/src/commonData.h	/^    static const MyDataF NeutralGasDensityCM = 2.44e19; \/\/ neutral gas number density in cm^-3$/;"	v
+NeutralGasDensityCM	src/commonData.h	/^    static const MyDataF NeutralGasDensityCM = 2.44e19; \/\/ neutral gas number density in cm^-3$/;"	v
+NeutralGasDensityM	otest/src/commonData.h	/^    static const MyDataF NeutralGasDensityM = 2.44e25; \/\/ neutral gas number density in m^-3$/;"	v
+NeutralGasDensityM	src/commonData.h	/^    static const MyDataF NeutralGasDensityM = 2.44e25; \/\/ neutral gas number density in m^-3$/;"	v
+Niu_Kang	otest/src/breakdownFormula.c	/^void Niu_Kang(MyDataF *pNiu_i, MyDataF *pNiu_a, MyDataF E) {$/;"	f
+Niu_Kang	src/breakdownFormula.c	/^void Niu_Kang(MyDataF *pNiu_i, MyDataF *pNiu_a, MyDataF E) {$/;"	f
+Niu_MorrowAndLowke	otest/src/breakdownFormula.c	/^void Niu_MorrowAndLowke(MyDataF *pNiu_i, MyDataF *pNiu_a, MyDataF E, MyDataF N) {$/;"	f
+Niu_MorrowAndLowke	src/breakdownFormula.c	/^void Niu_MorrowAndLowke(MyDataF *pNiu_i, MyDataF *pNiu_a, MyDataF E, MyDataF N) {$/;"	f
+Niu_Nikonov	otest/src/breakdownFormula.c	/^void Niu_Nikonov(MyDataF *pNiu_i, MyDataF *pNiu_a, MyDataF E, MyDataF P) {$/;"	f
+Niu_Nikonov	src/breakdownFormula.c	/^void Niu_Nikonov(MyDataF *pNiu_i, MyDataF *pNiu_a, MyDataF E, MyDataF P) {$/;"	f
+Niu_a_Kang	otest/src/breakdownFormula.c	/^MyDataF Niu_a_Kang(MyDataF E) {$/;"	f
+Niu_a_Kang	src/breakdownFormula.c	/^MyDataF Niu_a_Kang(MyDataF E) {$/;"	f
+Niu_a_MorrowAndLowke	otest/src/breakdownFormula.c	/^MyDataF Niu_a_MorrowAndLowke(MyDataF E, MyDataF N) {$/;"	f
+Niu_a_MorrowAndLowke	src/breakdownFormula.c	/^MyDataF Niu_a_MorrowAndLowke(MyDataF E, MyDataF N) {$/;"	f
+Niu_a_Nikonov	otest/src/breakdownFormula.c	/^MyDataF Niu_a_Nikonov(MyDataF E, MyDataF P) {$/;"	f
+Niu_a_Nikonov	src/breakdownFormula.c	/^MyDataF Niu_a_Nikonov(MyDataF E, MyDataF P) {$/;"	f
+Niu_i_Kang	otest/src/breakdownFormula.c	/^MyDataF Niu_i_Kang(MyDataF E) {$/;"	f
+Niu_i_Kang	src/breakdownFormula.c	/^MyDataF Niu_i_Kang(MyDataF E) {$/;"	f
+Niu_i_MorrowAndLowke	otest/src/breakdownFormula.c	/^MyDataF Niu_i_MorrowAndLowke(MyDataF E, MyDataF N) {$/;"	f
+Niu_i_MorrowAndLowke	src/breakdownFormula.c	/^MyDataF Niu_i_MorrowAndLowke(MyDataF E, MyDataF N) {$/;"	f
+Niu_i_Nikonov	otest/src/breakdownFormula.c	/^MyDataF Niu_i_Nikonov(MyDataF E, MyDataF P) {$/;"	f
+Niu_i_Nikonov	src/breakdownFormula.c	/^MyDataF Niu_i_Nikonov(MyDataF E, MyDataF P) {$/;"	f
+Nu_c	otest/src/fdtd.c	/^MyStruct Nu_c; \/\/ 循环利用的碰撞率$/;"	v
+Nu_c	src/fdtd.c	/^MyStruct Nu_c; \/\/ 循环利用的碰撞率$/;"	v
+OBJS	Makefile	/^OBJS:=$(patsubst $(SRC_DIR)\/%.c,%.o,$(SOURCES))$/;"	m
+OBJS	makefile	/^OBJS:=$(patsubst $(SRC_DIR)\/%.c,%.o,$(SOURCES))$/;"	m
+OBJS	otest/Makefile	/^OBJS=abd2d.o  \\$/;"	m
+ORIGN_TYPE	otest/src/common.h	117;"	d
+ORIGN_TYPE	src/common.h	123;"	d
+PMLCellxn	otest/src/pml.c	/^int PMLCellxn = 0;$/;"	v
+PMLCellxn	src/pml.c	/^int PMLCellxn = 0;$/;"	v
+PMLCellxp	otest/src/pml.c	/^int PMLCellxp = 0;$/;"	v
+PMLCellxp	src/pml.c	/^int PMLCellxp = 0;$/;"	v
+PMLCellyn	otest/src/pml.c	/^int PMLCellyn = 0;$/;"	v
+PMLCellyn	src/pml.c	/^int PMLCellyn = 0;$/;"	v
+PMLCellyp	otest/src/pml.c	/^int PMLCellyp = 0;$/;"	v
+PMLCellyp	src/pml.c	/^int PMLCellyp = 0;$/;"	v
+PML_H	src/pml.h	9;"	d
+PROJECTS	Makefile	/^PROJECTS=$(TEST) $(EXCUTABLE) #3DFormulaTransforming.pdf$/;"	m
+PROJECTS	makefile	/^PROJECTS=$(TEST) $(EXCUTABLE) #3DFormulaTransforming.pdf$/;"	m
+PULSE_LENGGTH_IN_TIME	otest/src/common.h	46;"	d
+PULSE_LENGGTH_IN_TIME	src/common.h	46;"	d
+PhaseVelRatio	otest/src/connectingInterface.c	/^MyDataF PhaseVelRatio(MyDataF angle) {$/;"	f
+PhaseVelRatio	src/connectingInterface.c	/^MyDataF PhaseVelRatio(MyDataF angle) {$/;"	f
+PreSimuAdd0	otest/src/matlabSimulation.c	/^void PreSimuAdd0(Engine *ep, const MyStruct stru) {$/;"	f
+PreSimuAdd0	src/matlabSimulation.c	/^void PreSimuAdd0(Engine *ep, const MyStruct stru) {$/;"	f
+PreSimuAdd1	otest/src/matlabSimulation.c	/^void PreSimuAdd1(Engine *ep, const MyStruct stru) {$/;"	f
+PreSimuAdd1	src/matlabSimulation.c	/^void PreSimuAdd1(Engine *ep, const MyStruct stru) {$/;"	f
+PreSimuAdd2	otest/src/matlabSimulation.c	/^void PreSimuAdd2(Engine *ep, const MyStruct stru) {$/;"	f
+PreSimuAdd2	src/matlabSimulation.c	/^void PreSimuAdd2(Engine *ep, const MyStruct stru) {$/;"	f
+PreSimuAddNE	otest/src/matlabSimulation.c	/^void PreSimuAddNE(Engine *ep, const MyStruct stru) {$/;"	f
+PreSimuAddNE	src/matlabSimulation.c	/^void PreSimuAddNE(Engine *ep, const MyStruct stru) {$/;"	f
+PrintData	otest/src/dataType.c	/^void PrintData(MyStruct mst) {$/;"	f
+PrintData	src/dataType.c	/^void PrintData(MyStruct mst) {$/;"	f
+PrintInput	otest/src/abd2d.c	/^void PrintInput() {$/;"	f
+PrintInput	src/abd2d.c	/^void PrintInput() {$/;"	f
+PrintSourceSize	otest/src/fdtd.c	/^void PrintSourceSize(int xpos, int ypos, int sxpos, int sypos) {$/;"	f
+PrintSourceSize	src/fdtd.c	/^void PrintSourceSize(int xpos, int ypos, int sxpos, int sypos) {$/;"	f
+Ratio_x	otest/src/commonData.c	/^MyDataF Ratio_x, Ratio_y;$/;"	v
+Ratio_x	src/commonData.c	/^MyDataF Ratio_x, Ratio_y;$/;"	v
+Ratio_y	otest/src/commonData.c	/^MyDataF Ratio_x, Ratio_y;$/;"	v
+Ratio_y	src/commonData.c	/^MyDataF Ratio_x, Ratio_y;$/;"	v
+ResetStructData	otest/src/dataType.c	/^void ResetStructData(MyStruct mst) {$/;"	f
+ResetStructData	src/dataType.c	/^void ResetStructData(MyStruct mst) {$/;"	f
+ResetStructData2	otest/src/dataType.c	/^void ResetStructData2(MyStruct mst) {$/;"	f
+ResetStructData2	src/dataType.c	/^void ResetStructData2(MyStruct mst) {$/;"	f
+ResetStructDataR	otest/src/dataType.c	/^void ResetStructDataR(MyStruct mst, MyDataF val) {$/;"	f
+ResetStructDataR	src/dataType.c	/^void ResetStructDataR(MyStruct mst, MyDataF val) {$/;"	f
+SAVE_ERMS_LEAP	otest/src/common.h	45;"	d
+SAVE_ERMS_LEAP	src/common.h	45;"	d
+SAVE_LEAP	otest/src/common.h	43;"	d
+SAVE_LEAP	src/common.h	43;"	d
+SAVE_TYPE	otest/src/common.h	119;"	d
+SAVE_TYPE	src/common.h	125;"	d
+SCATTERED_FORMATION	otest/src/common.h	49;"	d
+SCATTERED_FORMATION	src/common.h	49;"	d
+SCATTER_FIELD_DOMAIN_BND_SIZE	otest/src/common.h	37;"	d
+SCATTER_FIELD_DOMAIN_BND_SIZE	src/common.h	37;"	d
+SINE	src/common.h	76;"	d
+SOURCES	Makefile	/^SOURCES=$(shell find $(SRC_DIR) -name "*.c")$/;"	m
+SOURCES	makefile	/^SOURCES=$(shell find $(SRC_DIR) -name "*.c")$/;"	m
+SOURCES_SIZE	otest/src/common.h	110;"	d
+SOURCES_SIZE	src/common.h	116;"	d
+SOURCE_POS_IN_X	otest/src/common.h	109;"	d
+SOURCE_POS_IN_X	src/common.h	115;"	d
+SOURCE_POS_IN_Y	otest/src/common.h	108;"	d
+SOURCE_POS_IN_Y	src/common.h	114;"	d
+SRC	otest/Makefile	/^SRC=.\/src$/;"	m
+SRC_DIR	Makefile	/^SRC_DIR:=src$/;"	m
+SRC_DIR	makefile	/^SRC_DIR:=src$/;"	m
+SaveCapField	otest/src/dataSaving.c	/^void SaveCapField(const int timestep) {$/;"	f
+SaveCapField	src/dataSaving.c	/^void SaveCapField(const int timestep) {$/;"	f
+SaveData	otest/src/dataSaving.c	/^void SaveData(MyStruct data, char* filename, FILE *hfile) {$/;"	f
+SaveData	src/dataSaving.c	/^void SaveData(MyStruct data, char* filename, FILE *hfile) {$/;"	f
+SaveErms	otest/src/dataSaving.c	/^void SaveErms(int nestep) {$/;"	f
+SaveErms	src/dataSaving.c	/^void SaveErms(int nestep) {$/;"	f
+SaveRows	otest/src/dataSaving.c	/^void SaveRows(const MyStruct stru, int row, char *fname) {$/;"	f
+SaveRows	src/dataSaving.c	/^void SaveRows(const MyStruct stru, int row, char *fname) {$/;"	f
+SaveTimeStep	otest/src/commonData.c	/^int SaveTimeStep = SAVE_LEAP;$/;"	v
+SaveTimeStep	src/commonData.c	/^int SaveTimeStep = SAVE_LEAP;$/;"	v
+SaveToFile	otest/src/dataSaving.c	/^void SaveToFile() {$/;"	f
+SaveToFile	src/dataSaving.c	/^void SaveToFile() {$/;"	f
+Simulate0	otest/src/matlabSimulation.c	/^void Simulate0(Engine *ep, const MyStruct stru) {$/;"	f
+Simulate0	src/matlabSimulation.c	/^void Simulate0(Engine *ep, const MyStruct stru) {$/;"	f
+Simulate1	otest/src/matlabSimulation.c	/^void Simulate1(Engine *ep, const MyStruct stru) {$/;"	f
+Simulate1	src/matlabSimulation.c	/^void Simulate1(Engine *ep, const MyStruct stru) {$/;"	f
+Simulate2	otest/src/matlabSimulation.c	/^void Simulate2(Engine *ep, const MyStruct stru) {$/;"	f
+Simulate2	src/matlabSimulation.c	/^void Simulate2(Engine *ep, const MyStruct stru) {$/;"	f
+SimulateNe	otest/src/matlabSimulation.c	/^void SimulateNe(Engine *ep, const MyStruct stru) {$/;"	f
+SimulateNe	src/matlabSimulation.c	/^void SimulateNe(Engine *ep, const MyStruct stru) {$/;"	f
+SineSource	src/connectingInterface.c	/^MyDataF SineSource(MyDataF t) {$/;"	f
+Source	otest/src/connectingInterface.c	/^MyDataF Source(MyDataF t) {$/;"	f
+Source	src/connectingInterface.c	/^MyDataF Source(MyDataF t){$/;"	f
+Step	otest/src/fdtd.c	/^int Step = 1;$/;"	v
+Step	src/fdtd.c	/^int Step = 1;$/;"	v
+T	otest/src/commonData.c	/^MyDataF T; \/\/$/;"	v
+T	src/commonData.c	/^MyDataF T; \/\/$/;"	v
+TEST	Makefile	/^TEST:=$/;"	m
+TEST	makefile	/^TEST:=$/;"	m
+TEST_SRC_DIR	Makefile	/^TEST_SRC_DIR:=test$/;"	m
+TEST_SRC_DIR	makefile	/^TEST_SRC_DIR:=test$/;"	m
+TOTAL_TIME	otest/src/common.h	41;"	d
+TOTAL_TIME	src/common.h	41;"	d
+TotalTimeStep	otest/src/commonData.c	/^int TotalTimeStep;$/;"	v
+TotalTimeStep	src/commonData.c	/^int TotalTimeStep;$/;"	v
+UpdEltFldForPML_TEz	otest/src/pml.c	/^void UpdEltFldForPML_TEz(MyStruct ez, MyStruct hx, MyStruct hy) {$/;"	f
+UpdEltFldForPML_TEz	src/pml.c	/^void UpdEltFldForPML_TEz(MyStruct ez, MyStruct hx, MyStruct hy) {$/;"	f
+UpdEltFldForPML_TMz	otest/src/pml.c	/^void UpdEltFldForPML_TMz(MyStruct ex, MyStruct ey, MyStruct hz) {$/;"	f
+UpdEltFldForPML_TMz	src/pml.c	/^void UpdEltFldForPML_TMz(MyStruct ex, MyStruct ey, MyStruct hz) {$/;"	f
+UpdMagFldForPML_TEz	otest/src/pml.c	/^void UpdMagFldForPML_TEz(MyStruct hx, MyStruct hy, MyStruct ez) {$/;"	f
+UpdMagFldForPML_TEz	src/pml.c	/^void UpdMagFldForPML_TEz(MyStruct hx, MyStruct hy, MyStruct ez) {$/;"	f
+UpdMagFldForPML_TMz	otest/src/pml.c	/^void UpdMagFldForPML_TMz(MyStruct hz, MyStruct ex, MyStruct ey) {$/;"	f
+UpdMagFldForPML_TMz	src/pml.c	/^void UpdMagFldForPML_TMz(MyStruct hz, MyStruct ex, MyStruct ey) {$/;"	f
+UpdateCoeff	otest/src/initial.c	/^void UpdateCoeff() {$/;"	f
+UpdateCoeff	src/initial.c	/^void UpdateCoeff() {$/;"	f
+UpdateDensity	otest/src/density.c	/^void UpdateDensity() {$/;"	f
+UpdateDensity	src/density.c	/^void UpdateDensity() {$/;"	f
+UpdateEField	otest/src/fdtd.c	/^void UpdateEField() {$/;"	f
+UpdateEField	src/fdtd.c	/^void UpdateEField() {$/;"	f
+UpdateEFieldForPML	otest/src/pml.c	/^void UpdateEFieldForPML(MyStruct hx, MyStruct hy, MyStruct hz, MyStruct ex, MyStruct ey, MyStruct ez) {$/;"	f
+UpdateEFieldForPML	src/pml.c	/^void UpdateEFieldForPML(MyStruct hx, MyStruct hy, MyStruct hz, MyStruct ex, MyStruct ey, MyStruct ez) {$/;"	f
+UpdateMField	otest/src/fdtd.c	/^void UpdateMField() {$/;"	f
+UpdateMField	src/fdtd.c	/^void UpdateMField() {$/;"	f
+UpdateMFieldForPML	otest/src/pml.c	/^void UpdateMFieldForPML(MyStruct hx, MyStruct hy, MyStruct hz, MyStruct ex, MyStruct ey, MyStruct ez) {$/;"	f
+UpdateMFieldForPML	src/pml.c	/^void UpdateMFieldForPML(MyStruct hx, MyStruct hy, MyStruct hz, MyStruct ex, MyStruct ey, MyStruct ez) {$/;"	f
+UpdateVelocity	otest/src/density.c	/^void UpdateVelocity() {$/;"	f
+UpdateVelocity	src/density.c	/^void UpdateVelocity() {$/;"	f
+VPATH	Makefile	/^VPATH = $(SRC_DIR):$(TEST_SRC_DIR)$/;"	m
+VPATH	makefile	/^VPATH = $(SRC_DIR):$(TEST_SRC_DIR)$/;"	m
+VPATH	otest/Makefile	/^VPATH= $(SRC)$/;"	m
+Vex	otest/src/fdtd.c	/^MyStruct Vey, Vex, Vez;$/;"	v
+Vex	src/fdtd.c	/^MyStruct Vey, Vex, Vez;$/;"	v
+Vey	otest/src/fdtd.c	/^MyStruct Vey, Vex, Vez;$/;"	v
+Vey	src/fdtd.c	/^MyStruct Vey, Vex, Vez;$/;"	v
+Vez	otest/src/fdtd.c	/^MyStruct Vey, Vex, Vez;$/;"	v
+Vez	src/fdtd.c	/^MyStruct Vey, Vex, Vez;$/;"	v
+Vp_ratio	otest/src/connectingInterface.c	/^MyDataF Vp_ratio; \/\/phase velocity ratio$/;"	v
+Vp_ratio	src/connectingInterface.c	/^MyDataF Vp_ratio; \/\/phase velocity ratio$/;"	v
+We_Kang	otest/src/breakdownFormula.c	/^MyDataF We_Kang(MyDataF E) {$/;"	f
+We_Kang	src/breakdownFormula.c	/^MyDataF We_Kang(MyDataF E) {$/;"	f
+We_MorrowAndLowke	otest/src/breakdownFormula.c	/^MyDataF We_MorrowAndLowke(MyDataF E, MyDataF N) {$/;"	f
+We_MorrowAndLowke	src/breakdownFormula.c	/^MyDataF We_MorrowAndLowke(MyDataF E, MyDataF N) {$/;"	f
+We_Nikonov	otest/src/breakdownFormula.c	/^MyDataF We_Nikonov(MyDataF E, MyDataF P) {$/;"	f
+We_Nikonov	src/breakdownFormula.c	/^MyDataF We_Nikonov(MyDataF E, MyDataF P) {$/;"	f
+_SOURCE_TEX_	otest/src/common.h	57;"	d
+_SOURCE_TEX_	src/common.h	57;"	d
+_SOURCE_TMX_	otest/src/common.h	58;"	d
+_SOURCE_TMX_	src/common.h	58;"	d
+alpha	otest/src/commonData.c	/^MyDataF alpha;$/;"	v
+alpha	src/commonData.c	/^MyDataF alpha;$/;"	v
+attachment	otest/src/breakdownFormula.c	/^MyDataF attachment(MyDataF Em, MyDataF p) {$/;"	f
+attachment	src/breakdownFormula.c	/^MyDataF attachment(MyDataF Em, MyDataF p) {$/;"	f
+beta	otest/src/fdtd.c	/^MyStruct beta;$/;"	v
+beta	src/fdtd.c	/^MyStruct beta;$/;"	v
+c	otest/src/commonData.h	/^    static const MyDataF c = 2.998E8; \/\/speed of light$/;"	v
+c	src/commonData.h	/^    static const MyDataF c = 2.998E8; \/\/speed of light$/;"	v
+calErmsAtCoarsePoint	otest/src/density.c	/^void calErmsAtCoarsePoint() {$/;"	f
+calErmsAtCoarsePoint	src/density.c	/^void calErmsAtCoarsePoint() {$/;"	f
+calErmsAtCoarsePoint_Max	otest/src/density.c	/^void calErmsAtCoarsePoint_Max() {$/;"	f
+calErmsAtCoarsePoint_Max	src/density.c	/^void calErmsAtCoarsePoint_Max() {$/;"	f
+calsampos	otest/src/dataSaving.c	/^void calsampos(int *xpos, int *ypos) {$/;"	f
+calsampos	src/dataSaving.c	/^void calsampos(int *xpos, int *ypos) {$/;"	f
+ceihi	otest/src/connectingInterface.c	/^MyDataF chiei, ceihi;$/;"	v
+ceihi	src/connectingInterface.c	/^MyDataF chiei, ceihi;$/;"	v
+chiei	otest/src/connectingInterface.c	/^MyDataF chiei, ceihi;$/;"	v
+chiei	src/connectingInterface.c	/^MyDataF chiei, ceihi;$/;"	v
+chkgrad	otest/src/dataSaving.c	/^void chkgrad(MyDataF str, MyDataF strpre, int i, int j) {$/;"	f
+chkgrad	src/dataSaving.c	/^void chkgrad(MyDataF str, MyDataF strpre, int i, int j) {$/;"	f
+cnepx	otest/src/fdtd.c	/^int cnepx, cnepy;$/;"	v
+cnepx	src/fdtd.c	/^int cnepx, cnepy;$/;"	v
+cnepy	otest/src/fdtd.c	/^int cnepx, cnepy;$/;"	v
+cnepy	src/fdtd.c	/^int cnepx, cnepy;$/;"	v
+collision	otest/src/breakdownFormula.c	/^MyDataF collision(MyDataF Em, MyDataF p) {$/;"	f
+collision	src/breakdownFormula.c	/^MyDataF collision(MyDataF Em, MyDataF p) {$/;"	f
+cos_phi	otest/src/connectingInterface.c	/^MyDataF cos_phi, sin_phi;$/;"	v
+cos_phi	src/connectingInterface.c	/^MyDataF cos_phi, sin_phi;$/;"	v
+createFields	otest/src/initial.c	/^void createFields() {$/;"	f
+createFields	src/initial.c	/^void createFields() {$/;"	f
+data	otest/src/dataType.h	/^        MyDataF* data;$/;"	m	struct:__anon1
+data	src/dataType.h	/^        MyDataF* data;$/;"	m	struct:__anon2
+delays	otest/src/connectingInterface.c	/^MyDataF delays(MyDataF px, MyDataF py) {$/;"	f
+delays	src/connectingInterface.c	/^MyDataF delays(MyDataF px, MyDataF py) {$/;"	f
+ds_F	otest/src/commonData.c	/^MyDataF ds_F, ds_M;$/;"	v
+ds_F	src/commonData.c	/^MyDataF ds_F, ds_M;$/;"	v
+ds_M	otest/src/commonData.c	/^MyDataF ds_F, ds_M;$/;"	v
+ds_M	src/commonData.c	/^MyDataF ds_F, ds_M;$/;"	v
+dt	otest/src/commonData.c	/^MyDataF dt, dt_F, dt_M;$/;"	v
+dt	src/commonData.c	/^MyDataF dt, dt_F, dt_M;$/;"	v
+dt_F	otest/src/commonData.c	/^MyDataF dt, dt_F, dt_M;$/;"	v
+dt_F	src/commonData.c	/^MyDataF dt, dt_F, dt_M;$/;"	v
+dt_M	otest/src/commonData.c	/^MyDataF dt, dt_F, dt_M;$/;"	v
+dt_M	src/commonData.c	/^MyDataF dt, dt_F, dt_M;$/;"	v
+dx	otest/src/commonData.c	/^MyDataF dx;$/;"	v
+dx	src/commonData.c	/^MyDataF dx;$/;"	v
+dy	otest/src/commonData.c	/^MyDataF dy;$/;"	v
+dy	src/commonData.c	/^MyDataF dy;$/;"	v
+e	otest/src/commonData.h	/^    static const MyDataF e = 1.602e-19; \/\/electron charge$/;"	v
+e	src/commonData.h	/^    static const MyDataF e = 1.602e-19; \/\/electron charge$/;"	v
+econnect	otest/src/connectingInterface.c	/^void econnect(MyDataF t) {$/;"	f
+econnect	src/connectingInterface.c	/^void econnect(MyDataF t) {$/;"	f
+eilen	otest/src/connectingInterface.c	/^int eilen, hilen;$/;"	v
+eilen	src/connectingInterface.c	/^int eilen, hilen;$/;"	v
+end_connect	otest/src/connectingInterface.c	/^void end_connect() {$/;"	f
+end_connect	src/connectingInterface.c	/^void end_connect() {$/;"	f
+ep	otest/src/matlabSimulation.c	/^Engine *ep = NULL;$/;"	v
+ep	src/matlabSimulation.c	/^Engine *ep = NULL;$/;"	v
+eps_0	otest/src/commonData.h	/^    static const MyDataF eps_0 = 8.854e-12;$/;"	v
+eps_0	src/commonData.h	/^    static const MyDataF eps_0 = 8.854e-12;$/;"	v
+errMessage	src/dataType.c	/^void *errMessage[ERROR_MESSAGE_SIZE];$/;"	v
+f	otest/src/commonData.c	/^MyDataF f; \/\/frequency$/;"	v
+f	src/commonData.c	/^MyDataF f; \/\/frequency$/;"	v
+fdtd	otest/src/fdtd.c	/^void fdtd() {$/;"	f
+fdtd	src/fdtd.c	/^void fdtd() {$/;"	f
+filedat	otest/src/commonData.c	/^FILE *filedat = NULL;$/;"	v
+first	otest/src/initial.c	/^int first, second, third;$/;"	v
+first	src/initial.c	/^int first, second, third;$/;"	v
+freeData	otest/src/dataType.c	/^void freeData(MyStruct *mstruct) {$/;"	f
+freeData	src/dataType.c	/^void freeData(MyStruct *mstruct) {$/;"	f
+half_dt	otest/src/commonData.c	/^MyDataF half_dt;$/;"	v
+half_dt	src/commonData.c	/^MyDataF half_dt;$/;"	v
+help	otest/src/abd2d.c	/^void help() {$/;"	f
+help	src/abd2d.c	/^void help() {$/;"	f
+hilen	otest/src/connectingInterface.c	/^int eilen, hilen;$/;"	v
+hilen	src/connectingInterface.c	/^int eilen, hilen;$/;"	v
+if_erms_E_max	otest/src/commonData.c	/^int if_erms_E_max = IF_ERMS_E_MAX; \/\/ if set niutype=4 then this is reset to 1$/;"	v
+if_erms_E_max	src/commonData.c	/^int if_erms_E_max = IF_ERMS_E_MAX; \/\/ if set niutype=4 then this is reset to 1$/;"	v
+initCommonData	otest/src/initial.c	/^void initCommonData() {$/;"	f
+initCommonData	src/initial.c	/^void initCommonData() {$/;"	f
+initMyStruct	otest/src/dataType.c	/^void initMyStruct(MyStruct *coo, int nx, int ny, MyDataF InitValue) {$/;"	f
+initMyStruct	src/dataType.c	/^void initMyStruct(MyStruct *coo, int nx, int ny, MyDataF InitValue) {$/;"	f
+initSource	src/connectingInterface.c	/^void initSource() {$/;"	f
+initconnect	otest/src/connectingInterface.c	/^void initconnect() {$/;"	f
+initconnect	src/connectingInterface.c	/^void initconnect() {$/;"	f
+input	otest/src/abd2d.c	/^void input(int argc, char*argv[]) {$/;"	f
+input	src/abd2d.c	/^void input(int argc, char*argv[]) {$/;"	f
+ionization	otest/src/breakdownFormula.c	/^MyDataF ionization(MyDataF Em, MyDataF p) {$/;"	f
+ionization	src/breakdownFormula.c	/^MyDataF ionization(MyDataF Em, MyDataF p) {$/;"	f
+isConnect	otest/src/commonData.c	/^int isConnect = ISCONNECT;$/;"	v
+isConnect	src/commonData.c	/^int isConnect = ISCONNECT;$/;"	v
+isnan	otest/src/common.h	19;"	d
+isnan	src/common.h	19;"	d
+k	otest/src/commonData.c	/^MyDataF k; \/\/$/;"	v
+k	src/commonData.c	/^MyDataF k; \/\/$/;"	v
+kasi	otest/src/commonData.c	/^MyDataF kasi;$/;"	v
+kasi	src/commonData.c	/^MyDataF kasi;$/;"	v
+lamda	otest/src/commonData.c	/^MyDataF lamda;$/;"	v
+lamda	src/commonData.c	/^MyDataF lamda;$/;"	v
+length	otest/src/commonData.h	/^    static const MyDataF length = 1.0;$/;"	v
+length	src/commonData.h	/^    static const MyDataF length = 1.0;$/;"	v
+m	otest/src/commonData.c	/^int m = FINE_GRID_SIZE;$/;"	v
+m	src/commonData.c	/^int m = FINE_GRID_SIZE;$/;"	v
+main	otest/src/abd2d.c	/^int main(int argc, char** argv) {$/;"	f
+main	src/abd2d.c	/^int main(int argc, char** argv) {$/;"	f
+main	test/sourceTest.c	/^int main(){$/;"	f
+maxwellGridSize	otest/src/commonData.c	/^int maxwellGridSize = MAXWELL_MESH_SIZE;$/;"	v
+maxwellGridSize	src/commonData.c	/^int maxwellGridSize = MAXWELL_MESH_SIZE;$/;"	v
+mconnect	otest/src/connectingInterface.c	/^void mconnect(MyDataF t) {$/;"	f
+mconnect	src/connectingInterface.c	/^void mconnect(MyDataF t) {$/;"	f
+me	otest/src/commonData.h	/^    static const MyDataF me = 9.110e-31; \/\/electron mass$/;"	v
+me	src/commonData.h	/^    static const MyDataF me = 9.110e-31; \/\/electron mass$/;"	v
+mu_0	otest/src/commonData.h	/^    static const MyDataF mu_0 = 1.257e-6;$/;"	v
+mu_0	src/commonData.h	/^    static const MyDataF mu_0 = 1.257e-6;$/;"	v
+mu_e	otest/src/commonData.c	/^MyDataF mu_e;$/;"	v
+mu_e	src/commonData.c	/^MyDataF mu_e;$/;"	v
+mu_i	otest/src/commonData.c	/^MyDataF mu_i;$/;"	v
+mu_i	src/commonData.c	/^MyDataF mu_i;$/;"	v
+my_pause	otest/src/density.c	/^void my_pause() {$/;"	f
+my_pause	src/density.c	/^void my_pause() {$/;"	f
+n	otest/src/commonData.c	/^int n;$/;"	v
+n	src/commonData.c	/^int n;$/;"	v
+nbound	otest/src/commonData.c	/^int nbound;$/;"	v
+nbound	src/commonData.c	/^int nbound;$/;"	v
+ne	otest/src/fdtd.c	/^MyStruct ne, ne_pre;$/;"	v
+ne	src/fdtd.c	/^MyStruct ne, ne_pre;$/;"	v
+ne_pre	otest/src/fdtd.c	/^MyStruct ne, ne_pre;$/;"	v
+ne_pre	src/fdtd.c	/^MyStruct ne, ne_pre;$/;"	v
+niutype	otest/src/commonData.c	/^int niutype = NIU_TYPE;$/;"	v
+niutype	src/commonData.c	/^int niutype = NIU_TYPE;$/;"	v
+nx	otest/src/commonData.c	/^int nx, nxp1, nxm1;$/;"	v
+nx	otest/src/dataType.h	/^        int nx;$/;"	m	struct:__anon1
+nx	src/commonData.c	/^int nx, nxp1, nxm1;$/;"	v
+nx	src/dataType.h	/^        int nx;$/;"	m	struct:__anon2
+nxm1	otest/src/commonData.c	/^int nx, nxp1, nxm1;$/;"	v
+nxm1	src/commonData.c	/^int nx, nxp1, nxm1;$/;"	v
+nxp1	otest/src/commonData.c	/^int nx, nxp1, nxm1;$/;"	v
+nxp1	src/commonData.c	/^int nx, nxp1, nxm1;$/;"	v
+ny	otest/src/commonData.c	/^int ny, nyp1, nym1;$/;"	v
+ny	otest/src/dataType.h	/^        int ny;$/;"	m	struct:__anon1
+ny	src/commonData.c	/^int ny, nyp1, nym1;$/;"	v
+ny	src/dataType.h	/^        int ny;$/;"	m	struct:__anon2
+nym1	otest/src/commonData.c	/^int ny, nyp1, nym1;$/;"	v
+nym1	src/commonData.c	/^int ny, nyp1, nym1;$/;"	v
+nyp1	otest/src/commonData.c	/^int ny, nyp1, nym1;$/;"	v
+nyp1	src/commonData.c	/^int ny, nyp1, nym1;$/;"	v
+omega	otest/src/commonData.c	/^MyDataF omega;$/;"	v
+omega	src/commonData.c	/^MyDataF omega;$/;"	v
+p	otest/src/commonData.c	/^MyDataF p = 760.0; \/\/压强$/;"	v
+p	src/commonData.c	/^MyDataF p = 760.0; \/\/压强$/;"	v
+pSource	src/commonData.c	/^MyDataF (*pSource)(MyDataF t);$/;"	v
+phi	otest/src/commonData.c	/^MyDataF phi = 0; \/\/incidence wave inject angle on x-axis $/;"	v
+phi	src/commonData.c	/^MyDataF phi = 0; \/\/incidence wave inject angle on x-axis $/;"	v
+pie	otest/src/commonData.c	/^int pie = 0;$/;"	v
+pie	src/commonData.c	/^int pie = 0;$/;"	v
+pis	otest/src/commonData.c	/^int pis = 0;$/;"	v
+pis	src/commonData.c	/^int pis = 0;$/;"	v
+pje	otest/src/commonData.c	/^int pje = 0;$/;"	v
+pje	src/commonData.c	/^int pje = 0;$/;"	v
+pjs	otest/src/commonData.c	/^int pjs = 0;$/;"	v
+pjs	src/commonData.c	/^int pjs = 0;$/;"	v
+pml_R_0	otest/src/pml.c	/^MyDataF pml_R_0 = 1e-8;$/;"	v
+pml_R_0	src/pml.c	/^MyDataF pml_R_0 = 1e-8;$/;"	v
+pml_order	otest/src/pml.c	/^int pml_order = 2;$/;"	v
+pml_order	src/pml.c	/^int pml_order = 2;$/;"	v
+printf	otest/src/matlabSimulation.c	16;"	d	file:
+printf	src/matlabSimulation.c	16;"	d	file:
+rei	otest/src/commonData.c	/^MyDataF rei;$/;"	v
+rei	src/commonData.c	/^MyDataF rei;$/;"	v
+saveEfieldCenterTMz	otest/src/dataSaving.c	/^void saveEfieldCenterTMz(int timestep) {$/;"	f
+saveEfieldCenterTMz	src/dataSaving.c	/^void saveEfieldCenterTMz(int timestep) {$/;"	f
+save_vi	otest/src/commonData.c	/^int save_vi = 0;$/;"	v
+save_vi	src/commonData.c	/^int save_vi = 0;$/;"	v
+scpfld	otest/src/dataSaving.c	/^void scpfld(MyDataF *CapEf, int ttstep) {$/;"	f
+scpfld	src/dataSaving.c	/^void scpfld(MyDataF *CapEf, int ttstep) {$/;"	f
+second	otest/src/initial.c	/^int first, second, third;$/;"	v
+second	src/initial.c	/^int first, second, third;$/;"	v
+sign	otest/src/breakdownFormula.c	/^int sign(MyDataF val) {$/;"	f
+sign	src/breakdownFormula.c	/^int sign(MyDataF val) {$/;"	f
+sin_phi	otest/src/connectingInterface.c	/^MyDataF cos_phi, sin_phi;$/;"	v
+sin_phi	src/connectingInterface.c	/^MyDataF cos_phi, sin_phi;$/;"	v
+srcType	src/commonData.c	/^int srcType=SINE;$/;"	v
+srcdat	otest/src/dataSaving.c	/^MyDataF *srcdat = NULL;$/;"	v
+srcdat	src/dataSaving.c	/^MyDataF *srcdat = NULL;$/;"	v
+start_index_x	otest/src/connectingInterface.c	/^int start_index_x;$/;"	v
+start_index_x	src/connectingInterface.c	/^int start_index_x;$/;"	v
+start_index_y	otest/src/connectingInterface.c	/^int start_index_y;$/;"	v
+start_index_y	src/connectingInterface.c	/^int start_index_y;$/;"	v
+t_0	src/commonData.c	/^MyDataF t_0; \/\/ time delay$/;"	v
+t_per_cell	otest/src/connectingInterface.c	/^MyDataF t_per_cell; \/\/time wave propagates per Yee cell$/;"	v
+t_per_cell	src/connectingInterface.c	/^MyDataF t_per_cell; \/\/time wave propagates per Yee cell$/;"	v
+tauSquare	src/commonData.c	/^MyDataF tauSquare; \/\/ tau^2 for Gaussian wave$/;"	v
+third	otest/src/initial.c	/^int first, second, third;$/;"	v
+third	src/initial.c	/^int first, second, third;$/;"	v
+thread_count	otest/src/commonData.c	/^int thread_count=DEFAULT_THREAD_COUNT;/;"	v
+thread_count	src/commonData.c	/^int thread_count = DEFAULT_THREAD_COUNT;$/;"	v
+totaltime	otest/src/commonData.c	/^MyDataF totaltime = TOTAL_TIME; \/\/in nane second$/;"	v
+totaltime	src/commonData.c	/^MyDataF totaltime = TOTAL_TIME; \/\/in nane second$/;"	v
+tpie	otest/src/commonData.c	/^int tpie;$/;"	v
+tpie	src/commonData.c	/^int tpie;$/;"	v
+tpis	otest/src/commonData.c	/^int tpis;$/;"	v
+tpis	src/commonData.c	/^int tpis;$/;"	v
+tpje	otest/src/commonData.c	/^int tpje;$/;"	v
+tpje	src/commonData.c	/^int tpje;$/;"	v
+tpjs	otest/src/commonData.c	/^int tpjs;$/;"	v
+tpjs	src/commonData.c	/^int tpjs;$/;"	v
+va	otest/src/commonData.c	/^MyDataF vi, va;$/;"	v
+va	src/commonData.c	/^MyDataF vi, va;$/;"	v
+vi	otest/src/commonData.c	/^MyDataF vi, va;$/;"	v
+vi	src/commonData.c	/^MyDataF vi, va;$/;"	v
+vm	otest/src/commonData.c	/^MyDataF vm = 760 * 5.3e9;$/;"	v
+vm	src/commonData.c	/^MyDataF vm = 760 * 5.3e9;$/;"	v
+xe	otest/src/connectingInterface.c	/^int xs, ys, xe, ye; \/\/$/;"	v
+xe	src/connectingInterface.c	/^int xs, ys, xe, ye; \/\/$/;"	v
+xs	otest/src/connectingInterface.c	/^int xs, ys, xe, ye; \/\/$/;"	v
+xs	src/connectingInterface.c	/^int xs, ys, xe, ye; \/\/$/;"	v
+ye	otest/src/connectingInterface.c	/^int xs, ys, xe, ye; \/\/$/;"	v
+ye	src/connectingInterface.c	/^int xs, ys, xe, ye; \/\/$/;"	v
+ys	otest/src/connectingInterface.c	/^int xs, ys, xe, ye; \/\/$/;"	v
+ys	src/connectingInterface.c	/^int xs, ys, xe, ye; \/\/$/;"	v
