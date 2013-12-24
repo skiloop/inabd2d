@@ -71,6 +71,12 @@ extern "C" {
     //const  int if_erms_E_max = 3; // if set niutype=4 then this is reset to 1
     // 在abd2d.c里改
 #define IF_ERMS_E_MAX 3 // default values for if_erms_E_max
+    
+    // Wave forms
+#define SINE (0)
+#define GAUSSIAN (1)
+#define COSINE (2)
+#define DEFAULT_WAVEFORM (SINE)
 
 #define E_MAX 6.0e6
 #define NE0 1e13
@@ -81,13 +87,13 @@ extern "C" {
     //////////////////////////////////////
     //display definition
     /////////////////////////////////////
-#define FIELD_TO_DISPLAY0 Ex_s
-#define FIELD_TO_DISPLAY1 Ey_s
-#define FIELD_TO_DISPLAY2 Hz_s
+#define FIELD_TO_DISPLAY0 Ex
+#define FIELD_TO_DISPLAY1 Ey
+#define FIELD_TO_DISPLAY2 Hz
 
-#define FIELD_TO_DISPLAY3 Hx_s
-#define FIELD_TO_DISPLAY4 Hy_s
-#define FIELD_TO_DISPLAY5 Ez_s
+#define FIELD_TO_DISPLAY3 Hx
+#define FIELD_TO_DISPLAY4 Hy
+#define FIELD_TO_DISPLAY5 Ez
 
 #define DISPLAY_NE
 

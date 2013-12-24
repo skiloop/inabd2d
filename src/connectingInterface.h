@@ -12,6 +12,7 @@
 extern "C" {
 #endif
 
+    
     void initconnect();
     void econnect(MyDataF t);
     void mconnect(MyDataF t);
@@ -22,7 +23,11 @@ extern "C" {
     void Adjust_M_Field(MyDataF pre_t);
     void FreeDelayArrays();
 
+    void initSource();
     MyDataF Source(MyDataF t);
+    MyDataF GaussianSource(MyDataF t);
+    MyDataF SineSource(MyDataF t);
+    MyDataF CosineSource(MyDataF t);
 
 
 #ifdef	__cplusplus

@@ -57,9 +57,9 @@ void InitCapture(int ttstep) {
 
 void CaptureE(MyDataF *CapEf, int CurTimeStep, int i, int j) {
     if (IsTEx) {
-        CapEf[CurTimeStep] = Ez_s.data[i * Ez_s.ny + j];
+        CapEf[CurTimeStep] = Ez.data[i * Ez.ny + j];
     } else if (IsTMx) {
-        CapEf[CurTimeStep] = Ey_s.data[i * Ey_s.ny + j];
+        CapEf[CurTimeStep] = Ey.data[i * Ey.ny + j];
     }
 }
 
@@ -94,7 +94,7 @@ void CheckIfOverLimit(int i, int j, MyDataF data) {
 
 void saveEfieldCenterTMz(int timestep) {
     static int cnt = 0;
-    int jcenter = Hz_s.ny / 2, in;
+    int jcenter = Hz.ny / 2, in;
     MyDataF ex, ey;
 
     char file[21] = "ec000000.dat";
@@ -111,9 +111,9 @@ void saveEfieldCenterTMz(int timestep) {
         printf("Cannot create file: \t%s\n", file);
         exit(EXIT_FAILURE);
     }
-    for (in = tpis; in <= tpie && in < Hz_s.nx; in++) {
-        ex = (Ex_s.data[in * Ex_s.ny + jcenter] + Ex_s.data[in * Ex_s.ny + jcenter + 1]) / 2;
-        ey = (Ey_s.data[in * Ey_s.ny + jcenter] + Ey_s.data[(in + 1) * Ey_s.ny + jcenter]) / 2;
+    for (in = tpis; in <= tpie && in < Hz.nx; in++) {
+        ex = (Ex.data[in * Ex.ny + jcenter] + Ex.data[in * Ex.ny + jcenter + 1]) / 2;
+        ey = (Ey.data[in * Ey.ny + jcenter] + Ey.data[(in + 1) * Ey.ny + jcenter]) / 2;
         fprintf(fp, "%4.4e\n", sqrt(ex * ex + ey * ey));
     }
     fclose(fp);
@@ -175,11 +175,11 @@ void SaveCapField(const int timestep) {
         //puts(fname);
 
         if (IsTEx) {
-            CaptDataNoPML(cnt % 10, file, Ez_s, tpis, tpie, tpjs, tpje);
+            CaptDataNoPML(cnt % 10, file, Ez, tpis, tpie, tpjs, tpje);
             //
             file[0] = 'e';
             file[1] = 'c';
-            CaptDataCenter(cnt % 10, file, Ez_s, Ez_s.ny / 2, tpis, tpie);
+            CaptDataCenter(cnt % 10, file, Ez, Ez.ny / 2, tpis, tpie);
             //file[0] = 'h';	file[1] = 'x';	CaptData(cnt%10,file,Hx_s); 
             //file[0] = 'h';	file[1] = 'y';	CaptData(cnt%10,file,Hy_s); 
         } else if (IsTMx) {
@@ -187,7 +187,7 @@ void SaveCapField(const int timestep) {
             //file[1] = 'y';	CaptData(cnt%10,file,Ey_s);
             file[0] = 'h';
             file[1] = 'z';
-            CaptDataNoPML(cnt % 10, file, Hz_s, tpis, tpie, tpjs, tpje);
+            CaptDataNoPML(cnt % 10, file, Hz, tpis, tpie, tpjs, tpje);
             saveEfieldCenterTMz(timestep);
         }
         if(IfWithDensity) {
@@ -274,17 +274,17 @@ void SaveToFile() {
     fprintf(hfile, "DataName\tnx\tny\n");
 
     if (IsTMx) {
-        SaveData(Ex_s, "Ex_s.dat", hfile);
-        SaveData(Ey_s, "Ey_s.dat", hfile);
-        SaveData(Hz_s, "Hz_s.dat", hfile);
+        SaveData(Ex, "Ex_s.dat", hfile);
+        SaveData(Ey, "Ey_s.dat", hfile);
+        SaveData(Hz, "Hz_s.dat", hfile);
 
         SaveData(Vex, "Vex.dat", hfile);
         SaveData(Vey, "Vey.dat", hfile);
     }
     if (IsTEx) {
-        SaveData(Hx_s, "Hx_s.dat", hfile);
-        SaveData(Hy_s, "Hy_s.dat", hfile);
-        SaveData(Ez_s, "Ez_s.dat", hfile);
+        SaveData(Hx, "Hx_s.dat", hfile);
+        SaveData(Hy, "Hy_s.dat", hfile);
+        SaveData(Ez, "Ez_s.dat", hfile);
 
         SaveData(Vez, "Vez.dat", hfile);
     }

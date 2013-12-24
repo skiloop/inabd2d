@@ -45,30 +45,6 @@ MyDataF Ratio_x, Ratio_y;
 MyDataF lamda;
 MyDataF omega;
 MyDataF phi = 0; //incidence wave inject angle on x-axis 
-//
-//
-////EM field
-//MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;
-//MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;
-//MyStruct Ey_s_pre, Ex_s_pre, Ez_s_pre;
-//MyStruct Vey, Vex, Vez;
-//MyStruct ne, ne_pre;
-//MyStruct beta;
-//MyStruct Erms;
-//MyStruct Ermsx, Ermsy;
-//MyStruct Nu_c; // 循环利用的碰撞率
-//
-////Coeffients
-//MyDataF Chxez, Chyez, Chzex, Chzey;
-//
-//MyStruct Cevx, Cevy, Cevz;
-//MyStruct Ceex, Ceey, Ceez;
-//MyStruct Cehx, Cehy, Cehz;
-//
-//MyDataF Cve;
-//
-//MyStruct Cvvx, Cvvy, Cvvz;
-//MyStruct Cvex, Cvey, Cvez;
 
 int IsTMx = _SOURCE_TMX_;
 int IsTEx = _SOURCE_TEX_;
@@ -87,6 +63,14 @@ MyDataF totaltime = TOTAL_TIME; //in nane second
 int isConnect = ISCONNECT;
 int IfWithDensity = IF_WITH_DENSITY;
 int maxwellGridSize = MAXWELL_MESH_SIZE;
+
+//////////////////////////////////
+// source waveform
+//////////////////////////////////
+int srcType=SINE;
+MyDataF t_0; // time delay
+MyDataF tauSquare; // tau^2 for Gaussian wave
+MyDataF (*pSource)(MyDataF t);
 
 //Total fields zone position
 int tpis;

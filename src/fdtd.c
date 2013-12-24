@@ -30,8 +30,8 @@
 ///////////////////////////////
 //EM field
 MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;
-MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;
-MyStruct Ey_s_pre, Ex_s_pre, Ez_s_pre;
+MyStruct Ey, Ex, Ez, Hx, Hy, Hz;
+MyStruct Ey_pre, Ex_pre, Ez_pre;
 MyStruct Vey, Vex, Vez;
 MyStruct ne, ne_pre;
 MyStruct beta;
@@ -59,19 +59,19 @@ void UpdateEField() {
     int indx, indy;
     //MyDataF Eztmp;
     if (IsTMx) {
-        BackupMyStruct(Ex_s, Ex_s_pre);
-        BackupMyStruct(Ey_s, Ey_s_pre);
+        BackupMyStruct(Ex, Ex_pre);
+        BackupMyStruct(Ey, Ey_pre);
 #ifdef _OPENMP
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
 	private(i,j,index,indx)
 #endif
-        for (i = 0; i < Ex_s.nx; i++) {
+        for (i = 0; i < Ex.nx; i++) {
             for (j = pjs; j < pje; j++) {
-                index = i * Hz_s.ny + j;
-                indx = i * Ex_s.ny + j;
-                Ex_s.data[indx] = Ceex.data[indx]*(Ex_s.data[indx]) +
+                index = i * Hz.ny + j;
+                indx = i * Ex.ny + j;
+                Ex.data[indx] = Ceex.data[indx]*(Ex.data[indx]) +
                         Cevx.data[indx] * Vex.data[indx] + Cehx.data[indx]*
-                        (Hz_s.data[index] - Hz_s.data[index - 1]);
+                        (Hz.data[index] - Hz.data[index - 1]);
             }
         }
 #ifdef _OPENMP
@@ -79,31 +79,31 @@ void UpdateEField() {
 	private(i,j,index,indy)
 #endif
         for (i = pis; i < pie; i++) {
-            for (j = 0; j < Ey_s.ny; j++) {
-                indy = i * Ey_s.ny + j;
-                Ey_s.data[indy] = Ceey.data[indy]*(Ey_s.data[indy])
+            for (j = 0; j < Ey.ny; j++) {
+                indy = i * Ey.ny + j;
+                Ey.data[indy] = Ceey.data[indy]*(Ey.data[indy])
                         + Cevy.data[indy] * Vey.data[indy] + Cehy.data[indy]*
-                        (Hz_s.data[indy] - Hz_s.data[indy - Hz_s.ny]);
+                        (Hz.data[indy] - Hz.data[indy - Hz.ny]);
             }
         }
         //AdjustEFieldAtCnntIntfc();
     }
     if (IsTEx) {
-        BackupMyStruct(Ez_s, Ez_s_pre);
+        BackupMyStruct(Ez, Ez_pre);
 #ifdef _OPENMP
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
 	private(i,j,index,indx,indy)
 #endif
         for (i = pis + 1; i < pie; i++) {
             for (j = pjs + 1; j < pje; j++) {
-                index = i * Ez_s.ny + j;
-                indy = i * Hy_s.ny + j;
-                indx = i * Hx_s.ny + j;
+                index = i * Ez.ny + j;
+                indy = i * Hy.ny + j;
+                indx = i * Hx.ny + j;
 
-                Ez_s.data[index] = Ceez.data[index]*(Ez_s.data[index]) +
+                Ez.data[index] = Ceez.data[index]*(Ez.data[index]) +
                         Cevz.data[index] * Vez.data[index] + Cehz.data[index]*(
-                        (Hy_s.data[indy] - Hy_s.data[indy - Hy_s.ny])-
-                        (Hx_s.data[indx] - Hx_s.data[indx - 1]));
+                        (Hy.data[indy] - Hy.data[indy - Hy.ny])-
+                        (Hx.data[indx] - Hx.data[indx - 1]));
 
             }
         }
@@ -119,11 +119,11 @@ void UpdateMField() {
 #pragma omp parallel for num_threads(thread_count) schedule(dynamic)\
 	private(i,j,index,ind)
 #endif
-        for (i = 0; i < Hx_s.nx; i++) {
+        for (i = 0; i < Hx.nx; i++) {
             for (j = pjs; j < pje; j++) {
-                index = i * Hx_s.ny + j;
-                ind = i * Ez_s.ny + j;
-                Hx_s.data[index] = Hx_s.data[index] + Chxez * (Ez_s.data[ind + 1] - Ez_s.data[ind]);
+                index = i * Hx.ny + j;
+                ind = i * Ez.ny + j;
+                Hx.data[index] = Hx.data[index] + Chxez * (Ez.data[ind + 1] - Ez.data[ind]);
             }
         }
 #ifdef _OPENMP
@@ -131,10 +131,10 @@ void UpdateMField() {
 	private(i,j,index,ind)
 #endif
         for (i = pis; i < pie; i++) {
-            for (j = 0; j < Hy_s.ny; j++) {
-                index = i * Hy_s.ny + j;
-                ind = i * Ez_s.ny + j;
-                Hy_s.data[index] = Hy_s.data[index] + Chyez * (Ez_s.data[ind + Ez_s.ny] - Ez_s.data[ind]);
+            for (j = 0; j < Hy.ny; j++) {
+                index = i * Hy.ny + j;
+                ind = i * Ez.ny + j;
+                Hy.data[index] = Hy.data[index] + Chyez * (Ez.data[ind + Ez.ny] - Ez.data[ind]);
             }
         }
     }
@@ -146,14 +146,14 @@ void UpdateMField() {
 #endif
         for (i = pis; i < pie; i++) {
             for (j = pjs; j < pje; j++) {
-                index = i * Hz_s.ny + j;
-                ind = i * Ex_s.ny + j;
-                ind2 = i * Ey_s.ny + j;
-                Hz_s.data[index] +=
-                        Chzex * (Ex_s.data[ind + 1] - Ex_s.data[ind]) +
-                        Chzey * (Ey_s.data[ind2 + Ey_s.ny] - Ey_s.data[ind2]);
+                index = i * Hz.ny + j;
+                ind = i * Ex.ny + j;
+                ind2 = i * Ey.ny + j;
+                Hz.data[index] +=
+                        Chzex * (Ex.data[ind + 1] - Ex.data[ind]) +
+                        Chzey * (Ey.data[ind2 + Ey.ny] - Ey.data[ind2]);
 #ifdef _DEBUG
-                if (index == Hz_s.nx * Hz_s.ny / 2 + Hz_s.ny / 2)
+                if (index == Hz.nx * Hz.ny / 2 + Hz.ny / 2)
                     j = j;
 #endif
             }
@@ -183,8 +183,15 @@ void fdtd() {
     int step_per_half_ns8 = (int) (0.5 + 0.125e-9 / dt_F);
     clock_t t_start, t_end;
     //MyDataF RealEz,rhtb;
-    sxpos = (int) (0.5 + ny / 2); //x position of sources
+    int stpos = NUMBER_OF_CELLS_IN_PML_BOUND + SCATTER_FIELD_DOMAIN_BND_SIZE;
+    int index;
+    sxpos = (int) (0.5 + stpos + (int) (2.25 / 3.0 * (nx - 2 * stpos))); //x position of sources
     sypos = (int) (0.5 + ny / 2);
+    if (IsTEx) {
+        index = sxpos * Ez.ny + sypos;
+    } else {
+        index = sxpos * Hz.ny + sypos;
+    }
     //fne=fopen("cnep.dat","w");
     //y position of sources
     cnepx = m * ((int) (0.5 + 2.25 * lamda / dx) + tpis);
@@ -206,6 +213,7 @@ void fdtd() {
     sypos = (int) (0.5 + (tpjs + tpje) / 2);
     CurTime = -half_dt;
 
+    initSource();
     InitSim();
     //InitIncFdtd();
     if (isConnect)initconnect(); ////InitFields();////Init fields before marching  loop i.e. at t = 0
@@ -223,15 +231,15 @@ void fdtd() {
             //DispEMFields(CurTimeStep);
             //Hz_s.data[Hz_s.ny*Hz_s.ny/2+Hz_s.ny/2] += Source(CurTime);
             //UpdMFieldForPML();
-            UpdateMFieldForPML(Hx_s, Hy_s, Hz_s, Ex_s, Ey_s, Ez_s);
+            UpdateMFieldForPML(Hx, Hy, Hz, Ex, Ey, Ez);
             //DispEMFields(CurTimeStep);
 
             CurTime += half_dt;
             //DispEMFields(CurTimeStep);
             UpdateEField();
             if (!isConnect) {
-                if (IsTEx)Ez_s.data[100 * Ez_s.ny + 50] += Source(CurTime);
-                if (IsTMx)Hz_s.data[(pis + 10) * Hz_s.ny + 100] = Source(CurTime);
+                if (IsTEx)Ez.data[index] += Ez0 * Source(CurTime);
+                if (IsTMx)Hz.data[index] += Ez0 * Source(CurTime);
             }
             //DispEMFields(CurTimeStep);
             //connecting interface
@@ -239,7 +247,7 @@ void fdtd() {
             //Adjust_E_Field(CurTime-half_dt);////AddEInc(CurTime);//
             //DispEMFields(CurTimeStep);
             //UpdEFieldForPML();
-            UpdateEFieldForPML(Hx_s, Hy_s, Hz_s, Ex_s, Ey_s, Ez_s);
+            UpdateEFieldForPML(Hx, Hy, Hz, Ex, Ey, Ez);
             //DispEMFields(CurTimeStep);
             if (IfWithDensity) {
                 UpdateVelocity();
@@ -268,7 +276,11 @@ void fdtd() {
             //DispEMFields(CurTimeStep);
             ResetStructData(Erms);
         }
-        printf("%d\t%f ns\n", Step, CurTime / 1e-9);
+        if (IsTEx) {
+            printf("%d\t%5.4e\t%f ns\n", Step, Ez.data[index], CurTime / 1e-9);
+        } else {
+            printf("%d\t%5.4e\t%f ns\n", Step, Hz.data[index], CurTime / 1e-9);
+        }
         ////
         //if(CurTimeStep%1==0)
     }//END FOR
@@ -291,32 +303,32 @@ void PrintSourceSize(int xpos, int ypos, int sxpos, int sypos) {
 
 void FreeSpace() {
     if (IsTMx) {
-        freeData(&Ex_s);
-        freeData(&Ex_s_pre);
+        freeData(&Ex);
+        freeData(&Ex_pre);
 
         freeData(&Vex);
         freeData(&Cevx);
         freeData(&Ceex);
         freeData(&Cehx);
 
-        freeData(&Ey_s);
-        freeData(&Ey_s_pre);
+        freeData(&Ey);
+        freeData(&Ey_pre);
 
         freeData(&Vey);
         freeData(&Cevy);
         freeData(&Ceey);
         freeData(&Cehy);
-        freeData(&Hz_s);
+        freeData(&Hz);
     }
     if (IsTEx) {
         freeData(&Hx_i);
         freeData(&Hy_i);
         freeData(&Ez_i);
 
-        freeData(&Hx_s);
-        freeData(&Hy_s);
-        freeData(&Ez_s);
-        freeData(&Ez_s_pre);
+        freeData(&Hx);
+        freeData(&Hy);
+        freeData(&Ez);
+        freeData(&Ez_pre);
 
         freeData(&Vez);
         freeData(&Ceez);

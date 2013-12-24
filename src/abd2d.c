@@ -51,7 +51,7 @@ void input(int argc, char*argv[]) {
     //char buffer[MAX_BUFFER], *pstr;
     //MyDataF tdoub;
     if (argc < 2) {
-        fprintf(stderr, "Invalid input!\n");
+        //fprintf(stderr, "Invalid input!\n");
         help();
         exit(-1);
     }
@@ -82,6 +82,8 @@ void input(int argc, char*argv[]) {
             IfWithDensity = atoi(argv[i] + 15);
         } else if (strncmp(argv[i], "--e-max=", 8) == 0) {
             E_0 = atof(argv[i] + 8);
+        }else if(strncmp(argv[i],"--waveform=",11)==0){
+            srcType=atoi(argv[i]+11);
         }
 #ifdef _OPENMP
         else if (strncmp(argv[i], "--thread-count=", 15) == 0) {
@@ -113,6 +115,7 @@ void help() {
     printf("--is-connect=[0,1]\tuse connecting interface or not\n");
     printf("--with-density=[0,1]\twether with density\n");
     printf("--e-max= \tset E field amptidute\n");
+    printf("--waveform=\tset waveform\n\t0\t sine(default)\n\t1\t Gaussian pulse\n\t2\tcosine\n");
 #ifdef _OPENMP
     printf("--thread-count=n\tset number of threads to run the job\n");
 #endif
@@ -129,6 +132,7 @@ void PrintInput() {
     printf("--is-connect=%d\n", isConnect);
     printf("--with-density=%d\n", IfWithDensity);
     printf("--e-max=%5.3e\n", E_0);
+    printf("--waveform=%d\n",srcType);
 #ifdef _OPENMP
     printf("--thead-count=%d\n", thread_count);
 #endif

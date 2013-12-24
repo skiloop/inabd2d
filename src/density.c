@@ -181,11 +181,11 @@ void InterpolatErms() {
     int is, js;
     int numx = 0, numy = 0;
     if (IsTEx) {
-        numx = Ez_s.nx;
-        numy = Ez_s.ny;
+        numx = Ez.nx;
+        numy = Ez.ny;
     } else if (IsTMx) {
-        numx = Ey_s.nx;
-        numy = Ex_s.ny;
+        numx = Ey.nx;
+        numy = Ex.ny;
     }
     is = tpis - 1;
     js = tpjs - 1;
@@ -301,8 +301,8 @@ void CalSumESqrt() {
     if (IsTEx) {
         for (i = tpis; i <= tpie; i++) {
             for (j = tpjs; j <= tpje; j++) {
-                index = i * Ez_s.ny + j;
-                Erms.data[i * m * Erms.ny + j * m] += Ez_s.data[index] * Ez_s.data[index];
+                index = i * Ez.ny + j;
+                Erms.data[i * m * Erms.ny + j * m] += Ez.data[index] * Ez.data[index];
                 //if(i == 141&&j==39)
                 //	printf("%5.4e\t%5.4e\t%5.4e\t%5.4e\n",Erms.data[i*m*Erms.ny+j*m],Ez_s.data[index],Ez_s.data[index+Ez_s.ny]);
 #ifdef _DEBUG
@@ -316,10 +316,10 @@ void CalSumESqrt() {
         for (i = tpis; i <= tpie; i++) {
             for (j = tpjs; j <= tpje; j++) {
                 ind = i * m * Erms.ny + j*m;
-                index = i * Ex_s.ny + j;
-                Erms.data[ind] += pow((Ex_s.data[index - Ex_s.nx] + Ex_s.data[index]) / 2, 2);
-                index = i * Ey_s.ny + j;
-                Erms.data[ind] += pow((Ey_s.data[index - 1] + Ey_s.data[index]) / 2, 2);
+                index = i * Ex.ny + j;
+                Erms.data[ind] += pow((Ex.data[index - Ex.nx] + Ex.data[index]) / 2, 2);
+                index = i * Ey.ny + j;
+                Erms.data[ind] += pow((Ey.data[index - 1] + Ey.data[index]) / 2, 2);
 #ifdef _DEBUG
                 if (isnan(Erms.data[ind])) {
                     printf("Erms is nan at (%d,%d) at\n Line %d in function CalSumESqrt()\n", i*m, j*m, __LINE__);
@@ -338,9 +338,9 @@ void CalSumESqrt_Emax() {
     if (IsTEx) {
         for (i = tpis; i <= tpie; i++) {
             for (j = tpjs; j <= tpje; j++) {
-                index = i * Ez_s.ny + j;
+                index = i * Ez.ny + j;
                 ind = (i * Erms.ny + j) * m;
-                tmp = abs(Ez_s.data[index]);
+                tmp = abs(Ez.data[index]);
                 if (tmp > Erms.data[ind])
                     Erms.data[ind] = tmp;
             }
@@ -349,10 +349,10 @@ void CalSumESqrt_Emax() {
         for (i = tpis; i <= tpie; i++) {
             for (j = tpjs; j <= tpje; j++) {
                 ind = i * m * Erms.ny + j*m;
-                index = i * Ex_s.ny + j;
-                tmp = pow((Ex_s.data[index - Ex_s.nx] + Ex_s.data[index]) / 2, 2);
-                index = i * Ey_s.ny + j;
-                tmp += pow((Ey_s.data[index - 1] + Ey_s.data[index]) / 2, 2);
+                index = i * Ex.ny + j;
+                tmp = pow((Ex.data[index - Ex.nx] + Ex.data[index]) / 2, 2);
+                index = i * Ey.ny + j;
+                tmp += pow((Ey.data[index - 1] + Ey.data[index]) / 2, 2);
                 tmp = sqrt(abs(tmp));
                 if (tmp > Erms.data[ind])
                     Erms.data[ind] = tmp;
@@ -373,11 +373,11 @@ void calErmsAtCoarsePoint() {
     for (i = tpis; i <= tpie; i++) {
         for (j = tpjs; j <= tpje; j++) {
             ind = (i * m + hm) * Erms.ny + j*m;
-            tmp = 0.25 * (Ey_s.data[i * Ey_s.ny + j] + Ey_s.data[(i - 1) * Ey_s.ny + j] + Ey_s.data[i * Ey_s.ny + j + 1] + Ey_s.data[(i - 1) * Ey_s.ny + j + 1]);
-            Erms.data[ind] += Ex_s.data[i * Ex_s.ny + j] * Ex_s.data[i * Ex_s.ny + j] + tmp*tmp;
+            tmp = 0.25 * (Ey.data[i * Ey.ny + j] + Ey.data[(i - 1) * Ey.ny + j] + Ey.data[i * Ey.ny + j + 1] + Ey.data[(i - 1) * Ey.ny + j + 1]);
+            Erms.data[ind] += Ex.data[i * Ex.ny + j] * Ex.data[i * Ex.ny + j] + tmp*tmp;
             ind = (i * m) * Erms.ny + j * m + hm;
-            tmp = 0.25 * (Ex_s.data[i * Ex_s.ny + j] + Ex_s.data[(i + 1) * Ex_s.ny + j] + Ex_s.data[i * Ex_s.ny + j - 1] + Ex_s.data[(i + 1) * Ex_s.ny + j - 1]);
-            Erms.data[ind] += Ey_s.data[i * Ey_s.ny + j] * Ey_s.data[i * Ey_s.ny + j] + tmp*tmp;
+            tmp = 0.25 * (Ex.data[i * Ex.ny + j] + Ex.data[(i + 1) * Ex.ny + j] + Ex.data[i * Ex.ny + j - 1] + Ex.data[(i + 1) * Ex.ny + j - 1]);
+            Erms.data[ind] += Ey.data[i * Ey.ny + j] * Ey.data[i * Ey.ny + j] + tmp*tmp;
         }
     }
 }
@@ -393,11 +393,11 @@ void calErmsAtCoarsePoint_Max() {
     for (i = tpis; i <= tpie; i++) {
         for (j = tpjs; j <= tpje; j++) {
             ind = (i * m + hm) * Erms.ny + j*m;
-            tmp = 0.25 * (Ey_s.data[i * Ey_s.ny + j] + Ey_s.data[(i - 1) * Ey_s.ny + j] + Ey_s.data[i * Ey_s.ny + j + 1] + Ey_s.data[(i - 1) * Ey_s.ny + j + 1]);
-            Erms.data[ind] += Ex_s.data[i * Ex_s.ny + j] * Ex_s.data[i * Ex_s.ny + j] + tmp*tmp;
+            tmp = 0.25 * (Ey.data[i * Ey.ny + j] + Ey.data[(i - 1) * Ey.ny + j] + Ey.data[i * Ey.ny + j + 1] + Ey.data[(i - 1) * Ey.ny + j + 1]);
+            Erms.data[ind] += Ex.data[i * Ex.ny + j] * Ex.data[i * Ex.ny + j] + tmp*tmp;
             ind = (i * m) * Erms.ny + j * m + hm;
-            tmp = 0.25 * (Ex_s.data[i * Ex_s.ny + j] + Ex_s.data[(i + 1) * Ex_s.ny + j] + Ex_s.data[i * Ex_s.ny + j - 1] + Ex_s.data[(i + 1) * Ex_s.ny + j - 1]);
-            Eabs = abs(sqrt(Ey_s.data[i * Ey_s.ny + j] * Ey_s.data[i * Ey_s.ny + j] + tmp * tmp));
+            tmp = 0.25 * (Ex.data[i * Ex.ny + j] + Ex.data[(i + 1) * Ex.ny + j] + Ex.data[i * Ex.ny + j - 1] + Ex.data[(i + 1) * Ex.ny + j - 1]);
+            Eabs = abs(sqrt(Ey.data[i * Ey.ny + j] * Ey.data[i * Ey.ny + j] + tmp * tmp));
             if (Eabs > Erms.data[ind])Erms.data[ind] = Eabs;
         }
     }
@@ -411,13 +411,13 @@ void UpdateVelocity() {
             for (i = 0; i < Vex.nx; i++) {
                 for (j = 0; j < Vex.ny; j++) {
                     index = i * Vex.ny + j;
-                    Vex.data[index] = Cvvx.data[index] * Vex.data[index] - Cvex.data[index]*(Ex_s.data[index] + Ex_s_pre.data[index]);
+                    Vex.data[index] = Cvvx.data[index] * Vex.data[index] - Cvex.data[index]*(Ex.data[index] + Ex_pre.data[index]);
                 }
             }
             for (i = 0; i < Vey.nx; i++) {
                 for (j = 0; j < Vey.ny; j++) {
                     index = i * Vey.ny + j;
-                    Vey.data[index] = Cvvy.data[index] * Vey.data[index] - Cvey.data[index]*(Ey_s.data[index] + Ey_s_pre.data[index]);
+                    Vey.data[index] = Cvvy.data[index] * Vey.data[index] - Cvey.data[index]*(Ey.data[index] + Ey_pre.data[index]);
                 }
             }
         }
@@ -425,7 +425,7 @@ void UpdateVelocity() {
             for (i = 0; i < Vez.nx; i++) {
                 for (j = 0; j < Vez.ny; j++) {
                     index = i * Vez.ny + j;
-                    Vez.data[index] = Cvvz.data[index] * Vez.data[index] - Cvez.data[index]*(Ez_s.data[index] + Ez_s_pre.data[index]);
+                    Vez.data[index] = Cvvz.data[index] * Vez.data[index] - Cvez.data[index]*(Ez.data[index] + Ez_pre.data[index]);
                 }
             }
         }
@@ -435,13 +435,13 @@ void UpdateVelocity() {
             for (i = 0; i < Vex.nx; i++) {
                 for (j = 0; j < Vex.ny; j++) {
                     index = i * Vex.ny + j;
-                    Vex.data[index] = alpha * Vex.data[index] - Cve * (Ex_s.data[index] + Ex_s_pre.data[ index]);
+                    Vex.data[index] = alpha * Vex.data[index] - Cve * (Ex.data[index] + Ex_pre.data[ index]);
                 }
             }
             for (i = 0; i < Vey.nx; i++) {
                 for (j = 0; j < Vey.ny; j++) {
                     index = i * Vey.ny + j;
-                    Vey.data[index] = alpha * Vey.data[index] - Cve * (Ey_s.data[ index] + Ey_s_pre.data[ index]);
+                    Vey.data[index] = alpha * Vey.data[index] - Cve * (Ey.data[ index] + Ey_pre.data[ index]);
                 }
             }
         }
@@ -449,7 +449,7 @@ void UpdateVelocity() {
             for (i = 0; i < Vez.nx; i++) {
                 for (j = 0; j < Vez.ny; j++) {
                     index = i * Vez.ny + j;
-                    Vez.data[index] = alpha * Vez.data[index] - Cve * (Ez_s_pre.data[index] + Ez_s.data[index]);
+                    Vez.data[index] = alpha * Vez.data[index] - Cve * (Ez_pre.data[index] + Ez.data[index]);
                 }
             }
         }

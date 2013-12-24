@@ -128,6 +128,14 @@ extern "C" {
     extern int thread_count;
 #endif
 
+
+    ////////////////////////
+    // Source Waveform
+    ///////////////////////
+    extern int srcType;
+    extern MyDataF t_0; // time delay
+    extern MyDataF tauSquare; // tau^2 for Gaussian wave
+    extern MyDataF(*pSource)(MyDataF t);
 #ifdef	__cplusplus
 }
 #endif

@@ -16,6 +16,7 @@ void initCommonData() {
     /////////////////////////////////////
     //SET COMMOM DATA ZERO
     //////////////////////////////////////
+    pSource = NULL;
     De = 0;
     Da = 0;
     //mu_e=0;
@@ -419,6 +420,7 @@ void InitCoeff() {
     Chzex = dt / mu_0 / dy;
     Chzey = -dt / mu_0 / dx;
     Cve = e * dt * 0.5 / (me * gamma);
+    
     if (IfWithDensity) {
         Init_ne();
         UpdateCoeff();
@@ -433,9 +435,9 @@ void createFields() {
 
     if (IsTMx) {
 
-        InitMyStr(nx, nyp1, &Ex_s_pre);
+        InitMyStr(nx, nyp1, &Ex_pre);
         //InitMyStr(nx,ny,&Hz_s_pre);
-        InitMyStr(nxp1, ny, &Ey_s_pre);
+        InitMyStr(nxp1, ny, &Ey_pre);
 
         //InitMyStr(nx,nyp1,&Ex);
         //InitMyStr(nxp1,ny,&Ey);
@@ -446,7 +448,7 @@ void createFields() {
         InitMyStr(nx, ny, &Hz_i);
         /*----------------------------------*/
 
-        InitMyStr(nx, nyp1, &Ex_s);
+        InitMyStr(nx, nyp1, &Ex);
 
         //InitMyStr(nx,nyp1,&Ex_i);
         //InitMyStr(nx,nyp1,&Ex_i_pre);
@@ -456,7 +458,7 @@ void createFields() {
         InitMyStr(nx, nyp1, &Cehx);
         /*----------------------------------*/
 
-        InitMyStr(nxp1, ny, &Ey_s);
+        InitMyStr(nxp1, ny, &Ey);
         //InitMyStr(nxp1,ny,&Ey_i);
         //InitMyStr(nxp1,ny,&Ey_i_pre);	
 
@@ -466,7 +468,7 @@ void createFields() {
         InitMyStr(nxp1, ny, &Cehy);
         /*----------------------------------*/
 
-        InitMyStr(nx, ny, &Hz_s);
+        InitMyStr(nx, ny, &Hz);
         //InitMyStr(nx,ny,&Hz_i);
         //InitMyStr(nx,ny,&Hz_i_pre);
         /*----------------------------------*/
@@ -478,7 +480,7 @@ void createFields() {
 
         //InitMyStr(nxp1,ny,&Hx_s_pre);
         //InitMyStr(nx,nyp1,&Hy_s_pre);
-        InitMyStr(nxp1, nyp1, &Ez_s_pre);
+        InitMyStr(nxp1, nyp1, &Ez_pre);
 
         InitMyStr(nxp1, ny, &Hx_i);
         InitMyStr(nx, nyp1, &Hy_i);
@@ -489,14 +491,14 @@ void createFields() {
         //InitMyStr(nxp1,nyp1,&Ez);
 
         /*---------------< X >-------------------*/
-        InitMyStr(nxp1, ny, &Hx_s);
+        InitMyStr(nxp1, ny, &Hx);
         //InitMyStr(nxp1,ny,&Hx_i);
         //
         //InitMyStr(nxp1,ny,&Hx_i_pre);
         /*----------------------------------*/
 
         /*---------------< Y >-----------------*/
-        InitMyStr(nx, nyp1, &Hy_s);
+        InitMyStr(nx, nyp1, &Hy);
 
         //InitMyStr(nx,nyp1,&Hy_i);
         //InitMyStr(nx,nyp1,&Hy_i_pre);
@@ -504,7 +506,7 @@ void createFields() {
 
 
         /*--------------< Z >-----------------*/
-        InitMyStr(nxp1, nyp1, &Ez_s);
+        InitMyStr(nxp1, nyp1, &Ez);
         //InitMyStr(nxp1,nyp1,&Ez_i);
 
         //InitMyStr(nxp1,nyp1,&Ez_i_pre);

@@ -41,6 +41,22 @@ int xs, ys, xe, ye; //
 
 #define INC_SIZE 0
 
+void initSource() {
+    switch (srcType) {
+        case GAUSSIAN:
+            tauSquare = T * T / 4;
+            t_0 = T / 2 * 0.1;
+            pSource = GaussianSource;
+            break;
+        case COSINE:
+            pSource=CosineSource;
+            break;
+        case SINE:
+        default:
+            pSource=SineSource;
+    }
+}
+
 void initconnect() {
     //#ifdef  MATLAB_SIMULATION
     //	mxArray *MyArray;
@@ -49,6 +65,7 @@ void initconnect() {
     int i;
     MyDataF ds;
     MyDataF PhaseVelRatio(MyDataF);
+
     ds = dx;
     eilen = tpie - tpis + 5;
     hilen = eilen - 1;
@@ -126,35 +143,35 @@ void econnect(MyDataF t) {
     //#endif
     if (IsTEx) {
         for (ind = tpis; ind <= tpie; ind++) {
-            index = ind * Ez_s.ny;
+            index = ind * Ez.ny;
             //bottom 
             d = Dhxb[ind + start_index_x] + 0.5;
             di = (int) floor(d);
             df = d - di;
-            Ez_s.data[index + tpjs] += Cehz.data[index + tpjs] * Ratio_x * (Hi[di] + df * (Hi[di + 1] - Hi[di]));
+            Ez.data[index + tpjs] += Cehz.data[index + tpjs] * Ratio_x * (Hi[di] + df * (Hi[di + 1] - Hi[di]));
 
             //top
             d = Dhxt[ind + start_index_x] + 0.5;
 
             di = (int) floor(d);
             df = d - di;
-            Ez_s.data[index + tpje] -= Cehz.data[index + tpje] * Ratio_x * (Hi[di] + df * (Hi[di + 1] - Hi[di]));
+            Ez.data[index + tpje] -= Cehz.data[index + tpje] * Ratio_x * (Hi[di] + df * (Hi[di + 1] - Hi[di]));
         }
         //bound xn,xp
         for (ind = tpjs; ind <= tpje; ind++) {
             //left side
-            index = tpis * Ez_s.ny + ind;
+            index = tpis * Ez.ny + ind;
             d = Dhyl[ind + start_index_y] + 0.5;
             di = (int) floor(d);
             df = d - di;
-            Ez_s.data[index] -= Cehz.data[index]*(-Ratio_y)*(Hi[di] + df * (Hi[di + 1] - Hi[di]));
+            Ez.data[index] -= Cehz.data[index]*(-Ratio_y)*(Hi[di] + df * (Hi[di + 1] - Hi[di]));
 
             //right side
-            index = tpie * Ez_s.ny + ind;
+            index = tpie * Ez.ny + ind;
             d = Dhyr[ind + start_index_y] + 0.5;
             di = (int) floor(d);
             df = d - di;
-            Ez_s.data[index] += Cehz.data[index]*(-Ratio_y)*(Hi[di] + df * (Hi[di + 1] - Hi[di]));
+            Ez.data[index] += Cehz.data[index]*(-Ratio_y)*(Hi[di] + df * (Hi[di + 1] - Hi[di]));
         }
     }
     if (IsTMx) {
@@ -164,24 +181,24 @@ void econnect(MyDataF t) {
             d = Dhzl[ind] + 0.5;
             di = (int) floor(d);
             df = d - di;
-            Ey_s.data[tpis * Ey_s.ny + j] -= Ceyhz * (Hi[di] + df * (Hi[di + 1] - Hi[di])); //left side
+            Ey.data[tpis * Ey.ny + j] -= Ceyhz * (Hi[di] + df * (Hi[di + 1] - Hi[di])); //left side
 
             d = Dhzr[ind] + 0.5;
             di = (int) floor(d);
             df = d - di;
-            Ey_s.data[tpie * Ey_s.ny + j] += Ceyhz * (Hi[di] + df * (Hi[di + 1] - Hi[di])); //right side
+            Ey.data[tpie * Ey.ny + j] += Ceyhz * (Hi[di] + df * (Hi[di + 1] - Hi[di])); //right side
 
         }
         for (ind = 0, i = tpis; i < tpie; i++, ind++) {
             d = Dhzb[ind] + 0.5;
             di = (int) floor(d);
             df = d - di;
-            Ex_s.data[i * Ex_s.ny + tpjs] -= Cexhz * (Hi[di] + df * (Hi[di + 1] - Hi[di])); //bottom side
+            Ex.data[i * Ex.ny + tpjs] -= Cexhz * (Hi[di] + df * (Hi[di + 1] - Hi[di])); //bottom side
 
             d = Dhzt[ind] + 0.5;
             di = (int) floor(d);
             df = d - di;
-            Ex_s.data[i * Ex_s.ny + tpje] += Cexhz * (Hi[di] + df * (Hi[di + 1] - Hi[di])); //top side
+            Ex.data[i * Ex.ny + tpje] += Cexhz * (Hi[di] + df * (Hi[di + 1] - Hi[di])); //top side
         }
     }
 }
@@ -212,18 +229,18 @@ void mconnect(MyDataF t) {
         for (ind = tpis, ind1 = 0, ind3 = tpje; ind < tpie; ind++, ind1++) {
             di = (unsigned) floor(Dexb[ind1]);
             df = Dexb[ind1] - di;
-            Hz_s.data[ind * Hz_s.ny + mtpjs] -= Chzex * (Ei[di] + df * (Ei[di + 1] - Ei[di])); //bottom side
+            Hz.data[ind * Hz.ny + mtpjs] -= Chzex * (Ei[di] + df * (Ei[di + 1] - Ei[di])); //bottom side
             di = (unsigned) floor(Dext[ind1]);
             df = Dext[ind1] - di;
-            Hz_s.data[ind * Hz_s.ny + ind3] += Chzex * (Ei[di] + df * (Ei[di + 1] - Ei[di])); //top side
+            Hz.data[ind * Hz.ny + ind3] += Chzex * (Ei[di] + df * (Ei[di + 1] - Ei[di])); //top side
         }
         for (ind = tpjs, ind1 = 0, ind3 = tpie; ind < tpje; ind++, ind1++) {
             di = (unsigned) floor(Deyl[ind1]);
             df = Deyl[ind1] - di;
-            Hz_s.data[mtpis * Hz_s.ny + ind] -= Chzey * (Ei[di] + df * (Ei[di + 1] - Ei[di])); //left side
+            Hz.data[mtpis * Hz.ny + ind] -= Chzey * (Ei[di] + df * (Ei[di + 1] - Ei[di])); //left side
             di = (unsigned) floor(Deyr[ind1]);
             df = Deyr[ind1] - di;
-            Hz_s.data[ind3 * Hz_s.ny + ind] += Chzey * (Ei[di] + df * (Ei[di + 1] - Ei[di])); //right side
+            Hz.data[ind3 * Hz.ny + ind] += Chzey * (Ei[di] + df * (Ei[di + 1] - Ei[di])); //right side
         }
 
     }
@@ -233,12 +250,12 @@ void mconnect(MyDataF t) {
             di = (int) floor(Dezl[ind + start_index_y]);
             df = Dezl[ind + start_index_y] - di;
             di = di + 1;
-            Hy_s.data[(tpis - 1) * Hy_s.ny + ind] -= Chyez * (Ei[di] + df * (Ei[di + 1] - Ei[di])); //0;//
+            Hy.data[(tpis - 1) * Hy.ny + ind] -= Chyez * (Ei[di] + df * (Ei[di + 1] - Ei[di])); //0;//
             //right side
             di = (int) floor(Dezr[ind + start_index_y]);
             df = Dezr[ind + start_index_y] - di;
             di = di + 1;
-            Hy_s.data[tpie * Hy_s.ny + ind] += Chyez * (Ei[di] + df * (Ei[di + 1] - Ei[di]));
+            Hy.data[tpie * Hy.ny + ind] += Chyez * (Ei[di] + df * (Ei[di + 1] - Ei[di]));
         }
         //Adjust Hy
         for (ind = tpis; ind <= tpie; ind++) {
@@ -247,12 +264,12 @@ void mconnect(MyDataF t) {
             df = Dezb[ind + start_index_x] - di;
             di = di + 1;
 
-            Hx_s.data[ind * Hx_s.ny + tpjs - 1] -= Chxez * (Ei[di] + df * (Ei[di + 1] - Ei[di]));
+            Hx.data[ind * Hx.ny + tpjs - 1] -= Chxez * (Ei[di] + df * (Ei[di + 1] - Ei[di]));
             //yp
             di = (int) floor(Dezt[ind + start_index_x]);
             df = Dezt[ind + start_index_x] - di;
             di = di + 1;
-            Hx_s.data[ind * Hx_s.ny + tpje] += Chxez * (Ei[di] + df * (Ei[di + 1] - Ei[di]));
+            Hx.data[ind * Hx.ny + tpje] += Chxez * (Ei[di] + df * (Ei[di + 1] - Ei[di]));
         }
     }
 
@@ -416,62 +433,42 @@ void CalDelays() {
             Dhzr[i] = delays(tpie + 0.5, tpjs + i + 0.5);
         }
     }
-    ////save delays
-    //fp1=fopen("dhxb.dat","w");
-    //fp2=fopen("dhxt.dat","w");
-    //for(i=0;i<=Max_Index_Dhx;i++)
-    //{
-    //	fprintf(fp1,"%12.10e\t",Dhxb[i]);
-    //	fprintf(fp2,"%12.10e\t",Dhxt[i]);
-    //}
-    //fclose(fp1);
-    //fclose(fp2);
-
-
-    //fp1=fopen("dhyl.dat","w");
-    //fp2=fopen("dhyr.dat","w");
-    //for(i=0;i<=Max_Index_Dhy;i++)
-    //{
-    //	fprintf(fp1,"%12.10e\t",Dhyl[i]);
-    //	fprintf(fp2,"%12.10e\t",Dhyr[i]);
-    //}
-    //fclose(fp1);fclose(fp2);
-    //
-    //fp1=fopen("dezb.dat","w");
-    //fp2=fopen("dezt.dat","w");
-    //for(i=0;i<=Max_Index_Dez_x;i++){
-    //	fprintf(fp1,"%12.10e\t",Dezb[i]);
-    //	fprintf(fp2,"%12.10e\t",Dezt[i]);
-    //}
-    //fclose(fp1);fclose(fp2);
-    //
-    //
-    //fp1=fopen("dezl.dat","w");
-    //fp2=fopen("dezr.dat","w");
-    //for(i=0;i<=Max_Index_Dez_y;i++){
-    //	fprintf(fp1,"%12.10e\t",Dezl[i]);
-    //	fprintf(fp2,"%12.10e\t",Dezr[i]);
-    //}
-    //fclose(fp1);fclose(fp2);
-
 
 }
 
-MyDataF Source(MyDataF t) {
-    //    MyDataF t_0;
-    //    MyDataF tau = 3.1E-9;
-    //    t_0 = 0.8 * tau; //dt*ttstep/10;//||t>1000*dt
-    //
-    if (t < 0)return 0;
-    return cos(omega * t); //1;//-cos(2*M_PI*f*t)*exp(-4*M_PI*pow((t-t_0)/tau,2));//
-    //return 0;1.0;
+MyDataF GaussianSource(MyDataF t) {
+
+    return exp(-(t - t_0)*(t - t_0) / tauSquare);
+}
+
+MyDataF SineSource(MyDataF t) {
+    if (t < 0) {
+        return 0.0;
+    } else {
+        return sin(2 * M_PI * omega * t);
+    }
+}
+
+MyDataF CosineSource(MyDataF t) {
+    if (t < 0) {
+        return 0.0;
+    } else {
+        return cos(2 * M_PI * omega * t);
+    }
+}
+
+MyDataF Source(MyDataF t){
+    if (pSource==NULL)return 0.0;
+    else {
+        return (*pSource)(t);
+    }
 }
 
 void InitFields() {
     //Init Fields at t = 0;
     int j;
     for (j = tpjs; j <= tpje; j++)
-        Ez_s.data[tpis * Ez_s.ny + j] = Ez0 * sin(omega * CurTime);
+        Ez.data[tpis * Ez.ny + j] = Ez0 * sin(omega * CurTime);
 }
 //
 
@@ -482,12 +479,12 @@ MyDataF delays(MyDataF px, MyDataF py) {
 void AddEInc(MyDataF t) {
     int i;
     for (i = tpis; i <= tpie; i++) {
-        Ez_s.data[i * Ez_s.ny + tpjs] = E0 * Source(t - Dezb[i - tpis] * t_per_cell);
-        Ez_s.data[i * Ez_s.ny + tpje] = E0 * Source(t - Dezt[i - tpis] * t_per_cell);
+        Ez.data[i * Ez.ny + tpjs] = E0 * Source(t - Dezb[i - tpis] * t_per_cell);
+        Ez.data[i * Ez.ny + tpje] = E0 * Source(t - Dezt[i - tpis] * t_per_cell);
     }
     for (i = tpjs + 1; i < tpje; i++) {
-        Ez_s.data[tpis * Ez_s.ny + i] = E0 * Source(t - Dezl[i - tpjs] * t_per_cell);
-        Ez_s.data[tpie * Ez_s.ny + i] = E0 * Source(t - Dezr[i - tpjs] * t_per_cell);
+        Ez.data[tpis * Ez.ny + i] = E0 * Source(t - Dezl[i - tpjs] * t_per_cell);
+        Ez.data[tpie * Ez.ny + i] = E0 * Source(t - Dezr[i - tpjs] * t_per_cell);
     }
 }
 
