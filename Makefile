@@ -8,7 +8,7 @@ VPATH = $(SRC_DIR):$(TEST_SRC_DIR)
 SOURCES=$(shell find $(SRC_DIR) -name "*.c")
 OBJS:=$(patsubst $(SRC_DIR)/%.c,%.o,$(SOURCES))
 DEPS:=$(patsubst $(SRC_DIR)/%.c,%.d,$(SOURCES))
-INCLUDE+=-I$(SRC_DIR)
+INC+=-I$(SRC_DIR)
 #We don't need to clean up when we're making these targets
 NODEPS:=clean tags svn
 TEST:=sourceTest
@@ -26,7 +26,6 @@ objs:$(OBJS)
 test:$(TEST)
 
 sourceTest:sourceTest.o $(NORMAL_OBJS)
-	echo "make " $@
 	$(CC) -o $@ $^ $(LIB)
 
 #This is the rule for creating the dependency files
@@ -34,7 +33,7 @@ sourceTest:sourceTest.o $(NORMAL_OBJS)
 	$(CC) $(CFLAGS) -MM -MT $*.o $< -MF $@
 
 %.o:%.c %.d
-	$(CC) $(CFLAGS) $(INCLUDE) -o $@ -c $< 
+	$(CC) $(CFLAGS) $(INC) -o $@ -c $< 
 
 #Don't create dependencies when we're cleaning, for instance
 ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEPS))))

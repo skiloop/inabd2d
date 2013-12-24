@@ -45,7 +45,7 @@ void initSource() {
     switch (srcType) {
         case GAUSSIAN:
             tauSquare = T * T / 4;
-            t_0 = T / 2 * 0.1;
+            t_0 = T *1.2;
             pSource = GaussianSource;
             break;
         case COSINE:
