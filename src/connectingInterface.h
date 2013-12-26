@@ -12,7 +12,6 @@
 extern "C" {
 #endif
 
-    
     void initconnect();
     void econnect(MyDataF t);
     void mconnect(MyDataF t);
@@ -28,7 +27,6 @@ extern "C" {
     MyDataF GaussianSource(MyDataF t);
     MyDataF SineSource(MyDataF t);
     MyDataF CosineSource(MyDataF t);
-
 
 #ifdef	__cplusplus
 }

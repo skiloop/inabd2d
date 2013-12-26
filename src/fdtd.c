@@ -29,7 +29,6 @@
 // FDTD DATA
 ///////////////////////////////
 //EM field
-MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;
 MyStruct Ey, Ex, Ez, Hx, Hy, Hz;
 MyStruct Ey_pre, Ex_pre, Ez_pre;
 MyStruct Vey, Vex, Vez;
@@ -321,10 +320,6 @@ void FreeSpace() {
         freeData(&Hz);
     }
     if (IsTEx) {
-        freeData(&Hx_i);
-        freeData(&Hy_i);
-        freeData(&Ez_i);
-
         freeData(&Hx);
         freeData(&Hy);
         freeData(&Ez);

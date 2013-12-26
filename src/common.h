@@ -71,12 +71,6 @@ extern "C" {
     //const  int if_erms_E_max = 3; // if set niutype=4 then this is reset to 1
     // 在abd2d.c里改
 #define IF_ERMS_E_MAX 3 // default values for if_erms_E_max
-    
-    // Wave forms
-#define SINE (0)
-#define GAUSSIAN (1)
-#define COSINE (2)
-#define DEFAULT_WAVEFORM (SINE)
 
 #define E_MAX 6.0e6
 #define NE0 1e13
@@ -134,6 +128,16 @@ extern "C" {
     // ERROR DEALING
     ////////////////////////////
 #define ERROR_MESSAGE_SIZE 100
+    
+    
+    ////////////////////////
+    // SOURCE TYPE
+    ////////////////////////
+#define SINE 0
+#define GAUSSIAN 1
+#define COSINE 2
+#define DEFAULT_SOURCE_TYPE (SINE)
+   
 
 #ifdef	__cplusplus
 }

@@ -70,29 +70,6 @@ extern "C" {
     extern MyDataF omega;
     extern MyDataF phi; //incidence wave inject angle on x-axis 
 
-    //    //EM field
-    //    extern MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;
-    //    extern MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;
-    //    extern MyStruct Ey_s_pre, Ex_s_pre, Ez_s_pre;
-    //    extern MyStruct Vey, Vex, Vez;
-    //    extern MyStruct ne, ne_pre;
-    //    extern MyStruct beta;
-    //    extern MyStruct Erms;
-    //    extern MyStruct Ermsx, Ermsy;
-    //    extern MyStruct Nu_c; // 循环利用的碰撞率
-    //    //MyStruct Nu_c_pre;//上一步的碰撞率（循环利用的碰撞率）
-    //    //Coeffients
-    //    extern MyDataF Chxez, Chyez, Chzex, Chzey;
-    //
-    //    extern MyStruct Cevx, Cevy, Cevz;
-    //    extern MyStruct Ceex, Ceey, Ceez;
-    //    extern MyStruct Cehx, Cehy, Cehz;
-    //
-    //    extern MyDataF Cve;
-    //
-    //    extern MyStruct Cvvx, Cvvy, Cvvz;
-    //    extern MyStruct Cvex, Cvey, Cvez;
-
     extern int IsTMx;
     extern int IsTEx;
 
@@ -128,14 +105,15 @@ extern "C" {
     extern int thread_count;
 #endif
 
-
-    ////////////////////////
-    // Source Waveform
-    ///////////////////////
+    // source type
     extern int srcType;
     extern MyDataF t_0; // time delay
     extern MyDataF tauSquare; // tau^2 for Gaussian wave
     extern MyDataF(*pSource)(MyDataF t);
+    
+    // em fields
+    extern MyStruct Ex, Ey, Ez, Hx, Hy, Hz, Ex_pre, Ey_pre, Ez_pre;
+
 #ifdef	__cplusplus
 }
 #endif

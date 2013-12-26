@@ -67,10 +67,10 @@ int maxwellGridSize = MAXWELL_MESH_SIZE;
 //////////////////////////////////
 // source waveform
 //////////////////////////////////
-int srcType=SINE;
+int srcType = DEFAULT_SOURCE_TYPE;
 MyDataF t_0; // time delay
 MyDataF tauSquare; // tau^2 for Gaussian wave
-MyDataF (*pSource)(MyDataF t);
+MyDataF(*pSource)(MyDataF t);
 
 //Total fields zone position
 int tpis;

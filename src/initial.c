@@ -9,7 +9,6 @@
 #include "fdtd.h"
 #include "breakdownFormula.h"
 
-
 int first, second, third;
 
 void initCommonData() {
@@ -420,7 +419,7 @@ void InitCoeff() {
     Chzex = dt / mu_0 / dy;
     Chzey = -dt / mu_0 / dx;
     Cve = e * dt * 0.5 / (me * gamma);
-    
+
     if (IfWithDensity) {
         Init_ne();
         UpdateCoeff();
@@ -434,24 +433,10 @@ void InitCoeff() {
 void createFields() {
 
     if (IsTMx) {
-
         InitMyStr(nx, nyp1, &Ex_pre);
-        //InitMyStr(nx,ny,&Hz_s_pre);
         InitMyStr(nxp1, ny, &Ey_pre);
-
-        //InitMyStr(nx,nyp1,&Ex);
-        //InitMyStr(nxp1,ny,&Ey);
-        //InitMyStr(nx,ny,&Hz);
-
-        InitMyStr(nx, nyp1, &Ex_i);
-        InitMyStr(nxp1, ny, &Ey_i);
-        InitMyStr(nx, ny, &Hz_i);
-        /*----------------------------------*/
-
+        
         InitMyStr(nx, nyp1, &Ex);
-
-        //InitMyStr(nx,nyp1,&Ex_i);
-        //InitMyStr(nx,nyp1,&Ex_i_pre);
         InitMyStr(nx, nyp1, &Vex);
         InitMyStr(nx, nyp1, &Cevx);
         InitMyStr(nx, nyp1, &Ceex);
@@ -459,8 +444,6 @@ void createFields() {
         /*----------------------------------*/
 
         InitMyStr(nxp1, ny, &Ey);
-        //InitMyStr(nxp1,ny,&Ey_i);
-        //InitMyStr(nxp1,ny,&Ey_i_pre);	
 
         InitMyStr(nxp1, ny, &Vey);
         InitMyStr(nxp1, ny, &Cevy);
@@ -469,47 +452,14 @@ void createFields() {
         /*----------------------------------*/
 
         InitMyStr(nx, ny, &Hz);
-        //InitMyStr(nx,ny,&Hz_i);
-        //InitMyStr(nx,ny,&Hz_i_pre);
-        /*----------------------------------*/
+
     }
     if (IsTEx) {
-        //InitMyStr(nxi,nyi,&Ez_i);
-        //InitMyStr(nxi,nyip1,&Hx_i);
-        //InitMyStr(nxip1,nyi,&Hx_i);
 
-        //InitMyStr(nxp1,ny,&Hx_s_pre);
-        //InitMyStr(nx,nyp1,&Hy_s_pre);
         InitMyStr(nxp1, nyp1, &Ez_pre);
-
-        InitMyStr(nxp1, ny, &Hx_i);
-        InitMyStr(nx, nyp1, &Hy_i);
-        InitMyStr(nxp1, nyp1, &Ez_i);
-
-        //InitMyStr(nxp1,ny,&Hx);
-        //InitMyStr(nx,nyp1,&Hy);
-        //InitMyStr(nxp1,nyp1,&Ez);
-
-        /*---------------< X >-------------------*/
         InitMyStr(nxp1, ny, &Hx);
-        //InitMyStr(nxp1,ny,&Hx_i);
-        //
-        //InitMyStr(nxp1,ny,&Hx_i_pre);
-        /*----------------------------------*/
-
-        /*---------------< Y >-----------------*/
         InitMyStr(nx, nyp1, &Hy);
-
-        //InitMyStr(nx,nyp1,&Hy_i);
-        //InitMyStr(nx,nyp1,&Hy_i_pre);
-        /*----------------------------------*/
-
-
-        /*--------------< Z >-----------------*/
         InitMyStr(nxp1, nyp1, &Ez);
-        //InitMyStr(nxp1,nyp1,&Ez_i);
-
-        //InitMyStr(nxp1,nyp1,&Ez_i_pre);
 
         InitMyStr(nxp1, nyp1, &Vez);
         InitMyStr(nxp1, nyp1, &Ceez);
