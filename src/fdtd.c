@@ -237,8 +237,8 @@ void fdtd() {
             //DispEMFields(CurTimeStep);
             UpdateEField();
             if (!isConnect) {
-                if (IsTEx)Ez.data[index] += Ez0 * Source(CurTime);
-                if (IsTMx)Hz.data[index] += Ez0 * Source(CurTime);
+                if (IsTEx)Ez.data[index] += E0 * Source(CurTime);
+                if (IsTMx)Hz.data[index] += H0 * Source(CurTime);
             }
             //DispEMFields(CurTimeStep);
             //connecting interface
@@ -257,7 +257,7 @@ void fdtd() {
                     CalSumESqrt();
                 }
             }
-            if (Step == 100) {
+            if (Step % 50 == 0) {
                 DispEMFields(CurTimeStep);
             }
         }

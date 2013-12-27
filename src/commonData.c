@@ -40,11 +40,15 @@ MyDataF k; //
 MyDataF T; //
 MyDataF E_0 = E_MAX; // E field amptidute
 MyDataF E0, H0;
-MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;
-MyDataF Ratio_x, Ratio_y;
+MyDataF RatioHx, RatioHz, RaitoHy, RatioEz, RatioEx, RatioEy;
+
 MyDataF lamda;
 MyDataF omega;
-MyDataF phi = 0; //incidence wave inject angle on x-axis 
+
+MyDataF phi = 0.0*M_PI; // incidence wave inject angle on x-axis 
+MyDataF psi = 0; // phase angle
+MyDataF cos_phi, sin_phi;
+MyDataF cos_psi, sin_psi;
 
 int IsTMx = _SOURCE_TMX_;
 int IsTEx = _SOURCE_TEX_;

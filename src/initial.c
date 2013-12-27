@@ -41,7 +41,7 @@ void initCommonData() {
     f = 0; //frequency
     k = 0;
     E0 = H0 = 0;
-    Hx0 = Hz0 = Hy0 = Ez0 = Ex0 = Ey0 = 0;
+    RatioHx = RatioHz = RaitoHy = RatioEz = RatioEx = RatioEy = 0;
     lamda = 0;
     omega = 0;
     //////////////////////////////////////////////
@@ -67,17 +67,19 @@ void initCommonData() {
     nbound = NUMBER_OF_CELLS_IN_PML_BOUND;
     omega = 2 * M_PI*f;
 
-    Ratio_x = sin(phi); //sin(0.5*M_PI);
-    Ratio_y = -cos(phi); //cos(0.5*M_PI);
+    sin_phi = sin(phi);
+    cos_phi = cos(phi);
+    sin_psi = sin(psi);
+    cos_psi = cos(psi);
     if (IsTMx) {
-        Ex0 = Ratio_x*E0;
-        Hz0 = H0;
-        Ey0 = Ratio_y*E0;
+        RatioEx = -sin_phi;
+        RatioHz = 1;
+        RatioEy = cos_phi;
     }
     if (IsTEx) {
-        Hx0 = Ratio_x*H0;
-        Hy0 = Ratio_y*H0;
-        Ez0 = E0;
+        RatioHx = -sin_phi;
+        RaitoHy = cos_phi;
+        RatioEz = 1;
     }
 
     dx = dy = lamda / maxwellGridSize; //
@@ -99,7 +101,7 @@ void initCommonData() {
     printf("dx\t=\t%5.4e mm\ndt\t=\t%5.4e ns\n", dx / 1e-3, dt / 1e-9);
     printf("\ndt_M\t=\t%5.4e ns\ndt_F\t=\t%5.4e ns\n", dt_M / 1e-9, dt_F / 1e-9);
     printf("ds_M\t=\t%5.4e mm\nds_F\t=\t%5.4e mm\n", ds_M / 1e-3, ds_F / 1e-3);
-    printf("Ratio_x\t=\t%5.4e\nRatio_y\t=\t%5.4e\n", Ratio_x, Ratio_y);
+    printf("cos(phi)\t=\t%5.4e\nsin(phi)\t=\t%5.4e\n", cos_phi, sin_phi);
     printf("\ndt_F/dt\t\t:\t%d\n", (int) (0.5 + dt_F / dt));
     printf("PML size\t:\t%d\n", nbound);
     printf("E0\t:\t%f\n", E0);
@@ -435,7 +437,7 @@ void createFields() {
     if (IsTMx) {
         InitMyStr(nx, nyp1, &Ex_pre);
         InitMyStr(nxp1, ny, &Ey_pre);
-        
+
         InitMyStr(nx, nyp1, &Ex);
         InitMyStr(nx, nyp1, &Vex);
         InitMyStr(nx, nyp1, &Cevx);

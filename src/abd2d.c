@@ -33,7 +33,6 @@ int main(int argc, char** argv) {
     IntTtlFldDmnBnd();
     //InitIncFdtd();
     fdtd();
-    FreeDelayArrays();
     FreePMLSpace();
     SaveToFile();
     FreeSpace();

@@ -12,20 +12,62 @@
 extern "C" {
 #endif
 
+    /**
+     * Initial connecting interface
+     */
     void initconnect();
+
+    /**
+     * Apply connecting interface to E fields
+     * @param t
+     */
     void econnect(MyDataF t);
+
+    /**
+     * Apply connecting interface to M fields
+     * @param t
+     */
     void mconnect(MyDataF t);
     void end_connect();
 
+    /**
+     *     this function define where the total field domain is
+     *     Note: pis,pjs,pie,pje must be defined and initialzed 
+     *               before calling this function
+     */
     void IntTtlFldDmnBnd();
-    void Adjust_E_Field(MyDataF pre_t); //adjust TEx electric field which at total fields boundary
-    void Adjust_M_Field(MyDataF pre_t);
-    void FreeDelayArrays();
 
+    /**
+     * Initial source
+     */
     void initSource();
+
+    /**
+     * 
+     * @param t
+     * @return 
+     */
     MyDataF Source(MyDataF t);
+
+    /**
+     * 
+     * @param t
+     * @return 
+     */
     MyDataF GaussianSource(MyDataF t);
+
+    /**
+     * 
+     * @param t
+     * @return 
+     */
     MyDataF SineSource(MyDataF t);
+
+    /**
+     * 
+     * @param t
+     * @return 
+     */
     MyDataF CosineSource(MyDataF t);
 
 #ifdef	__cplusplus
