@@ -9,7 +9,6 @@
 #include "fdtd.h"
 #include "breakdownFormula.h"
 
-
 int first, second, third;
 
 void initCommonData() {
@@ -42,7 +41,7 @@ void initCommonData() {
     f = 0; //frequency
     k = 0;
     E0 = H0 = 0;
-    Hx0 = Hz0 = Hy0 = Ez0 = Ex0 = Ey0 = 0;
+    RatioHx = RatioHz = RaitoHy = RatioEz = RatioEx = RatioEy = 0;
     lamda = 0;
     omega = 0;
     //////////////////////////////////////////////
@@ -68,17 +67,19 @@ void initCommonData() {
     nbound = NUMBER_OF_CELLS_IN_PML_BOUND;
     omega = 2 * M_PI*f;
 
-    Ratio_x = sin(phi); //sin(0.5*M_PI);
-    Ratio_y = -cos(phi); //cos(0.5*M_PI);
+    sin_phi = sin(phi);
+    cos_phi = cos(phi);
+    sin_psi = sin(psi);
+    cos_psi = cos(psi);
     if (IsTMx) {
-        Ex0 = Ratio_x*E0;
-        Hz0 = H0;
-        Ey0 = Ratio_y*E0;
+        RatioEx = -sin_phi;
+        RatioHz = 1;
+        RatioEy = cos_phi;
     }
     if (IsTEx) {
-        Hx0 = Ratio_x*H0;
-        Hy0 = Ratio_y*H0;
-        Ez0 = E0;
+        RatioHx = -sin_phi;
+        RaitoHy = cos_phi;
+        RatioEz = 1;
     }
 
     dx = dy = lamda / maxwellGridSize; //
@@ -100,7 +101,7 @@ void initCommonData() {
     printf("dx\t=\t%5.4e mm\ndt\t=\t%5.4e ns\n", dx / 1e-3, dt / 1e-9);
     printf("\ndt_M\t=\t%5.4e ns\ndt_F\t=\t%5.4e ns\n", dt_M / 1e-9, dt_F / 1e-9);
     printf("ds_M\t=\t%5.4e mm\nds_F\t=\t%5.4e mm\n", ds_M / 1e-3, ds_F / 1e-3);
-    printf("Ratio_x\t=\t%5.4e\nRatio_y\t=\t%5.4e\n", Ratio_x, Ratio_y);
+    printf("cos(phi)\t=\t%5.4e\nsin(phi)\t=\t%5.4e\n", cos_phi, sin_phi);
     printf("\ndt_F/dt\t\t:\t%d\n", (int) (0.5 + dt_F / dt));
     printf("PML size\t:\t%d\n", nbound);
     printf("E0\t:\t%f\n", E0);
@@ -420,7 +421,7 @@ void InitCoeff() {
     Chzex = dt / mu_0 / dy;
     Chzey = -dt / mu_0 / dx;
     Cve = e * dt * 0.5 / (me * gamma);
-    
+
     if (IfWithDensity) {
         Init_ne();
         UpdateCoeff();
@@ -434,24 +435,10 @@ void InitCoeff() {
 void createFields() {
 
     if (IsTMx) {
-
         InitMyStr(nx, nyp1, &Ex_pre);
-        //InitMyStr(nx,ny,&Hz_s_pre);
         InitMyStr(nxp1, ny, &Ey_pre);
 
-        //InitMyStr(nx,nyp1,&Ex);
-        //InitMyStr(nxp1,ny,&Ey);
-        //InitMyStr(nx,ny,&Hz);
-
-        InitMyStr(nx, nyp1, &Ex_i);
-        InitMyStr(nxp1, ny, &Ey_i);
-        InitMyStr(nx, ny, &Hz_i);
-        /*----------------------------------*/
-
         InitMyStr(nx, nyp1, &Ex);
-
-        //InitMyStr(nx,nyp1,&Ex_i);
-        //InitMyStr(nx,nyp1,&Ex_i_pre);
         InitMyStr(nx, nyp1, &Vex);
         InitMyStr(nx, nyp1, &Cevx);
         InitMyStr(nx, nyp1, &Ceex);
@@ -459,8 +446,6 @@ void createFields() {
         /*----------------------------------*/
 
         InitMyStr(nxp1, ny, &Ey);
-        //InitMyStr(nxp1,ny,&Ey_i);
-        //InitMyStr(nxp1,ny,&Ey_i_pre);	
 
         InitMyStr(nxp1, ny, &Vey);
         InitMyStr(nxp1, ny, &Cevy);
@@ -469,47 +454,14 @@ void createFields() {
         /*----------------------------------*/
 
         InitMyStr(nx, ny, &Hz);
-        //InitMyStr(nx,ny,&Hz_i);
-        //InitMyStr(nx,ny,&Hz_i_pre);
-        /*----------------------------------*/
+
     }
     if (IsTEx) {
-        //InitMyStr(nxi,nyi,&Ez_i);
-        //InitMyStr(nxi,nyip1,&Hx_i);
-        //InitMyStr(nxip1,nyi,&Hx_i);
 
-        //InitMyStr(nxp1,ny,&Hx_s_pre);
-        //InitMyStr(nx,nyp1,&Hy_s_pre);
         InitMyStr(nxp1, nyp1, &Ez_pre);
-
-        InitMyStr(nxp1, ny, &Hx_i);
-        InitMyStr(nx, nyp1, &Hy_i);
-        InitMyStr(nxp1, nyp1, &Ez_i);
-
-        //InitMyStr(nxp1,ny,&Hx);
-        //InitMyStr(nx,nyp1,&Hy);
-        //InitMyStr(nxp1,nyp1,&Ez);
-
-        /*---------------< X >-------------------*/
         InitMyStr(nxp1, ny, &Hx);
-        //InitMyStr(nxp1,ny,&Hx_i);
-        //
-        //InitMyStr(nxp1,ny,&Hx_i_pre);
-        /*----------------------------------*/
-
-        /*---------------< Y >-----------------*/
         InitMyStr(nx, nyp1, &Hy);
-
-        //InitMyStr(nx,nyp1,&Hy_i);
-        //InitMyStr(nx,nyp1,&Hy_i_pre);
-        /*----------------------------------*/
-
-
-        /*--------------< Z >-----------------*/
         InitMyStr(nxp1, nyp1, &Ez);
-        //InitMyStr(nxp1,nyp1,&Ez_i);
-
-        //InitMyStr(nxp1,nyp1,&Ez_i_pre);
 
         InitMyStr(nxp1, nyp1, &Vez);
         InitMyStr(nxp1, nyp1, &Ceez);

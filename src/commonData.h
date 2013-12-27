@@ -19,11 +19,11 @@ extern "C" {
 #include "dataType.h"
 
     // common constants    
-    static const MyDataF mu_0 = 1.257e-6;
-    static const MyDataF eps_0 = 8.854e-12;
+    static const MyDataF mu_0 = 1.2566370614359173e-06;
+    static const MyDataF eps_0 = 8.8541878176203892e-12;
     static const MyDataF length = 1.0;
     static const MyDataF e = 1.602e-19; //electron charge
-    static const MyDataF c = 2.998E8; //speed of light
+    static const MyDataF c = 299792458.0; //speed of light
     static const MyDataF me = 9.110e-31; //electron mass
     static const MyDataF CFL_factor = CFL_FACTOR;
     static const MyDataF CourantFactor = COURANT_FACTOR;
@@ -64,34 +64,14 @@ extern "C" {
     extern MyDataF k; //
     extern MyDataF T; //
     extern MyDataF E0, H0, E_0;
-    extern MyDataF Hx0, Hz0, Hy0, Ez0, Ex0, Ey0;
-    extern MyDataF Ratio_x, Ratio_y;
+    extern MyDataF RatioHx, RatioHz, RaitoHy, RatioEz, RatioEx, RatioEy;
+
     extern MyDataF lamda;
     extern MyDataF omega;
     extern MyDataF phi; //incidence wave inject angle on x-axis 
-
-    //    //EM field
-    //    extern MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;
-    //    extern MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;
-    //    extern MyStruct Ey_s_pre, Ex_s_pre, Ez_s_pre;
-    //    extern MyStruct Vey, Vex, Vez;
-    //    extern MyStruct ne, ne_pre;
-    //    extern MyStruct beta;
-    //    extern MyStruct Erms;
-    //    extern MyStruct Ermsx, Ermsy;
-    //    extern MyStruct Nu_c; // 循环利用的碰撞率
-    //    //MyStruct Nu_c_pre;//上一步的碰撞率（循环利用的碰撞率）
-    //    //Coeffients
-    //    extern MyDataF Chxez, Chyez, Chzex, Chzey;
-    //
-    //    extern MyStruct Cevx, Cevy, Cevz;
-    //    extern MyStruct Ceex, Ceey, Ceez;
-    //    extern MyStruct Cehx, Cehy, Cehz;
-    //
-    //    extern MyDataF Cve;
-    //
-    //    extern MyStruct Cvvx, Cvvy, Cvvz;
-    //    extern MyStruct Cvex, Cvey, Cvez;
+    extern MyDataF cos_phi, sin_phi;
+    extern MyDataF psi; //phase angel
+    extern MyDataF cos_psi, sin_psi;
 
     extern int IsTMx;
     extern int IsTEx;
@@ -128,14 +108,15 @@ extern "C" {
     extern int thread_count;
 #endif
 
-
-    ////////////////////////
-    // Source Waveform
-    ///////////////////////
+    // source type
     extern int srcType;
     extern MyDataF t_0; // time delay
     extern MyDataF tauSquare; // tau^2 for Gaussian wave
     extern MyDataF(*pSource)(MyDataF t);
+
+    // em fields
+    extern MyStruct Ex, Ey, Ez, Hx, Hy, Hz, Ex_pre, Ey_pre, Ez_pre;
+
 #ifdef	__cplusplus
 }
 #endif
