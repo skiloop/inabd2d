@@ -6,8 +6,9 @@ SRC_DIR:=./src
 TEST_SRC_DIR:=./test
 VPATH = $(SRC_DIR):$(TEST_SRC_DIR)
 SOURCES=$(shell find $(SRC_DIR) -name "*.c")
-OBJS:=$(patsubst $(SRC_DIR)/%.c,%.o,$(SOURCES))
-DEPS:=$(patsubst $(SRC_DIR)/%.c,%.d,$(SOURCES))
+SOURCES+=$(shell find $(TEST_SRC_DIR) -name "*.c")
+OBJS:=$(patsubst %.c,%.o,$(notdir $(SOURCES)))
+DEPS:=$(patsubst %.o,%.d,$(OBJS))
 INC+=-I$(SRC_DIR)
 #We don't need to clean up when we're making these targets
 NODEPS:=clean tags svn
@@ -25,16 +26,14 @@ objs:$(OBJS)
 
 test:$(TEST)
 
-%.o:%.c %.d
-	$(CC) $(CFLAGS) $(INC) -o $@ -c $< 
-sourceTest.o:sourceTest.c
-	$(CC) $(CFLAGS) $(INC) -o $@ -c $< 
-#This is the rule for creating the dependency files
-%.d:$(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) -MM -MT $*.o $< -MF $@
-
 sourceTest:sourceTest.o $(NORMAL_OBJS)
 	$(CC) -o $@ $^ $(LIB)
+
+#This is the rule for creating the dependency files
+%.d:%.c
+	$(CC) $(CFLAGS) $(INC) -MM -MT $*.o $< -MF $@
+%.o:%.c %.d
+	$(CC) $(CFLAGS) $(INC) -o $@ -c $< 
 
 #Don't create dependencies when we're cleaning, for instance
 ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEPS))))
@@ -43,11 +42,10 @@ ifeq (0, $(words $(findstring $(MAKECMDGOALS), $(NODEPS))))
 -include $(DEPS)
 endif
 
-$(EXCUTABLE):$(OBJS)
-	$(CC) -o $@ $(OBJS) $(LIB) 
+$(EXCUTABLE):$(NORMAL_OBJS) $(EXCUTABLE).o
+	$(CC) -o $@ $^ $(LIB)
 clean:
-	-rm -f $(DEPS) $(OBJS) $(PROJECTS) *.aux *.log *.o
+	-rm -f $(DEPS) $(OBJS) $(PROJECTS) *.aux *.log 
 veryclean:clean
 
 rebuild:veryclean all
-
