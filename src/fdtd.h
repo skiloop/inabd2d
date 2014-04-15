@@ -16,8 +16,6 @@ extern "C" {
 
     //EM field
     extern MyStruct Ey_i, Ex_i, Ez_i, Hx_i, Hy_i, Hz_i;
-    extern MyStruct Ey_s, Ex_s, Ez_s, Hx_s, Hy_s, Hz_s;
-    extern MyStruct Ey_s_pre, Ex_s_pre, Ez_s_pre;
     extern MyStruct Vey, Vex, Vez;
     extern MyStruct ne, ne_pre;
     extern MyStruct beta;

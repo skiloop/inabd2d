@@ -5,12 +5,12 @@ CC=cc#icc#gcc
 LD=ld
 
 # origin CFLAGS
-#CFLAGS=-O3 -Wall#-Wunused-but-set-variable# run mode
-CFLAGS=-g -Wall -DDEBUG#-Wunused-but-set-variable #debug mode
+CFLAGS=-O3 -Wall#-Wunused-but-set-variable# run mode
+#CFLAGS=-g -Wall -DDEBUG=2#-Wunused-but-set-variable #debug mode
 
 # origin link options
 LIB=-lm
-#LIB+=-O3
+LIB+=-O3
 
 # matlab path 
 MATPATH=/opt/Matlab/R2013b# for local server
@@ -32,7 +32,7 @@ LIB+=$(MATLIB)
 CFLAGS+=-DMATLAB_SIMULATION $(MATINC)# -g
 
 # openmp 
-#CFLAGS+=-fopenmp
-#LIB+=-fopenmp
+CFLAGS+=-fopenmp
+LIB+=-fopenmp
 
 

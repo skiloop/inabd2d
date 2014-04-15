@@ -64,7 +64,7 @@ extern "C" {
     extern MyDataF k; //
     extern MyDataF T; //
     extern MyDataF E0, H0, E_0;
-    extern MyDataF RatioHx, RatioHz, RaitoHy, RatioEz, RatioEx, RatioEy;
+    extern MyDataF RatioHx, RatioHz, RatioHy, RatioEz, RatioEx, RatioEy;
 
     extern MyDataF lamda;
     extern MyDataF omega;

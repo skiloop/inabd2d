@@ -40,7 +40,7 @@ MyDataF k; //
 MyDataF T; //
 MyDataF E_0 = E_MAX; // E field amptidute
 MyDataF E0, H0;
-MyDataF RatioHx, RatioHz, RaitoHy, RatioEz, RatioEx, RatioEy;
+MyDataF RatioHx, RatioHz, RatioHy, RatioEz, RatioEx, RatioEy;
 
 MyDataF lamda;
 MyDataF omega;
