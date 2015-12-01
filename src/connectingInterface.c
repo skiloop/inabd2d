@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
+#ifdef MATLAB_SIMULATION
 #include<engine.h>
 #include<mex.h>
 #ifdef printf
 #undef printf
+#endif
 #endif
 #include "common.h"
 #include "fdtd.h"
@@ -41,9 +43,11 @@ MyDataF *Dhzb, *Dhzt, *Dhzl, *Dhzr;
 MyDataF t_per_cell; //time wave propagates per Yee cell
 int xs, ys, xe, ye; //
 MyDataF ds;
-
-mxArray *myArr;
+#ifdef MATLAB_SIMULATION
+mxArray *m
+#endifyArr;
 extern Engine* ep;
+#endif
 #define INC_SIZE 0
 
 void initSource() {
