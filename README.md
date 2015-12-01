@@ -15,6 +15,7 @@ C compiler with openmp
 * 2 run the executable file 
 
 #PARAMETES TO RUN  THE PROGRAM
+parameters| description
 -----------------|--------------------------------------------
 --rei          | recombination coefficient
 --nui-type     | way to calculate ironlization coefficients
