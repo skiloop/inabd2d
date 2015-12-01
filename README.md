@@ -16,13 +16,13 @@ C compiler with openmp
 
 #PARAMETES TO RUN  THE PROGRAM
 
-* --rei 			recombination coefficient
-* --nui-type 		way to calculate ironlization coefficients
-* --maxwell-grid 	how many Maxwell grid per wavelength
-* --fine-grid 		how many density grid per Maxwell grid
-* --tm 			wave type 1 for TM wave, others for TE wave
-* --with-density 	1 for non-free space, others for free space
-* --is-connect 		1 for using connecting interface, others not
-* --total-time 		how long the the program simulates in T
+* --rei>>>>>>>>>>>recombination coefficient
+* --nui-type>>>>>>way to calculate ironlization coefficients
+* --maxwell-grid>>how many Maxwell grid per wavelength
+* --fine-grid>>>>>how many density grid per Maxwell grid
+* --tm>>>>>>>>>>>>wave type 1 for TM wave, others for TE wave
+* --with-density>>1 for non-free space, others for free space
+* --is-connect>>>>1 for using connecting interface, others not
+* --total-time>>>>how long the the program simulates in T
 
 
