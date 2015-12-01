@@ -13,7 +13,7 @@ LIB=-lm
 LIB+=-O3
 
 # matlab path 
-MATPATH=/opt/Matlab/R2013b# for local server
+#MATPATH=/opt/Matlab/R2013b# for local server
 #MATPATH=/opt2/Matlab/R2011a# for servers of college
 
 # Matlab link path
