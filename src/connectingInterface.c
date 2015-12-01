@@ -124,7 +124,9 @@ void econnect(MyDataF t) {
     for (i = 1; i <= eilen - 2; i++) {
         Ei[i] += ceihi * (Hi[i] - Hi[i - 1]);
     }
-
+#if DEBUG==1
+	printf("%5.4e\t%5.4e\t",Ei[4],Hi[4]);
+#endif
     //mur boundary 
     Ei[eilen - 1] = ei_last2 + CMur * (Ei[eilen - 2] - Ei[eilen - 1]);
 
@@ -155,14 +157,17 @@ void econnect(MyDataF t) {
             index = tpis * Ez.ny + ind;
             di = (int) floor(Dhyl[i]);
             df = Dhyl[i] - di;
-            Ez.data[index] -= Cehz.data[index] * RaitoHy * (Hi[di] + df * (Hi[di + 1] - Hi[di]));
+            Ez.data[index] -= Cehz.data[index] * RatioHy * (Hi[di] + df * (Hi[di + 1] - Hi[di]));
 
             //right side
             index = tpie * Ez.ny + ind;
             di = (int) floor(Dhyr[i]);
             df = Dhyr[i] - di;
-            Ez.data[index] += Cehz.data[index] * RaitoHy * (Hi[di] + df * (Hi[di + 1] - Hi[di]));
+            Ez.data[index] += Cehz.data[index] * RatioHy * (Hi[di] + df * (Hi[di + 1] - Hi[di]));
         }
+#if DEBUG==1
+		printf("%5.4e\t",Ez.data[(tpis+4)*Ez.ny + tpjs+4]);
+#endif
     }
     if (IsTMx) {
         int i, j;
@@ -185,6 +190,9 @@ void econnect(MyDataF t) {
             df = Dhzt[ind] - di;
             Ex.data[i * Ex.ny + tpje] += Cexhz * RatioHz * (Hi[di] + df * (Hi[di + 1] - Hi[di])); //top side
         }
+#if DEBUG==1
+		printf("%5.4e\t",Ey.data[(tpis+4)*Ey.ny + tpjs+4]);
+#endif
     }
 }
 
@@ -459,7 +467,7 @@ MyDataF SineSource(MyDataF t) {
     if (t < 0) {
         return 0.0;
     } else {
-        return sin(2 * M_PI * omega * t);
+        return sin( omega * t);
     }
 }
 
@@ -467,7 +475,7 @@ MyDataF CosineSource(MyDataF t) {
     if (t < 0) {
         return 0.0;
     } else {
-        return cos(2 * M_PI * omega * t);
+        return cos(omega * t);
     }
 }
 

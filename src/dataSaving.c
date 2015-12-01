@@ -176,15 +176,10 @@ void SaveCapField(const int timestep) {
 
         if (IsTEx) {
             CaptDataNoPML(cnt % 10, file, Ez, tpis, tpie, tpjs, tpje);
-            //
             file[0] = 'e';
             file[1] = 'c';
             CaptDataCenter(cnt % 10, file, Ez, Ez.ny / 2, tpis, tpie);
-            //file[0] = 'h';	file[1] = 'x';	CaptData(cnt%10,file,Hx_s); 
-            //file[0] = 'h';	file[1] = 'y';	CaptData(cnt%10,file,Hy_s); 
         } else if (IsTMx) {
-            //file[1] = 'x';	CaptData(cnt%10,file,Ex_s); 
-            //file[1] = 'y';	CaptData(cnt%10,file,Ey_s);
             file[0] = 'h';
             file[1] = 'z';
             CaptDataNoPML(cnt % 10, file, Hz, tpis, tpie, tpjs, tpje);
@@ -274,17 +269,17 @@ void SaveToFile() {
     fprintf(hfile, "DataName\tnx\tny\n");
 
     if (IsTMx) {
-        SaveData(Ex, "Ex_s.dat", hfile);
-        SaveData(Ey, "Ey_s.dat", hfile);
-        SaveData(Hz, "Hz_s.dat", hfile);
+        SaveData(Ex, "Ex.dat", hfile);
+        SaveData(Ey, "Ey.dat", hfile);
+        SaveData(Hz, "Hz.dat", hfile);
 
         SaveData(Vex, "Vex.dat", hfile);
         SaveData(Vey, "Vey.dat", hfile);
     }
     if (IsTEx) {
-        SaveData(Hx, "Hx_s.dat", hfile);
-        SaveData(Hy, "Hy_s.dat", hfile);
-        SaveData(Ez, "Ez_s.dat", hfile);
+        SaveData(Hx, "Hx.dat", hfile);
+        SaveData(Hy, "Hy.dat", hfile);
+        SaveData(Ez, "Ez.dat", hfile);
 
         SaveData(Vez, "Vez.dat", hfile);
     }

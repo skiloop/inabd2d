@@ -41,7 +41,7 @@ void initCommonData() {
     f = 0; //frequency
     k = 0;
     E0 = H0 = 0;
-    RatioHx = RatioHz = RaitoHy = RatioEz = RatioEx = RatioEy = 0;
+    RatioHx = RatioHz = RatioHy = RatioEz = RatioEx = RatioEy = 0;
     lamda = 0;
     omega = 0;
     //////////////////////////////////////////////
@@ -78,7 +78,7 @@ void initCommonData() {
     }
     if (IsTEx) {
         RatioHx = -sin_phi;
-        RaitoHy = cos_phi;
+        RatioHy = cos_phi;
         RatioEz = 1;
     }
 
@@ -102,6 +102,12 @@ void initCommonData() {
     printf("\ndt_M\t=\t%5.4e ns\ndt_F\t=\t%5.4e ns\n", dt_M / 1e-9, dt_F / 1e-9);
     printf("ds_M\t=\t%5.4e mm\nds_F\t=\t%5.4e mm\n", ds_M / 1e-3, ds_F / 1e-3);
     printf("cos(phi)\t=\t%5.4e\nsin(phi)\t=\t%5.4e\n", cos_phi, sin_phi);
+    printf("RatioEx\t=\t%5.4e\n",RatioEx);
+    printf("RatioEy\t=\t%5.4e\n",RatioEy);
+    printf("RatioEz\t=\t%5.4e\n",RatioEz);
+    printf("RatioHx\t=\t%5.4e\n",RatioHx);
+    printf("RatioHy\t=\t%5.4e\n",RatioHy);
+    printf("RatioHz\t=\t%5.4e\n",RatioHz);
     printf("\ndt_F/dt\t\t:\t%d\n", (int) (0.5 + dt_F / dt));
     printf("PML size\t:\t%d\n", nbound);
     printf("E0\t:\t%f\n", E0);
