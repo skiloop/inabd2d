@@ -25,12 +25,12 @@
 runpath=m50n25de
 mkdir -p $runpath
 cd $runpath
-../abd2d --rei=0 --niu-type=0 --maxwell-grid=50 --find-grid=25 --is-connect=1 --with-density=1 --tm=1 --total-time=150 | tee co.txt 2>&1 > /dev/null &
+../abd2d --rei=0 --niu-type=0 --maxwell-grid=50 --fine-grid=25 --is-connect=1 --with-density=1 --tm=1 --total-time=150 | tee co.txt 2>&1 > /dev/null &
 cd ..
 
 # No. 3
 runpath=m50n10de
 mkdir -p $runpath
 cd $runpath
-../abd2d --rei=0 --niu-type=0 --maxwell-grid=50 --find-grid=10 --is-connect=1 --with-density=1 --tm=1 --total-time=150 | tee co.txt 2>&1 > /dev/null &
+../abd2d --rei=0 --niu-type=0 --maxwell-grid=50 --fine-grid=10 --is-connect=1 --with-density=1 --tm=1 --total-time=150 | tee co.txt 2>&1 > /dev/null &
 cd ..

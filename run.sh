@@ -10,6 +10,7 @@ run=abd2d
 rei=0
 nuiType=2
 maxwellGrid=50
+densityGrid=8
 connect=1
 density=1
 tmWave=1
@@ -20,7 +21,7 @@ if [ ! -f ${run} ];then
 fi
 mkdir -p ${runpath}
 cd ${runpath}
-../${run} --rei=${rei} --niu-type=${nuiType} --maxwell-grid=${maxwellGrid} --find-grid=${densityGrid} --is-connect=${connect} --with-density=${density} --tm=${tmWave} --total-time=${runtime} > r.log 2>&1 > /dev/null &
+../${run} --rei=${rei} --niu-type=${nuiType} --maxwell-grid=${maxwellGrid} --fine-grid=${densityGrid} --is-connect=${connect} --with-density=${density} --tm=${tmWave} --total-time=${runtime} > r.log 2>&1 > /dev/null &
 echo "jobs is running in background"
 echo "data output is in directory ${runpath}";
 echo "to see if still running please execute: ps | grep ${run}";
