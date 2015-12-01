@@ -7,12 +7,12 @@ inabd2d
 C compiler with openmp
 
 #HOW TO RUN ON LINUX
-* 1 run make to compile
-* 2 run run.sh scripts for simple running, you can change the parameters defined in run.sh to use different parameters for EM and FDTD condition
+1. run make to compile
+2. run run.sh scripts for simple running, you can change the parameters defined in run.sh to use different parameters for EM and FDTD condition
 
 #HOW TO RUN ON WINDOWS
-* 1 compile with your windows compiler
-* 2 run the executable file 
+1. compile with your windows compiler
+2. run the executable file 
 
 #PARAMETES TO RUN  THE PROGRAM
 parameters| description
